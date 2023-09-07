@@ -2,12 +2,46 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "sourceMap": true,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
     },
-    "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "lib": ["esnext", "dom", "ES6",
+      "dom.iterable",
+      "scripthost"],
+    "types": ["@dcloudio/types", "miniprogram-api-typings"],
+    "typeRoots": ["@/types/index.d.ts"],
+    "skipLibCheck": true,
+
+    "forceConsistentCasingInFileNames": true,
+    "strictFunctionTypes": false,
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "incremental": false,
+    "noLib": false,
+    //    "jsx": "preserve",
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "removeComments": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": [
+    "**/*.js",
+    "node_modules",
+    "dist",
+    "tests"
+  ],
 }

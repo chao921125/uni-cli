@@ -4,6 +4,7 @@
 3. [uni-ui v1.4.27](https://github.com/dcloudio/uni-ui)
 4. [uviewui 未用](https://uviewui.com/)
 5. [ucharts 图表 收费 未用](https://www.ucharts.cn/v2/#/)
+6. pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 # 注意事项
 ###### vant 样式修改方式：1、行内；2、标签加名称，内容额外使用view等内置组件；3、添加 ::v-deep 修改
