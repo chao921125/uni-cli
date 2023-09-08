@@ -1,5 +1,5 @@
 import { createSSRApp } from "vue";
-import * as  Pinia from "pinia";
+import * as Pinia from "pinia";
 import App from "./App.vue";
 import { createI18n } from "vue-i18n";
 
