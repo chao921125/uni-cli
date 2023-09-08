@@ -5,9 +5,9 @@
  * *States 实例集合 属性实例key
  */
 export interface IDemoState {
-    id: number;
-    name: string;
+	id: number;
+	name: string;
 }
 export interface IDemoStates {
-    demo: IDemoState;
+	demo: IDemoState;
 }

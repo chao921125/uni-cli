@@ -6,7 +6,7 @@ const store = createPinia();
 
 // 不必额外导入，直接使用此方法
 export const getStoreRefs = (store: any) => {
-    return storeToRefs(store);
+	return storeToRefs(store);
 };
 
 // pinia.use(() => {
@@ -16,9 +16,9 @@ export const getStoreRefs = (store: any) => {
 // 导出自定义其他状态文件
 import { useDemo } from "./modules/demo";
 export interface IAppStore {
-    useDemo: ReturnType<typeof useDemo>;
+	useDemo: ReturnType<typeof useDemo>;
 }
 export const appStore: IAppStore = {
-    useDemo: useDemo(store),
+	useDemo: useDemo(store),
 } as IAppStore;
 export default store;
