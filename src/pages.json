@@ -1,33 +1,9 @@
-{ // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+{
 	"pages": [{
-		"path": "pages/tab-bar/index",
+		"path": "pages/index/index",
 		"style": {
 			"navigationBarTitleText": "%index.title%",
 			"enablePullDownRefresh": true
-		}
-	}, {
-		"path": "pages/tab-bar/article",
-		"style": {
-			"navigationBarTitleText": "文章",
-			"enablePullDownRefresh": true
-		}
-	}, {
-		"path": "pages/tab-bar/api",
-		"style": {
-			"navigationBarTitleText": "%index.api%",
-			"enablePullDownRefresh": true
-		}
-	}, {
-		"path": "pages/tab-bar/demo",
-		"style": {
-			"navigationBarTitleText": "示例",
-			"enablePullDownRefresh": true
-		}
-	}, {
-		"path": "pages/common/blank",
-		"style": {
-			"navigationBarTitleText": "空白页",
-			"enablePullDownRefresh": false
 		}
 	}],
 	"subPackages": [{
@@ -65,28 +41,6 @@
 			}
 		}]
 	}],
-	"tabBar": {
-		"height": "1px",
-		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
-		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
-		"list": [{
-			"pagePath": "pages/tab-bar/index",
-			"text": ""
-		},
-			{
-				"pagePath": "pages/tab-bar/article",
-				"text": ""
-			}, {
-				"pagePath": "pages/tab-bar/api",
-				"text": ""
-			}, {
-				"pagePath": "pages/tab-bar/demo",
-				"text": ""
-			}
-		]
-	},
 	"preloadRule": {
 		"pages/tab-bar/index": {
 			"network": "all",
@@ -108,16 +62,15 @@
 	"uniIdRouter": {
 		"loginPage": "pages/login/login",
 		"needLogin": [
-			"pages/user/.*" // 需要登录才可访问的页面列表，可以使用正则语法
+			"pages/user/.*"
 		],
 		"resToLogin": true
 	},
 	"easycom": {
-		"autoscan": true
-		// "custom": {
-		//     // uni-ui 规则如下配置
-		//     "^van-(.*)": "@/wxcomponents/vant/$1/index"
-		// }
+		"autoscan": true,
+		"custom": {
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

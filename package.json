@@ -67,7 +67,9 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-3081220230817001",
     "@dcloudio/uni-stacktracey": "3.0.0-3081220230817001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3081220230817001",
+		"@types/node": "^20.5.9",
     "@vue/runtime-core": "^3.3.4",
+		"@vue/tsconfig": "^0.4.0",
 		"css-loader": "6.8.1",
 		"eslint": "^8.48.0",
 		"eslint-config-prettier": "^9.0.0",
@@ -78,10 +80,12 @@
     "sass-loader": "^13.3.2",
 		"style-loader": "^3.3.3",
 		"stylelint": "^15.10.3",
+		"typescript": "^5.2.2",
 		"unplugin-vue-components": "^0.25.2",
     "vite": "4.4.9",
     "vite-plugin-html": "^3.2.0",
-		"vue-loader": "^17.2.2"
+		"vue-loader": "^17.2.2",
+		"vue-tsc": "^1.8.10"
 	},
   "dcloudext": {
     "category": [
