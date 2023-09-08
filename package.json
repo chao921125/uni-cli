@@ -38,11 +38,14 @@
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
     "type-check": "vue-tsc --noEmit"
   },
+  "resolutions": {
+    "pinia": "2.0.36"
+  },
   "dependencies": {
     "@dcloudio/uni-components": "3.0.0-3081220230817001",
     "@dcloudio/uni-ui": "^1.4.28",
     "@vant/weapp": "^1.10.25",
-    "pinia": "^2.1.6",
+    "pinia": "2.0.36",
     "vant": "^4.6.7",
     "vue": "^3.3.4",
     "vue-i18n": "^9.3.0"

@@ -1,4 +1,4 @@
-# 该项目使用的UI
+# 该项目使用的UI TS问题多多，改回JS
 1. 微信内置的
 2. [vant v1.10.23](https://github.com/youzan/vant-weapp)
 3. [uni-ui v1.4.27](https://github.com/dcloudio/uni-ui)
