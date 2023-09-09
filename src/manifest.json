@@ -151,7 +151,8 @@
     "usingComponents": true
   },
   "uniStatistics": {
-    "enable": true
+		"enable": true,//全局开启
+		"version": "2" // 开启新版uni统计，值为字符串
   },
   "vueVersion": "3",
 	"locale": "auto",

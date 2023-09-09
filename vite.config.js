@@ -12,16 +12,16 @@ export default defineConfig({
 			},
 		},
 	},
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-    // dedupe: "", // 一般SSR+ESM使用
-    // conditions: "",
-    // mainFields: "",
-    // extensions: "",
-    // preserveSymlinks: "",
-  },
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
+		},
+		// dedupe: "", // 一般SSR+ESM使用
+		// conditions: "",
+		// mainFields: "",
+		// extensions: "",
+		// preserveSymlinks: "",
+	},
 	server: {
 		port: 2223,
 		strictPort: true,

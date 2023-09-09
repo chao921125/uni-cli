@@ -1,5 +1,5 @@
 <template>
-	<text style="text-decoration:underline" :href="href" @click="openURL" :inWhiteList="inWhiteList">{{text}}</text>
+	<text style="text-decoration: underline" :href="href" @click="openURL" :inWhiteList="inWhiteList">{{ text }}</text>
 </template>
 
 <script>
@@ -11,49 +11,48 @@
 	 * @example * <u-link href="https://ext.dcloud.net.cn" text="https://ext.dcloud.net.cn" :inWhiteList="true"></u-link>
 	 */
 	export default {
-		name: 'u-link',
+		name: "u-link",
 		props: {
 			href: {
 				type: String,
-				default: ''
+				default: "",
 			},
 			text: {
 				type: String,
-				default: ''
+				default: "",
 			},
 			inWhiteList: {
 				type: Boolean,
-				default: false
-			}
+				default: false,
+			},
 		},
 		methods: {
 			openURL() {
 				// #ifdef APP-PLUS
-				plus.runtime.openURL(this.href) //这里默认使用外部浏览器打开而不是内部web-view组件打开
+				plus.runtime.openURL(this.href); //这里默认使用外部浏览器打开而不是内部web-view组件打开
 				// #endif
 				// #ifdef H5
-				window.open(this.href)
+				window.open(this.href);
 				// #endif
 				// #ifdef MP
-				if (this.inWhiteList) { //如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
+				if (this.inWhiteList) {
+					//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
 					uni.navigateTo({
-						url: '/pages/component/web-view/web-view?url=' + this.href
+						url: "/pages/component/web-view/web-view?url=" + this.href,
 					});
 				} else {
 					uni.setClipboardData({
-						data: this.href
+						data: this.href,
 					});
 					uni.showModal({
-						content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
-						showCancel: false
+						content: "本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址",
+						showCancel: false,
 					});
 				}
 				// #endif
-			}
-		}
-	}
+			},
+		},
+	};
 </script>
 
-<style>
-
-</style>
+<style></style>

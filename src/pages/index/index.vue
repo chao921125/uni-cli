@@ -20,10 +20,10 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import ULink from "@/components/u-link/u-link.vue";
+	import { ref } from "vue";
+	import ULink from "@/components/u-link/u-link.vue";
 
-const title = ref("Hello")
+	const title = ref("Hello");
 </script>
 
 <style lang="scss">
@@ -33,6 +33,7 @@ const title = ref("Hello")
 		align-items: center;
 		justify-content: center;
 		.s-btn {
+			font-family: "PingFang Bold";
 			font-size: 50rpx;
 		}
 	}
