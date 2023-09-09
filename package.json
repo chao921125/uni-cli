@@ -36,14 +36,16 @@
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
-    "type-check": "vue-tsc --noEmit"
-  },
+		"lint:prettier": "prettier --write --fix --loglevel warn \"./**/*.{js,ts,json,jsx,tsx,css,less,scss,vue,html,md}\""
+	},
+	"resolutions": {
+		"pinia": "2.0.36"
+	},
   "dependencies": {
     "@dcloudio/uni-components": "3.0.0-3081220230817001",
     "@dcloudio/uni-ui": "^1.4.28",
     "@vant/weapp": "^1.10.25",
-    "pinia": "^2.1.6",
-    "vant": "^4.6.7",
+    "pinia": "2.0.36",
     "vue": "^3.3.4",
     "vue-i18n": "^9.3.0"
   },
@@ -65,15 +67,105 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-3081220230817001",
     "@dcloudio/uni-stacktracey": "3.0.0-3081220230817001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3081220230817001",
-    "@types/node": "^20.5.9",
+		"@types/node": "^20.5.9",
     "@vue/runtime-core": "^3.3.4",
-    "@vue/tsconfig": "^0.4.0",
-    "miniprogram-api-typings": "^3.12.0",
+		"@vue/tsconfig": "^0.4.0",
+		"css-loader": "6.8.1",
+		"eslint": "^8.48.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"eslint-plugin-vue": "^9.17.0",
+		"prettier": "^3.0.3",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
-    "typescript": "^5.2.2",
+		"style-loader": "^3.3.3",
+		"stylelint": "^15.10.3",
+		"typescript": "^5.2.2",
+		"unplugin-vue-components": "^0.25.2",
     "vite": "4.4.9",
     "vite-plugin-html": "^3.2.0",
-    "vue-tsc": "^1.8.10"
+		"vue-loader": "^17.2.2",
+		"vue-tsc": "^1.8.10"
+	},
+  "dcloudext": {
+    "category": [
+      "前端页面模板",
+      "uni-app前端项目模板"
+    ],
+    "sale": {
+      "regular": {
+        "price": "0.00"
+      },
+      "sourcecode": {
+        "price": "0.00"
+      }
+    },
+    "contact": {
+      "qq": ""
+    },
+    "declaration": {
+      "ads": "无",
+      "data": "无",
+      "permissions": "无"
+    },
+    "npmurl": ""
+  },
+  "uni_modules": {
+    "dependencies": [],
+    "encrypt": [],
+    "platforms": {
+      "cloud": {
+        "tcb": "y",
+        "aliyun": "y"
+      },
+      "client": {
+        "App": {
+          "app-vue": "y",
+          "app-nvue": "y"
+        },
+        "H5-mobile": {
+          "Safari": "y",
+          "Android Browser": "y",
+          "微信浏览器(Android)": "y",
+          "QQ浏览器(Android)": "y"
+        },
+        "H5-pc": {
+          "Chrome": "y",
+          "IE": "y",
+          "Edge": "y",
+          "Firefox": "y",
+          "Safari": "y"
+        },
+        "小程序": {
+          "微信": "y",
+          "阿里": "y",
+          "百度": "y",
+          "字节跳动": "y",
+          "QQ": "y",
+          "京东": "y"
+        },
+        "快应用": {
+          "华为": "u",
+          "联盟": "u"
+        },
+        "Vue": {
+          "vue2": "y",
+          "vue3": "y"
+        }
+      }
+    }
+  },
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
+        }
+      }
+    }
   }
 }
