@@ -1,10 +1,13 @@
 <script>
+	import config from "@/config/index";
+
 	export default {
 		globalData: {
 			title: "CC APP",
 		},
 		// 只能在App.vue里监听应用的生命周期
 		onLaunch: function () {
+			config.loadFontFace();
 			// 设置小程序分享
 			wx.showShareMenu({
 				withShareTicket: true,
