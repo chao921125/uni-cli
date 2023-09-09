@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import path from "path";
 import uni from "@dcloudio/vite-plugin-uni";
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,6 +12,16 @@ export default defineConfig({
 			},
 		},
 	},
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+    // dedupe: "", // 一般SSR+ESM使用
+    // conditions: "",
+    // mainFields: "",
+    // extensions: "",
+    // preserveSymlinks: "",
+  },
 	server: {
 		port: 2223,
 		strictPort: true,

@@ -14,5 +14,5 @@
 
 <style>
 	/*每个页面公共css */
-	@import "./wxcomponents/vant-weapp/common/index.wxss";
+	@import "@/wxcomponents/vant/common/index.wxss";
 </style>

@@ -2,6 +2,6 @@ export {};
 
 declare module "vue" {
 	// @ts-ignore
-	type Hooks = App.AppInstance & Page.PageInstance;
+  type Hooks = App.AppInstance & Page.PageInstance;
 	interface ComponentCustomOptions extends Hooks {}
 }
