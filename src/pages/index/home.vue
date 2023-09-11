@@ -28,7 +28,7 @@
 		closeable
 		position="left"
 		class="home-dialog"
-		custom-style="width: 50%; height: 100%;"
+		custom-style="width: 50%; height: 100%; padding-top: 50;"
 		@close="closeDialog"
 		@click-overlay="closeDialog"
 	>

@@ -24,7 +24,10 @@
 
 	const urlParams = ref();
 	onLoad((option) => {
-		urlParams.value = option.index || "";
+		urlParams.value = option || "";
+		if (option.index) {
+			changeIndex(Number(option.index));
+		}
 	});
 
 	const timer = ref(null);
