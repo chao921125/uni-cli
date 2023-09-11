@@ -1,7 +1,9 @@
+@use "./variable.scss";
+
 /** 重写三方UI样式 **/
 
 ._input-placeholder {
-	color: $text-placeholder;
+	color: variable.$text-placeholder;
 }
 .uni-forms-item {
 	.uni-forms-item__content {

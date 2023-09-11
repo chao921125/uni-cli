@@ -1,112 +1,114 @@
+@use "./variable.scss";
+
 // @for $var from start |to,through| end
 // 从 0 开始 至 90 结束，间隔为10
 // $i: 50;
 // @while $i > 0 {
-//   .#{$prefix}-m-#{$i} { margin: #{$i}px; }
-//   .#{$prefix}-mt-#{$i} { margin-top: #{$i}px; }
-//   .#{$prefix}-mr-#{$i} { margin-right: #{$i}px; }
-//   .#{$prefix}-mb-#{$i} { margin-bottom: #{$i}px; }
-//   .#{$prefix}-ml-#{$i} { margin-left: #{$i}px; }
+//   .#{variable.$prefix}-m-#{$i} { margin: #{$i}px; }
+//   .#{variable.$prefix}-mt-#{$i} { margin-top: #{$i}px; }
+//   .#{variable.$prefix}-mr-#{$i} { margin-right: #{$i}px; }
+//   .#{variable.$prefix}-mb-#{$i} { margin-bottom: #{$i}px; }
+//   .#{variable.$prefix}-ml-#{$i} { margin-left: #{$i}px; }
 
-//   .#{$prefix}-p-#{$i} { padding: #{$i}px; }
-//   .#{$prefix}-pt-#{$i} { padding-top: #{$i}px; }
-//   .#{$prefix}-pr-#{$i} { padding-right: #{$i}px; }
-//   .#{$prefix}-pb-#{$i} { padding-bottom: #{$i}px; }
-//   .#{$prefix}-pl-#{$i} { padding-left: #{$i}px; }
+//   .#{variable.$prefix}-p-#{$i} { padding: #{$i}px; }
+//   .#{variable.$prefix}-pt-#{$i} { padding-top: #{$i}px; }
+//   .#{variable.$prefix}-pr-#{$i} { padding-right: #{$i}px; }
+//   .#{variable.$prefix}-pb-#{$i} { padding-bottom: #{$i}px; }
+//   .#{variable.$prefix}-pl-#{$i} { padding-left: #{$i}px; }
 //   $i: $i - 5;
 // }
 @for $i from 0 through 90 {
-	.#{$prefix}-z-index-#{$i} {
+	.#{variable.$prefix}-z-index-#{$i} {
 		z-index: $i * 10;
 	}
 }
 
 @for $i from 1 through 100 {
-	.#{$prefix}-p-#{$i} {
+	.#{variable.$prefix}-p-#{$i} {
 		padding: #{$i}rpx;
 	}
-	.#{$prefix}-pl-#{$i} {
+	.#{variable.$prefix}-pl-#{$i} {
 		padding-left: #{$i}rpx;
 	}
-	.#{$prefix}-pr-#{$i} {
+	.#{variable.$prefix}-pr-#{$i} {
 		padding-right: #{$i}rpx;
 	}
-	.#{$prefix}-pt-#{$i} {
+	.#{variable.$prefix}-pt-#{$i} {
 		padding-top: #{$i}rpx;
 	}
-	.#{$prefix}-pb-#{$i} {
+	.#{variable.$prefix}-pb-#{$i} {
 		padding-bottom: #{$i}rpx;
 	}
-	.#{$prefix}-m-#{$i} {
+	.#{variable.$prefix}-m-#{$i} {
 		margin: #{$i}rpx;
 	}
-	.#{$prefix}-ml-#{$i} {
+	.#{variable.$prefix}-ml-#{$i} {
 		margin-left: #{$i}rpx;
 	}
-	.#{$prefix}-mr-#{$i} {
+	.#{variable.$prefix}-mr-#{$i} {
 		margin-right: #{$i}rpx;
 	}
-	.#{$prefix}-mt-#{$i} {
+	.#{variable.$prefix}-mt-#{$i} {
 		margin-top: #{$i}rpx;
 	}
-	.#{$prefix}-mb-#{$i} {
+	.#{variable.$prefix}-mb-#{$i} {
 		margin-bottom: #{$i}rpx;
 	}
 }
 
-.#{$prefix}-flex {
+.#{variable.$prefix}-flex {
 	display: flex;
 	display: -webkit-flex;
 }
-.#{$prefix}-flex-row {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-row {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: row;
 }
-.#{$prefix}-flex-row-center {
-	@extend .#{$prefix}-flex-row;
+.#{variable.$prefix}-flex-row-center {
+	@extend .#{variable.$prefix}-flex-row;
 	align-items: center;
 	justify-content: center;
 }
-.#{$prefix}-flex-row-start {
-	@extend .#{$prefix}-flex-row;
+.#{variable.$prefix}-flex-row-start {
+	@extend .#{variable.$prefix}-flex-row;
 	align-items: flex-start;
 	justify-content: flex-start;
 }
-.#{$prefix}-flex-row-end {
-	@extend .#{$prefix}-flex-row;
+.#{variable.$prefix}-flex-row-end {
+	@extend .#{variable.$prefix}-flex-row;
 	align-items: flex-start;
 	justify-content: flex-end;
 }
-.#{$prefix}-flex-row-center-start {
-	@extend .#{$prefix}-flex-row;
+.#{variable.$prefix}-flex-row-center-start {
+	@extend .#{variable.$prefix}-flex-row;
 	align-items: center;
 	justify-content: flex-start;
 }
-.#{$prefix}-flex-row-between {
-	@extend .#{$prefix}-flex-row;
+.#{variable.$prefix}-flex-row-between {
+	@extend .#{variable.$prefix}-flex-row;
 	align-items: center;
 	justify-content: space-between;
 }
-.#{$prefix}-flex-row-reverse {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-row-reverse {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: row-reverse;
 }
-.#{$prefix}-flex-row-reverse-start {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-row-reverse-start {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: row-reverse;
 	align-items: flex-start;
 	justify-content: flex-start;
 }
-.#{$prefix}-flex-column {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-column {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: column;
 }
-.#{$prefix}-flex-column-reverse {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-column-reverse {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: column-reverse;
 }
-.#{$prefix}-flex-column-center {
-	@extend .#{$prefix}-flex;
+.#{variable.$prefix}-flex-column-center {
+	@extend .#{variable.$prefix}-flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -117,7 +119,7 @@
 	display: -ms-grid;
 	display: -moz-grid;
 }
-.#{$prefix}-grid {
+.#{variable.$prefix}-grid {
 	@extend %grid;
 	grid-template-columns: repeat(auto-fit, 240px);
 	/*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
@@ -130,11 +132,11 @@
 	text-align: center;
 }
 
-.#{$prefix}-text-center {
+.#{variable.$prefix}-text-center {
 	@extend %text-center;
 }
 
-.#{$prefix}-text-ellipsis {
+.#{variable.$prefix}-text-ellipsis {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;

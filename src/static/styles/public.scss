@@ -1,3 +1,5 @@
+@use "./variable.scss";
+
 // 顶部状态栏
 .nav-status {
 	height: var(--status-bar-height);
@@ -15,11 +17,11 @@
 }
 
 // wh
-.#{$prefix}-wh-full {
+.#{variable.$prefix}-wh-full {
 	width: 100vw;
 	height: 100vh;
 }
-.#{$prefix}-wh-fill {
+.#{variable.$prefix}-wh-fill {
 	width: 100%;
 	height: 100%;
 }
@@ -34,10 +36,10 @@
 }
 
 .bg-color-default {
-	background-color: $color-grey-light;
+	background-color: variable.$color-grey-light;
 }
 .bg-color-white {
-	background-color: $color-white;
+	background-color: variable.$color-white;
 }
 .bg-color-dis {
 	background-color: blanchedalmond;
@@ -57,22 +59,22 @@
 
 // 字体颜色
 .text-black {
-	color: $text-primary;
+	color: variable.$text-primary;
 }
 .text-white {
-	color: $text-default;
+	color: variable.$text-default;
 }
 .text-default {
-	color: $text-success;
+	color: variable.$text-success;
 }
 .text-success {
-	color: $text-success;
+	color: variable.$text-success;
 }
 .text-link {
-	color: $text-link;
+	color: variable.$text-link;
 }
 .text-error {
-	color: $text-error;
+	color: variable.$text-error;
 }
 // 字体加粗
 .text-bold {
@@ -163,23 +165,23 @@
 	color: #fff;
 }
 .btn-success {
-	background-color: $btn-success;
-	color: $text-default;
+	background-color: variable.$btn-success;
+	color: variable.$text-default;
 }
 .btn-error {
-	background-color: $btn-error;
-	color: $text-default;
+	background-color: variable.$btn-error;
+	color: variable.$text-default;
 }
 .btn-waring {
-	background-color: $btn-waring;
-	color: $text-default;
+	background-color: variable.$btn-waring;
+	color: variable.$text-default;
 }
 
 // 中横线
 .line-default {
 	width: 100%;
 	height: 1rpx;
-	background-color: $color-grey-light;
+	background-color: variable.$color-grey-light;
 }
 
 // modal 弹窗相关 start

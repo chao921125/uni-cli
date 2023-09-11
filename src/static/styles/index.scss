@@ -1,17 +1,9 @@
-// 组件
-@import "@/wxcomponents/vant/common/index.wxss";
-// 字体
-@import "@/static/fonts/index.css";
-// 图标
-@import "@/static/icon/iconfont/iconfont.css";
 /** ------ 自定义 ------ **/
 // 定义变量
-@import "./variable.scss";
+@use "./variable.scss";
 // 三方样式重写
-@import "./reset-ui.scss";
+@use "./reset-ui.scss";
 // 原子定义，全局可用
-@import "./global.scss";
+@use "./global.scss";
 // 公共布局
-@import "./public.scss";
-// 重用样式，非全局
-@import "./common.scss";
+@use "./public.scss";
