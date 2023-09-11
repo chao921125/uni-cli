@@ -2,7 +2,7 @@
 	<view @click="changeClick">template {{ props.name }}</view>
 </template>
 
-<script setup name="TempScriptSetup">
+<script setup name="">
 	const props = defineProps({
 		name: {
 			required: false,

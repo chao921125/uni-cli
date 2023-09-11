@@ -1,4 +1,5 @@
 <template>
+	<re-van-nav-bar title="国际化"></re-van-nav-bar>
 	<view class="container">
 		<view class="title">{{ $t("index.demo") }}</view>
 		<view class="description">{{ $t("index.demo-description") }}</view>
@@ -27,6 +28,7 @@
 
 <script setup>
 	import { getCurrentInstance, computed } from "vue";
+	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 
 	let systemInfo = uni.getSystemInfoSync();
 	let systemLocale = systemInfo.language;
