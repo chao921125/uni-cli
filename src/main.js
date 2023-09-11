@@ -1,9 +1,8 @@
 import { createSSRApp } from "vue";
-import * as Pinia from "pinia";
 import App from "./App.vue";
+import * as Pinia from "pinia";
 import { createI18n } from "vue-i18n";
-
-import messages from "./plugins/locale/index.ts";
+import messages from "./plugins/locale";
 let i18nConfig = {
 	locale: uni.getLocale(),
 	messages,

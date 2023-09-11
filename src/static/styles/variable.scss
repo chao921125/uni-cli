@@ -1,3 +1,9 @@
+/** 定义公共的变量 **/
+
+// 定制统一前缀
+$prefix: re;
+
+// 色值定义 start
 // base color
 $color-white: #ffffff;
 $color-black: #dcdcdc;
@@ -27,3 +33,4 @@ $border-waring: #ff9933;
 
 // 可点击颜色
 $link-success: #03c03c;
+// 色值定义 end
