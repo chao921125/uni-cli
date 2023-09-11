@@ -1,32 +1,33 @@
 <template>
 	<view>
 		<van-tabbar :active="active" @change="changePage" :placeholder="true" active-color="#1989fa">
-			<van-tabbar-item name="index" icon="home-o">首页</van-tabbar-item>
-			<van-tabbar-item name="article" icon="description">文章</van-tabbar-item>
-			<van-tabbar-item name="api" icon="coupon-o">API</van-tabbar-item>
-			<van-tabbar-item name="demo" icon="cashier-o">示例</van-tabbar-item>
+			<van-tabbar-item icon="home-o">首页</van-tabbar-item>
+			<van-tabbar-item icon="description">文章</van-tabbar-item>
+			<van-tabbar-item icon="coupon-o">API</van-tabbar-item>
+			<van-tabbar-item icon="cashier-o">示例</van-tabbar-item>
 		</van-tabbar>
 	</view>
 </template>
 
 <script setup>
 	import { onMounted, ref } from "vue";
+	const props = defineProps({
+		index: {
+			required: false,
+			type: Number,
+			default: 0,
+		},
+	});
+	const emits = defineEmits(["change"]);
 
-	const pages = getCurrentPages();
-	const current = pages[pages.length - 1].route;
-
-	const active = ref("");
-
+	const active = ref(0);
 	const changePage = (event) => {
-		if (current.includes(event.detail)) return false;
-		uni.switchTab({
-			url: `/pages/tab-bar/${event.detail}`,
-		});
+		active.value = event.detail;
+		emits("change", event.detail);
 	};
 
 	onMounted(() => {
-		console.log("current=============", current.substring(current.lastIndexOf("/") + 1));
-		active.value = current.substring(current.lastIndexOf("/") + 1);
+		active.value = props.index;
 	});
 </script>
 

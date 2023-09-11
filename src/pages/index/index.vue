@@ -1,59 +1,48 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{ title }}</text>
-		</view>
-		<uni-card>
-			<text class="">这是一个基础卡片示例，内容较少，此示例展示了一个没有任何属性不带阴影的卡片。</text>
-		</uni-card>
-		<van-button>wode</van-button>
-		<text class="s-btn">wode lalala</text>
+	<view v-if="!isLoading" class="re-wh-full re-wh-fill re-text-center welcome-box">
+		<van-loading type="spinner" color="#1989fa">加载中...</van-loading>
 	</view>
-	<van-grid>
-		<van-grid-item icon="photo-o" text="文字" />
-		<van-grid-item icon="photo-o" text="文字" />
-		<van-grid-item icon="photo-o" text="文字" />
-		<van-grid-item icon="photo-o" text="文字" />
-	</van-grid>
-	<u-link>lalalal</u-link>
+	<view v-else>
+		<re-van-nav-bar title="首页" :isShowLeft="false"></re-van-nav-bar>
+		<article v-if="tabBarIndex === 1"></article>
+		<api v-else-if="tabBarIndex === 2"></api>
+		<demo v-else-if="tabBarIndex === 3"></demo>
+		<home v-else></home>
+		<re-van-tab-bar :index="tabBarIndex" @change="changeIndex"></re-van-tab-bar>
+	</view>
 </template>
 
 <script setup>
-	import { ref } from "vue";
-	import ULink from "@/components/u-link/u-link.vue";
+	import { onLoad } from "@dcloudio/uni-app";
+	import { onMounted, ref } from "vue";
+	import ReVanTabBar from "@/pages/comonents/re-van-tab-bar.vue";
+	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
+	import Home from "./home.vue";
+	import Article from "./article.vue";
+	import Api from "./api.vue";
+	import Demo from "./demo.vue";
+
+	const urlParams = ref();
+	onLoad((option) => {
+		urlParams.value = option.index || "";
+	});
+
+	const timer = ref(null);
+	const isLoading = ref(false);
+	onMounted(() => {
+		timer.value = setTimeout(() => {
+			isLoading.value = true;
+			clearTimeout(timer.value);
+			timer.value = null;
+		}, 1500);
+	});
+
+	const tabBarIndex = ref(0);
+	const changeIndex = (index) => {
+		tabBarIndex.value = index;
+	};
 
 	const title = ref("Hello");
 </script>
 
-<style lang="scss">
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		.s-btn {
-			font-family: "PingFang Bold";
-			font-size: 50rpx;
-		}
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
-</style>
+<style scoped lang="scss"></style>

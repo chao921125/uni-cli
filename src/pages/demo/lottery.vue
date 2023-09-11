@@ -1,4 +1,5 @@
 <template>
+	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
 	<view class="container">
 		<view v-show="!isLoading">
 			<text v-show="isInput" class="uni-title">请输入抽奖的内容（请用逗号或者空格分割）</text>
@@ -41,6 +42,7 @@
 
 <script setup>
 	import { reactive, ref } from "vue";
+	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 	// 地球,火星,太阳,木星,金星,水星,火星,土星
 	const data = reactive({
 		lottery: {

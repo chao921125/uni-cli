@@ -1,13 +1,35 @@
 {
   "pages": [
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationBarTitleText": "CC NET",
+				"enablePullDownRefresh": true
       }
     }
   ],
+	"subPackages": [{
+		"root": "pages/demo/",
+		"pages": [{
+			"path": "language",
+			"style": {
+				"navigationBarTitleText": "国际化",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "lottery",
+			"style": {
+				"navigationBarTitleText": "抽奖",
+				"enablePullDownRefresh": true
+			}
+		}]
+	}],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["__APP__"]
+		}
+	},
   "easycom": {
     "autoscan": true,
     "custom": {
@@ -15,14 +37,35 @@
     }
   },
   "globalStyle": {
+    "navigationStyle": "custom",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "cc-net",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
     "usingComponents": {
-      "van-button": "/wxcomponents/vant/button/index",
+			"van-config-provider": "/wxcomponents/vant/config-provider/index",
+			"van-transition": "/wxcomponents/vant/transition/index",
+			"van-loading": "/wxcomponents/vant/loading/index",
+			"van-icon": "/wxcomponents/vant/icon/index",
+			"van-row": "/wxcomponents/vant/row/index",
+			"van-col": "/wxcomponents/vant/col/index",
+			"van-cell": "/wxcomponents/vant/cell/index",
+			"van-cell-group": "/wxcomponents/vant/cell-group/index",
 			"van-grid": "/wxcomponents/vant/grid/index",
-			"van-grid-item": "/wxcomponents/vant/grid-item/index"
+			"van-grid-item": "/wxcomponents/vant/grid-item/index",
+			"van-button": "/wxcomponents/vant/button/index",
+			"van-image": "/wxcomponents/vant/image/index",
+			"van-toast": "/wxcomponents/vant/toast/index",
+			"van-popup": "/wxcomponents/vant/popup/index",
+			"van-nav-bar": "/wxcomponents/vant/nav-bar/index",
+			"van-tabbar": "/wxcomponents/vant/tabbar/index",
+			"van-tabbar-item": "/wxcomponents/vant/tabbar-item/index",
+			"van-sidebar": "/wxcomponents/vant/sidebar/index",
+			"van-sidebar-item": "/wxcomponents/vant/sidebar-item/index",
+			"van-notice-bar": "/wxcomponents/vant/notice-bar/index"
 		}
   }
 }
