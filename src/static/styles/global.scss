@@ -3,23 +3,22 @@
 /**
  @for $var from start |to,through| end
  从 0 开始 至 90 结束，间隔为10
- $i: 50;
- @while $i > 0 {
-   .#{variable.$prefix}-m-#{$i} { margin: #{$i}px; }
-   .#{variable.$prefix}-mt-#{$i} { margin-top: #{$i}px; }
-   .#{variable.$prefix}-mr-#{$i} { margin-right: #{$i}px; }
-   .#{variable.$prefix}-mb-#{$i} { margin-bottom: #{$i}px; }
-   .#{variable.$prefix}-ml-#{$i} { margin-left: #{$i}px; }
-
-   .#{variable.$prefix}-p-#{$i} { padding: #{$i}px; }
-   .#{variable.$prefix}-pt-#{$i} { padding-top: #{$i}px; }
-   .#{variable.$prefix}-pr-#{$i} { padding-right: #{$i}px; }
-   .#{variable.$prefix}-pb-#{$i} { padding-bottom: #{$i}px; }
-   .#{variable.$prefix}-pl-#{$i} { padding-left: #{$i}px; }
-   $i: $i - 5;
- }
  */
-
+//$i: 50;
+//@while $i > 0 {
+//  .#{variable.$prefix}-m-#{$i} { margin: #{$i}px; }
+//  .#{variable.$prefix}-mt-#{$i} { margin-top: #{$i}px; }
+//  .#{variable.$prefix}-mr-#{$i} { margin-right: #{$i}px; }
+//  .#{variable.$prefix}-mb-#{$i} { margin-bottom: #{$i}px; }
+//  .#{variable.$prefix}-ml-#{$i} { margin-left: #{$i}px; }
+//
+//  .#{variable.$prefix}-p-#{$i} { padding: #{$i}px; }
+//  .#{variable.$prefix}-pt-#{$i} { padding-top: #{$i}px; }
+//  .#{variable.$prefix}-pr-#{$i} { padding-right: #{$i}px; }
+//  .#{variable.$prefix}-pb-#{$i} { padding-bottom: #{$i}px; }
+//  .#{variable.$prefix}-pl-#{$i} { padding-left: #{$i}px; }
+//  $i: $i - 5;
+//}
 @for $i from 0 through 90 {
 	.#{variable.$prefix}-z-index-#{$i} {
 		z-index: $i * 10;
