@@ -107,7 +107,7 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   sass:
-    specifier: ^1.66.1
+    specifier: ^1.68.0
     version: 1.68.0
   sass-loader:
     specifier: ^13.3.2
