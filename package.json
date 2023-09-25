@@ -71,7 +71,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-3081220230817001",
     "@vue/runtime-core": "^3.3.4",
     "css-loader": "^6.8.1",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
