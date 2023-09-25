@@ -52,22 +52,19 @@ dependencies:
     version: 1.4.28
   '@lucky-canvas/uni':
     specifier: ^0.0.13
-    version: registry.npmmirror.com/@lucky-canvas/uni@0.0.13
+    version: 0.0.13
   '@vant/weapp':
     specifier: ^1.11.0
     version: registry.npmmirror.com/@vant/weapp@1.11.0
   pinia:
     specifier: 2.0.36
     version: 2.0.36(vue@3.3.4)
-  vant:
-    specifier: ^4.7.0
-    version: 4.7.0(vue@3.3.4)
   vue:
-    specifier: ^3.3.4
+    specifier: 3.3.4
     version: 3.3.4
   vue-i18n:
-    specifier: ^9.4.1
-    version: registry.npmmirror.com/vue-i18n@9.4.1(vue@3.3.4)
+    specifier: 9.4.1
+    version: 9.4.1(vue@3.3.4)
 
 devDependencies:
   '@dcloudio/types':
@@ -89,8 +86,8 @@ devDependencies:
     specifier: ^3.3.4
     version: 3.3.4
   css-loader:
-    specifier: ^6.8.1
-    version: registry.npmmirror.com/css-loader@6.8.1(webpack@5.88.2)
+    specifier: 6.8.1
+    version: 6.8.1(webpack@5.88.2)
   eslint:
     specifier: ^8.50.0
     version: registry.npmmirror.com/eslint@8.50.0
@@ -107,16 +104,16 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   sass:
-    specifier: ^1.68.0
+    specifier: 1.68.0
     version: 1.68.0
   sass-loader:
-    specifier: ^13.3.2
+    specifier: 13.3.2
     version: 13.3.2(sass@1.68.0)(webpack@5.88.2)
   style-loader:
-    specifier: ^3.3.3
+    specifier: 3.3.3
     version: 3.3.3(webpack@5.88.2)
   stylelint:
-    specifier: ^15.10.3
+    specifier: 15.10.3
     version: 15.10.3
   unplugin-vue-components:
     specifier: ^0.25.2
@@ -1364,6 +1361,14 @@ packages:
       '@intlify/shared': 9.1.9
       '@intlify/vue-devtools': 9.1.9
 
+  /@intlify/core-base@9.4.1:
+    resolution: {integrity: sha512-WIwx+elsZbxSMxRG5+LC+utRohFvmZMoDevfKOfnYMLbpCjCSavqTfHJAtfsY6ruowzqXeKkeLhRHbYbjoJx5g==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/message-compiler': 9.4.1
+      '@intlify/shared': 9.4.1
+    dev: false
+
   /@intlify/devtools-if@9.1.9:
     resolution: {integrity: sha512-oKSMKjttG3Ut/1UGEZjSdghuP3fwA15zpDPcjkf/1FjlOIm6uIBGMNS5jXzsZy593u+P/YcnrZD6cD3IVFz9vQ==}
     engines: {node: '>= 10'}
@@ -1377,6 +1382,14 @@ packages:
       '@intlify/message-resolver': 9.1.9
       '@intlify/shared': 9.1.9
       source-map: 0.6.1
+
+  /@intlify/message-compiler@9.4.1:
+    resolution: {integrity: sha512-aN2N+dUx320108QhH51Ycd2LEpZ+NKbzyQ2kjjhqMcxhHdxtOnkgdx+MDBhOy/CObwBmhC3Nygzc6hNlfKvPNw==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/shared': 9.4.1
+      source-map-js: 1.0.2
+    dev: false
 
   /@intlify/message-resolver@9.1.9:
     resolution: {integrity: sha512-Lx/DBpigeK0sz2BBbzv5mu9/dAlt98HxwbG7xLawC3O2xMF9MNWU5FtOziwYG6TDIjNq0O/3ZbOJAxwITIWXEA==}
@@ -1393,6 +1406,11 @@ packages:
   /@intlify/shared@9.1.9:
     resolution: {integrity: sha512-xKGM1d0EAxdDFCWedcYXOm6V5Pfw/TMudd6/qCdEb4tv0hk9EKeg7lwQF1azE0dP2phvx0yXxrt7UQK+IZjNdw==}
     engines: {node: '>= 10'}
+
+  /@intlify/shared@9.4.1:
+    resolution: {integrity: sha512-A51elBmZWf1FS80inf/32diO9DeXoqg9GR9aUDHFcfHoNDuT46Q+fpPOdj8jiJnSHSBh8E1E+6qWRhAZXdK3Ng==}
+    engines: {node: '>= 16'}
+    dev: false
 
   /@intlify/vue-devtools@9.1.9:
     resolution: {integrity: sha512-YPehH9uL4vZcGXky4Ev5qQIITnHKIvsD2GKGXgqf+05osMUI6WSEQHaN9USRa318Rs8RyyPCiDfmA0hRu3k7og==}
@@ -2046,6 +2064,12 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  /@lucky-canvas/uni@0.0.13:
+    resolution: {integrity: sha512-rtudKkWgGY+Uj+1xvZJqbQ/NMGGvge/os0cypj12EO6RK8ZX0NKVR97SxEsFG7mn96cDn96tCg12MwmYQHkB9g==}
+    dependencies:
+      lucky-canvas: 1.7.27
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2216,18 +2240,6 @@ packages:
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
-
-  /@vant/popperjs@1.3.0:
-    resolution: {integrity: sha512-hB+czUG+aHtjhaEmCJDuXOep0YTZjdlRR+4MSmIFnkCQIxJaXLQdSsR90XWvAI2yvKUI7TCGqR8pQg2RtvkMHw==}
-    dev: false
-
-  /@vant/use@1.6.0(vue@3.3.4):
-    resolution: {integrity: sha512-PHHxeAASgiOpSmMjceweIrv2AxDZIkWXyaczksMoWvKV2YAYEhoizRuk/xFnKF+emUIi46TsQ+rvlm/t2BBCfA==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.3.4
-    dev: false
 
   /@vitejs/plugin-vue@4.3.4(vite@4.4.9)(vue@3.3.4):
     resolution: {integrity: sha512-ciXNIHKPriERBisHFBvnTbfKa6r9SAesOYXeGDzgegcvy9Q4xdScSHAmKbNT0M3O0S9LKhIf5/G+UYG4NnnzYw==}
@@ -3065,6 +3077,23 @@ packages:
   /css-list-helpers@2.0.0:
     resolution: {integrity: sha512-9Bj8tZ0jWbAM3u/U6m/boAzAwLPwtjzFvwivr2piSvyVa3K3rChJzQy4RIHkNkKiZCHrEMWDJWtTR8UyVhdDnQ==}
     dev: false
+
+  /css-loader@6.8.1(webpack@5.88.2):
+    resolution: {integrity: sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      icss-utils: 5.1.0(postcss@8.4.29)
+      postcss: 8.4.29
+      postcss-modules-extract-imports: 3.0.0(postcss@8.4.29)
+      postcss-modules-local-by-default: 4.0.3(postcss@8.4.29)
+      postcss-modules-scope: 3.0.0(postcss@8.4.29)
+      postcss-modules-values: 4.0.0(postcss@8.4.29)
+      postcss-value-parser: 4.2.0
+      semver: 7.5.4
+      webpack: 5.88.2
+    dev: true
 
   /css-select@4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
@@ -4785,6 +4814,10 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /lucky-canvas@1.7.27:
+    resolution: {integrity: sha512-Ftz6qD+863bI7xijBmZg3dw3cNEc7odPr70EZQcGA14y3TgTAzH65HPosOCd6kKUlMwhntBaHMx3onoj9MtJRQ==}
+    dev: false
+
   /magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
@@ -6156,17 +6189,6 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vant@4.7.0(vue@3.3.4):
-    resolution: {integrity: sha512-oAKfVVfspsRg4MkemGMFm92MXnZb0h8RyvqonPKQkoCMDbMmZvRYmWDfXmfxOnOXVCW308Cqp5HDoDIlcMc3Ag==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      '@vant/popperjs': 1.3.0
-      '@vant/use': 1.6.0(vue@3.3.4)
-      '@vue/shared': 3.3.4
-      vue: 3.3.4
-    dev: false
-
   /vite-plugin-html@3.2.0(vite@4.4.9):
     resolution: {integrity: sha512-2VLCeDiHmV/BqqNn5h2V+4280KRgQzCFN47cst3WiNK848klESPQnzuC3okH5XHtgwHH/6s1Ho/YV6yIO0pgoQ==}
     peerDependencies:
@@ -6219,6 +6241,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-i18n@9.4.1(vue@3.3.4):
+    resolution: {integrity: sha512-vnQyYE9LBuNOqPpETIcCaGnAyLEqfeIvDcyZ9T+WBCWFTqWw1J8FuF1jfeDwpHBi5JKgAwgXyq1mt8jp/x/GPA==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@intlify/core-base': 9.4.1
+      '@intlify/shared': 9.4.1
+      '@vue/devtools-api': 6.5.0
+      vue: 3.3.4
+    dev: false
 
   /vue-loader@17.2.2(vue@3.3.4)(webpack@5.88.2):
     resolution: {integrity: sha512-aqNvKJvnz2A/6VWeJZodAo8XLoAlVwBv+2Z6dama+LHsAF+P/xijQ+OfWrxIs0wcGSJduvdzvTuATzXbNKkpiw==}
@@ -8323,16 +8357,6 @@ packages:
       '@intlify/shared': registry.npmmirror.com/@intlify/shared@9.1.9
       '@intlify/vue-devtools': registry.npmmirror.com/@intlify/vue-devtools@9.1.9
 
-  registry.npmmirror.com/@intlify/core-base@9.4.1:
-    resolution: {integrity: sha512-WIwx+elsZbxSMxRG5+LC+utRohFvmZMoDevfKOfnYMLbpCjCSavqTfHJAtfsY6ruowzqXeKkeLhRHbYbjoJx5g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/core-base/-/core-base-9.4.1.tgz}
-    name: '@intlify/core-base'
-    version: 9.4.1
-    engines: {node: '>= 16'}
-    dependencies:
-      '@intlify/message-compiler': registry.npmmirror.com/@intlify/message-compiler@9.4.1
-      '@intlify/shared': registry.npmmirror.com/@intlify/shared@9.4.1
-    dev: false
-
   registry.npmmirror.com/@intlify/devtools-if@9.1.9:
     resolution: {integrity: sha512-oKSMKjttG3Ut/1UGEZjSdghuP3fwA15zpDPcjkf/1FjlOIm6uIBGMNS5jXzsZy593u+P/YcnrZD6cD3IVFz9vQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/devtools-if/-/devtools-if-9.1.9.tgz}
     name: '@intlify/devtools-if'
@@ -8350,16 +8374,6 @@ packages:
       '@intlify/message-resolver': registry.npmmirror.com/@intlify/message-resolver@9.1.9
       '@intlify/shared': registry.npmmirror.com/@intlify/shared@9.1.9
       source-map: registry.npmmirror.com/source-map@0.6.1
-
-  registry.npmmirror.com/@intlify/message-compiler@9.4.1:
-    resolution: {integrity: sha512-aN2N+dUx320108QhH51Ycd2LEpZ+NKbzyQ2kjjhqMcxhHdxtOnkgdx+MDBhOy/CObwBmhC3Nygzc6hNlfKvPNw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/message-compiler/-/message-compiler-9.4.1.tgz}
-    name: '@intlify/message-compiler'
-    version: 9.4.1
-    engines: {node: '>= 16'}
-    dependencies:
-      '@intlify/shared': registry.npmmirror.com/@intlify/shared@9.4.1
-      source-map-js: registry.npmmirror.com/source-map-js@1.0.2
-    dev: false
 
   registry.npmmirror.com/@intlify/message-resolver@9.1.9:
     resolution: {integrity: sha512-Lx/DBpigeK0sz2BBbzv5mu9/dAlt98HxwbG7xLawC3O2xMF9MNWU5FtOziwYG6TDIjNq0O/3ZbOJAxwITIWXEA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/message-resolver/-/message-resolver-9.1.9.tgz}
@@ -8382,13 +8396,6 @@ packages:
     name: '@intlify/shared'
     version: 9.1.9
     engines: {node: '>= 10'}
-
-  registry.npmmirror.com/@intlify/shared@9.4.1:
-    resolution: {integrity: sha512-A51elBmZWf1FS80inf/32diO9DeXoqg9GR9aUDHFcfHoNDuT46Q+fpPOdj8jiJnSHSBh8E1E+6qWRhAZXdK3Ng==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/shared/-/shared-9.4.1.tgz}
-    name: '@intlify/shared'
-    version: 9.4.1
-    engines: {node: '>= 16'}
-    dev: false
 
   registry.npmmirror.com/@intlify/vue-devtools@9.1.9:
     resolution: {integrity: sha512-YPehH9uL4vZcGXky4Ev5qQIITnHKIvsD2GKGXgqf+05osMUI6WSEQHaN9USRa318Rs8RyyPCiDfmA0hRu3k7og==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@intlify/vue-devtools/-/vue-devtools-9.1.9.tgz}
@@ -8442,14 +8449,6 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': registry.npmmirror.com/@jridgewell/resolve-uri@3.1.1
       '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec@1.4.15
-
-  registry.npmmirror.com/@lucky-canvas/uni@0.0.13:
-    resolution: {integrity: sha512-rtudKkWgGY+Uj+1xvZJqbQ/NMGGvge/os0cypj12EO6RK8ZX0NKVR97SxEsFG7mn96cDn96tCg12MwmYQHkB9g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@lucky-canvas/uni/-/uni-0.0.13.tgz}
-    name: '@lucky-canvas/uni'
-    version: 0.0.13
-    dependencies:
-      lucky-canvas: registry.npmmirror.com/lucky-canvas@1.7.27
-    dev: false
 
   registry.npmmirror.com/@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
@@ -9050,26 +9049,6 @@ packages:
       path-key: registry.npmmirror.com/path-key@3.1.1
       shebang-command: registry.npmmirror.com/shebang-command@2.0.0
       which: registry.npmmirror.com/which@2.0.2
-    dev: true
-
-  registry.npmmirror.com/css-loader@6.8.1(webpack@5.88.2):
-    resolution: {integrity: sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/css-loader/-/css-loader-6.8.1.tgz}
-    id: registry.npmmirror.com/css-loader/6.8.1
-    name: css-loader
-    version: 6.8.1
-    engines: {node: '>= 12.13.0'}
-    peerDependencies:
-      webpack: ^5.0.0
-    dependencies:
-      icss-utils: registry.npmmirror.com/icss-utils@5.1.0(postcss@8.4.29)
-      postcss: registry.npmmirror.com/postcss@8.4.29
-      postcss-modules-extract-imports: registry.npmmirror.com/postcss-modules-extract-imports@3.0.0(postcss@8.4.29)
-      postcss-modules-local-by-default: registry.npmmirror.com/postcss-modules-local-by-default@4.0.3(postcss@8.4.29)
-      postcss-modules-scope: registry.npmmirror.com/postcss-modules-scope@3.0.0(postcss@8.4.29)
-      postcss-modules-values: registry.npmmirror.com/postcss-modules-values@4.0.0(postcss@8.4.29)
-      postcss-value-parser: registry.npmmirror.com/postcss-value-parser@4.2.0
-      semver: registry.npmmirror.com/semver@7.5.4
-      webpack: 5.88.2
     dev: true
 
   registry.npmmirror.com/cssesc@3.0.0:
@@ -9706,7 +9685,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss@8.4.29
+      postcss: 8.4.29
 
   registry.npmmirror.com/ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/ignore/-/ignore-5.2.4.tgz}
@@ -9952,21 +9931,6 @@ packages:
     version: 5.1.1
     dependencies:
       yallist: registry.npmmirror.com/yallist@3.1.1
-
-  registry.npmmirror.com/lru-cache@6.0.0:
-    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/lru-cache/-/lru-cache-6.0.0.tgz}
-    name: lru-cache
-    version: 6.0.0
-    engines: {node: '>=10'}
-    dependencies:
-      yallist: registry.npmmirror.com/yallist@4.0.0
-    dev: true
-
-  registry.npmmirror.com/lucky-canvas@1.7.27:
-    resolution: {integrity: sha512-Ftz6qD+863bI7xijBmZg3dw3cNEc7odPr70EZQcGA14y3TgTAzH65HPosOCd6kKUlMwhntBaHMx3onoj9MtJRQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/lucky-canvas/-/lucky-canvas-1.7.27.tgz}
-    name: lucky-canvas
-    version: 1.7.27
-    dev: false
 
   registry.npmmirror.com/magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz}
@@ -10290,7 +10254,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss@8.4.29
+      postcss: 8.4.29
 
   registry.npmmirror.com/postcss-modules-local-by-default@4.0.3(postcss@8.4.29):
     resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/postcss-modules-local-by-default/-/postcss-modules-local-by-default-4.0.3.tgz}
@@ -10302,7 +10266,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       icss-utils: registry.npmmirror.com/icss-utils@5.1.0(postcss@8.4.29)
-      postcss: registry.npmmirror.com/postcss@8.4.29
+      postcss: 8.4.29
       postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser@6.0.13
       postcss-value-parser: registry.npmmirror.com/postcss-value-parser@4.2.0
 
@@ -10315,7 +10279,7 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss: registry.npmmirror.com/postcss@8.4.29
+      postcss: 8.4.29
       postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser@6.0.13
 
   registry.npmmirror.com/postcss-modules-values@4.0.0(postcss@8.4.29):
@@ -10328,7 +10292,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       icss-utils: registry.npmmirror.com/icss-utils@5.1.0(postcss@8.4.29)
-      postcss: registry.npmmirror.com/postcss@8.4.29
+      postcss: 8.4.29
 
   registry.npmmirror.com/postcss-modules@4.3.1(postcss@8.4.29):
     resolution: {integrity: sha512-ItUhSUxBBdNamkT3KzIZwYNNRFKmkJrofvC2nWab3CPKhYBQ1f27XXh1PAPE27Psx58jeelPsxWB/+og+KEH0Q==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/postcss-modules/-/postcss-modules-4.3.1.tgz}
@@ -10370,7 +10334,7 @@ packages:
     dependencies:
       nanoid: registry.npmmirror.com/nanoid@3.3.6
       picocolors: registry.npmmirror.com/picocolors@1.0.0
-      source-map-js: registry.npmmirror.com/source-map-js@1.0.2
+      source-map-js: 1.0.2
 
   registry.npmmirror.com/prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/prelude-ls/-/prelude-ls-1.2.1.tgz}
@@ -10574,16 +10538,6 @@ packages:
     version: 6.3.1
     hasBin: true
 
-  registry.npmmirror.com/semver@7.5.4:
-    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/semver/-/semver-7.5.4.tgz}
-    name: semver
-    version: 7.5.4
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: registry.npmmirror.com/lru-cache@6.0.0
-    dev: true
-
   registry.npmmirror.com/send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/send/-/send-0.18.0.tgz}
     name: send
@@ -10652,12 +10606,6 @@ packages:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.1
       object-inspect: registry.npmmirror.com/object-inspect@1.12.3
     dev: true
-
-  registry.npmmirror.com/source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz}
-    name: source-map-js
-    version: 1.0.2
-    engines: {node: '>=0.10.0'}
 
   registry.npmmirror.com/source-map-support@0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/source-map-support/-/source-map-support-0.5.21.tgz}
@@ -10936,21 +10884,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  registry.npmmirror.com/vue-i18n@9.4.1(vue@3.3.4):
-    resolution: {integrity: sha512-vnQyYE9LBuNOqPpETIcCaGnAyLEqfeIvDcyZ9T+WBCWFTqWw1J8FuF1jfeDwpHBi5JKgAwgXyq1mt8jp/x/GPA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/vue-i18n/-/vue-i18n-9.4.1.tgz}
-    id: registry.npmmirror.com/vue-i18n/9.4.1
-    name: vue-i18n
-    version: 9.4.1
-    engines: {node: '>= 16'}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      '@intlify/core-base': registry.npmmirror.com/@intlify/core-base@9.4.1
-      '@intlify/shared': registry.npmmirror.com/@intlify/shared@9.4.1
-      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.5.0
-      vue: 3.3.4
-    dev: false
-
   registry.npmmirror.com/vue-router@4.2.4(vue@3.3.4):
     resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/vue-router/-/vue-router-4.2.4.tgz}
     id: registry.npmmirror.com/vue-router/4.2.4
@@ -10995,12 +10928,6 @@ packages:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/yallist/-/yallist-3.1.1.tgz}
     name: yallist
     version: 3.1.1
-
-  registry.npmmirror.com/yallist@4.0.0:
-    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/yallist/-/yallist-4.0.0.tgz}
-    name: yallist
-    version: 4.0.0
-    dev: true
 
   registry.npmmirror.com/yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/yaml/-/yaml-1.10.2.tgz}
