@@ -1,6 +1,6 @@
 @use "./variable.scss";
 
-// 顶部状态栏
+/* 顶部状态栏 */
 .nav-status {
 	height: var(--status-bar-height);
 	width: 100%;
@@ -11,12 +11,12 @@
 	padding-bottom: env(safe-area-inset-bottom);
 }
 
-// 布局
+/* 布局 */
 .container {
 	padding: 10rpx 20rpx;
 }
 
-// wh
+/* wh */
 .#{variable.$prefix}-wh-full {
 	width: 100vw;
 	height: 100vh;
@@ -26,7 +26,7 @@
 	height: 100%;
 }
 
-// 宽高
+/* 宽高 */
 .width-half {
 	width: 50%;
 }
@@ -45,7 +45,7 @@
 	background-color: blanchedalmond;
 }
 
-// 头像
+/* 头像 */
 .avatar-circle {
 	width: 150rpx;
 	height: 150rpx;
@@ -57,7 +57,7 @@
 	border-radius: 50%;
 }
 
-// 字体颜色
+/* 字体颜色 */
 .text-black {
 	color: variable.$text-primary;
 }
@@ -76,11 +76,11 @@
 .text-error {
 	color: variable.$text-error;
 }
-// 字体加粗
+/* 字体加粗 */
 .text-bold {
 	font-weight: bold;
 }
-// 标题
+/* 标题 */
 .title-h1 {
 	font-size: 60rpx;
 	font-weight: bold;
@@ -107,7 +107,7 @@
 	font-weight: bold;
 }
 
-// table
+/* table */
 .table-box {
 	padding: 10rpx 20rpx;
 }
@@ -123,7 +123,7 @@
 	font-weight: normal;
 }
 
-// 自定义表单
+/* 自定义表单 */
 .form-box {
 	margin: 30rpx 0;
 	.form-item {
@@ -154,7 +154,7 @@
 	}
 }
 
-// 按钮
+/* 按钮 */
 .btn-text-mini {
 	padding: 5rpx 20rpx;
 	border-radius: 10rpx;
@@ -177,14 +177,14 @@
 	color: variable.$text-default;
 }
 
-// 中横线
+/* 中横线 */
 .line-default {
 	width: 100%;
 	height: 1rpx;
 	background-color: variable.$color-grey-light;
 }
 
-// modal 弹窗相关 start
+/* modal 弹窗相关 start */
 .modal-body {
 	width: 100%;
 	min-width: 500rpx;
@@ -193,4 +193,4 @@
 .modal-btn-box {
 	width: 100%;
 }
-// modal 弹窗相关 end
+/* modal 弹窗相关 end */
