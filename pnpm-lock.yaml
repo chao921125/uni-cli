@@ -10,7 +10,7 @@ overrides:
 dependencies:
   '@dcloudio/uni-app':
     specifier: 3.0.0-3081220230817001
-    version: 3.0.0-3081220230817001(@dcloudio/types@3.3.3)(postcss@8.4.29)(vue@3.3.4)
+    version: 3.0.0-3081220230817001(@dcloudio/types@3.4.0)(postcss@8.4.29)(vue@3.3.4)
   '@dcloudio/uni-app-plus':
     specifier: 3.0.0-3081220230817001
     version: 3.0.0-3081220230817001(postcss@8.4.29)(vite@4.4.9)(vue@3.3.4)
@@ -56,20 +56,23 @@ dependencies:
   '@vant/weapp':
     specifier: ^1.11.0
     version: registry.npmmirror.com/@vant/weapp@1.11.0
+  common:
+    specifier: link:@/common
+    version: link:@/common
   pinia:
     specifier: 2.0.36
     version: 2.0.36(vue@3.3.4)
   vue:
-    specifier: 3.3.4
+    specifier: ^3.3.4
     version: 3.3.4
   vue-i18n:
-    specifier: 9.4.1
+    specifier: ^9.4.1
     version: 9.4.1(vue@3.3.4)
 
 devDependencies:
   '@dcloudio/types':
-    specifier: ^3.3.3
-    version: 3.3.3
+    specifier: ^3.4.0
+    version: 3.4.0
   '@dcloudio/uni-automator':
     specifier: 3.0.0-3081220230817001
     version: 3.0.0-3081220230817001(jest-environment-node@27.5.1)(jest@27.0.4)(postcss@8.4.29)(vue@3.3.4)
@@ -86,7 +89,7 @@ devDependencies:
     specifier: ^3.3.4
     version: 3.3.4
   css-loader:
-    specifier: 6.8.1
+    specifier: ^6.8.1
     version: 6.8.1(webpack@5.88.2)
   eslint:
     specifier: ^8.50.0
@@ -104,16 +107,16 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   sass:
-    specifier: 1.68.0
+    specifier: ^1.68.0
     version: 1.68.0
   sass-loader:
-    specifier: 13.3.2
+    specifier: ^13.3.2
     version: 13.3.2(sass@1.68.0)(webpack@5.88.2)
   style-loader:
-    specifier: 3.3.3
+    specifier: ^3.3.3
     version: 3.3.3(webpack@5.88.2)
   stylelint:
-    specifier: 15.10.3
+    specifier: ^15.10.3
     version: 15.10.3
   unplugin-vue-components:
     specifier: ^0.25.2
@@ -494,8 +497,8 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /@dcloudio/types@3.3.3:
-    resolution: {integrity: sha512-xfp88QOJ2fgCzv49HhEGrX0L+3xDsCyyvcoApL7z0J1Lr7tqPUkxqAVBe9zBlKsDX/mO9mNj7NzKIisHfp+fNQ==}
+  /@dcloudio/types@3.4.0:
+    resolution: {integrity: sha512-xZMK+Su2dRT5h/INOyyqj3kYHzvEcryjk+01ZYcEwa8dqohk6U7ndcQFC/FjRBOHNB01yJWREgnDB5aThVtYjA==}
 
   /@dcloudio/uni-app-plus@3.0.0-3081220230817001(postcss@8.4.29)(vite@4.4.9)(vue@3.3.4):
     resolution: {integrity: sha512-GpQobx3WbcyOZ49f8JM+febzKvlthFBAxcs4xrbtNVzmkj0jLJoh9GoH37oa7m5DI1k4l5wUuwvg4/JxBbhOSA==}
@@ -566,12 +569,12 @@ packages:
     resolution: {integrity: sha512-08ZUIn2a+OZWjqvjTbLygWZOY9YXbf2J1ns2letBI9aoMZDx+Sgx2lUFWHDksmOhvApPLKrRjJM0Hmmxi2mjJw==}
     dev: false
 
-  /@dcloudio/uni-app@3.0.0-3081220230817001(@dcloudio/types@3.3.3)(postcss@8.4.29)(vue@3.3.4):
+  /@dcloudio/uni-app@3.0.0-3081220230817001(@dcloudio/types@3.4.0)(postcss@8.4.29)(vue@3.3.4):
     resolution: {integrity: sha512-sf8PzXHSd/VFCn7X9+QbD4nrY21FnIwjrhyX2hFit7PZK9kpyQluqCmG7YuotuXJzsNML8c8u2O9q5FaeOyTHg==}
     peerDependencies:
       '@dcloudio/types': ^3.3.2
     dependencies:
-      '@dcloudio/types': 3.3.3
+      '@dcloudio/types': 3.4.0
       '@dcloudio/uni-cloud': 3.0.0-3081220230817001(postcss@8.4.29)(vue@3.3.4)
       '@dcloudio/uni-components': registry.npmmirror.com/@dcloudio/uni-components@3.0.0-3081220230817001(postcss@8.4.29)(vue@3.3.4)
       '@dcloudio/uni-i18n': 3.0.0-3081220230817001

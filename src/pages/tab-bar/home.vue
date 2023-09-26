@@ -1,5 +1,7 @@
 <template>
 	<view class="container">
+		<view v-for="(item, index) in webSiteArray" :key="index">{{ item }}</view>
+		<view>asdf</view>
 		<van-row gutter="20">
 			<van-col span="24">
 				<!-- <uni-notice-bar show-icon scrollable :speed="50" text="为了方便大家,特此做出一个小小工具.请大家关注支持!!!" /> -->
@@ -40,7 +42,7 @@
 
 <script setup>
 	import ReVanTabBar from "@/pages/comonents/re-van-tab-bar.vue";
-	import { ref } from "vue";
+	import { onMounted, ref } from "vue";
 	import webSiteArray from "@/common/api/data.json";
 
 	const isShowDialog = ref(false);
@@ -56,6 +58,10 @@
 		webSiteActive.value = e.detail;
 		closeDialog();
 	};
+
+	onMounted(() => {
+		console.log("============", webSiteArray);
+	});
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
 </script>
