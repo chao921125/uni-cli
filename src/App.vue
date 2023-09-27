@@ -38,13 +38,15 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	/* 组件 */
 	@import "@/wxcomponents/vant/common/index.wxss";
+	// #ifdef H5
 	/* 字体 */
 	@import "@/static/fonts/index.css";
 	/* 图标 */
 	@import "@/static/iconfonts/iconfont/iconfont.css";
+	// #endif
 	/* 每个页面公共css */
 	@import "@/static/styles/index.scss";
 </style>
