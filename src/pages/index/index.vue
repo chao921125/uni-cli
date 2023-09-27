@@ -22,6 +22,7 @@
 	import Api from "./api.vue";
 	import Demo from "./demo.vue";
 
+	import webSiteArray from "@/plugins/api/data.json";
 	const urlParams = ref();
 	onLoad((option) => {
 		urlParams.value = option || "";
@@ -33,6 +34,7 @@
 	const timer = ref(null);
 	const isLoading = ref(false);
 	onMounted(() => {
+		console.log("+++++++++++++++++++++++++++++++++", webSiteArray);
 		timer.value = setTimeout(() => {
 			isLoading.value = true;
 			clearTimeout(timer.value);
