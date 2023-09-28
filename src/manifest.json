@@ -11,7 +11,7 @@
 		"uploadFile": 60000,
 		"downloadFile": 60000
 	},
-	"debug": true,
+	"debug": false,
   /* 5+App特有相关 */
   "app-plus": {
 		"optimization": {
