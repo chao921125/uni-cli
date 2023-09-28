@@ -2,7 +2,6 @@
 	<view class="container">
 		<van-row gutter="20">
 			<van-col span="24">
-				<!-- <uni-notice-bar show-icon scrollable :speed="50" text="为了方便大家,特此做出一个小小工具.请大家关注支持!!!" /> -->
 				<van-notice-bar left-icon="volume-o" text="为了方便大家,特此做出一个小小工具.请大家关注支持!!!" />
 			</van-col>
 			<van-col span="24">
@@ -12,16 +11,16 @@
 					<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 				</view>
 			</van-col>
-			<van-col span="24" v-for="(item, index) in webSiteArray.websiteType[webSiteActive].child" :key="index">
+			<van-col span="24" v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
 				<view class="re-mt-20 re-flex">
 					<van-image width="15" height="15" :src="item.icon"></van-image>
-					<uni-link class="re-ml-30" color="#000000" :href="item.url" :text="item.name" showUnderLine="false" copyTips="已复制,请在浏览器打开"></uni-link>
+					<uni-link class="re-ml-30" color="#000000" :href="item.url" :text="item.name" showUnderLine="false" copyTips="已复制,请在浏览器打开">
+						{{ item.name }}
+					</uni-link>
 				</view>
 			</van-col>
 		</van-row>
 	</view>
-
-	<re-van-tab-bar></re-van-tab-bar>
 
 	<van-popup
 		:show="isShowDialog"
@@ -39,7 +38,6 @@
 </template>
 
 <script setup>
-	import ReVanTabBar from "@/pages/comonents/re-van-tab-bar.vue";
 	import { ref } from "vue";
 	import webSiteArray from "@/plugins/api/data.json";
 
@@ -52,7 +50,7 @@
 	};
 	const webSiteActive = ref(0);
 	const changeWebSite = (e) => {
-		console.log("active", e.detail);
+		console.log("active=============", e.detail);
 		webSiteActive.value = e.detail;
 		closeDialog();
 	};

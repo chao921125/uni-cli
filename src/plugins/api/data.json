@@ -3,7 +3,7 @@
 		"key": "all",
 		"label": "推荐",
 		"isRecommend": true,
-		"child": [{
+		"children": [{
 			"icon": "https://www.bing.com/favicon.ico",
 			"name": "必应搜索（推荐）",
 			"url": "https://www.bing.com/"
@@ -36,7 +36,7 @@
 		"key": "ai",
 		"label": "AI",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://chat.openai.com/images/chatgpt-share-og.png",
 			"name": "文字 - CHatGPT（地表最强）",
 			"url": "https://chat.openai.com/auth/login"
@@ -81,7 +81,7 @@
 		"key": "office",
 		"label": "办公工具",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://cn.office-converter.com/favicon.ico",
 			"name": "转换 - 很齐全的一个转换网站",
 			"url": "https://cn.office-converter.com/"
@@ -94,7 +94,7 @@
 		"key": "dev",
 		"label": "编程开发",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://juejin.cn/favicon.ico",
 			"name": "社区 - 掘金",
 			"url": "https://juejin.cn/"
@@ -139,7 +139,7 @@
 		"key": "source",
 		"label": "素材资源",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://unsplash.com/favicon.ico",
 			"name": "图片 - unsplash",
 			"url": "https://unsplash.com/"
@@ -152,7 +152,7 @@
 		"key": "life",
 		"label": "生活小帮手",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://www.114best.com/favicon.ico",
 			"name": "手机号查询",
 			"url": "https://www.114best.com/"
@@ -173,7 +173,7 @@
 		"key": "power",
 		"label": "法律保护",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://wenshu.court.gov.cn/favicon.ico",
 			"name": "中国裁判文书",
 			"url": "https://wenshu.court.gov.cn/"
@@ -186,7 +186,7 @@
 		"key": "view",
 		"label": "导航",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "https://lanrenao.com/favicon.ico",
 			"name": "综合性的导航网站 - 懒人",
 			"url": "https://lanrenao.com/"
@@ -247,7 +247,7 @@
 		"key": "blank",
 		"label": "净土",
 		"isRecommend": false,
-		"child": [{
+		"children": [{
 			"icon": "none",
 			"name": "不要点我",
 			"url": "大傻子"
