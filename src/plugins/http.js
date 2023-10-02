@@ -1,5 +1,5 @@
-import defaultConfig from "@/common/config/index.js";
-import utils from "@/common/plugins/uni-methods.js";
+import defaultConfig from "@/config/index.js";
+import utils from "@/plugins/utils/index.js";
 // 文档参考：https://uniapp.dcloud.net.cn/api/request/request.html
 let ajaxTimes = 1;
 let defaultHeader = {

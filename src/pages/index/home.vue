@@ -14,7 +14,15 @@
 			<van-col span="24" v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
 				<view class="re-mt-20 re-flex">
 					<van-image width="15" height="15" :src="item.icon"></van-image>
-					<uni-link class="re-ml-30" color="#000000" :href="item.url" :text="item.name" showUnderLine="false" copyTips="已复制,请在浏览器打开">
+					<uni-link
+						class="re-ml-30"
+						color="#000000"
+						:href="item.url"
+						:text="item.name"
+						showUnderLine="false"
+						copyTips="已复制,请在浏览器打开"
+						@click="toWeb(item.url)"
+					>
 						{{ item.name }}
 					</uni-link>
 				</view>
@@ -42,6 +50,7 @@
 <script setup>
 	import { ref } from "vue";
 	import webSiteArray from "@/plugins/api/data.json";
+	import utils from "@/plugins/utils/index.js";
 
 	const isShowDialog = ref(false);
 	const openDialog = () => {
@@ -55,6 +64,10 @@
 		console.log("active=============", e.detail);
 		webSiteActive.value = e.detail;
 		closeDialog();
+	};
+
+	const toWeb = (url) => {
+		utils.gotoPage("/pages/common/web?url=" + url);
 	};
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik

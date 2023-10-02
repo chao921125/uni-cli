@@ -9,6 +9,27 @@
     }
   ],
 	"subPackages": [{
+		"root": "pages/common/",
+		"pages": [{
+			"path": "blank",
+			"style": {
+				"navigationBarTitleText": "空白",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "loading",
+			"style": {
+				"navigationBarTitleText": "加载",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "web",
+			"style": {
+				"navigationBarTitleText": "WEB",
+				"enablePullDownRefresh": true
+			}
+		}]
+	}, {
 		"root": "pages/demo/",
 		"pages": [{
 			"path": "language",
