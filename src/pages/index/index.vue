@@ -33,12 +33,11 @@
 		if (option.index) {
 			changeIndex(Number(option.index));
 		}
-		console.log("+++++++++++++++++++++++++++++++++");
 		timer.value = setTimeout(() => {
 			isLoading.value = true;
 			clearTimeout(timer.value);
 			timer.value = null;
-		}, 2000);
+		}, 1500);
 	});
 
 	const timer = ref(null);

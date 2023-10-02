@@ -22,6 +22,7 @@
 						showUnderLine="false"
 						copyTips="已复制,请在浏览器打开"
 						@click="toWeb(item.url)"
+						@tap="toWeb(item.url)"
 					>
 						{{ item.name }}
 					</uni-link>
@@ -61,13 +62,12 @@
 	};
 	const webSiteActive = ref(0);
 	const changeWebSite = (e) => {
-		console.log("active=============", e.detail);
 		webSiteActive.value = e.detail;
 		closeDialog();
 	};
 
 	const toWeb = (url) => {
-		utils.gotoPage("/pages/common/web?url=" + url);
+		utils.gotoPage("/pages/common/web?url=" + url, false);
 	};
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik

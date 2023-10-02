@@ -14,8 +14,8 @@
 				menus: ["shareAppMessage", "shareTimeline"],
 			});
 		},
-		onError: function () {
-			console.log("App Error");
+		onError: function (e) {
+			console.log("App Error", e);
 		},
 		onUniNViewMessage: function () {
 			console.log("App UniNViewMessage");
