@@ -1,24 +1,31 @@
 <template>
 	<view class="container">
 		<van-row gutter="20" class="re-mt-20">
-			<van-col span="8"><van-button class="remt-20" @click="toPageLottery">抽奖</van-button></van-col>
-			<van-col span="8"><van-button class="re-mt-20" @click="toPageI18n">国际化</van-button></van-col>
+			<van-col span="8">
+				<view class="re-mb-10"><van-button class="re-mb-20" @click="toPage(router.DemoLottery)">抽奖</van-button></view>
+			</van-col>
+			<van-col span="12" class="re-mb-20">
+				<view class="re-mb-10"><van-button class="re-mb-20" @click="toPage(router.DemoLuckyWheel)">抽奖（大转盘）</van-button></view>
+			</van-col>
+			<van-col span="12" class="re-mb-20">
+				<view class="re-mb-10"><van-button class="re-mb-20" @click="toPage(router.DemoLuckyGrid)">抽奖（九宫格）</van-button></view>
+			</van-col>
+			<van-col span="12" class="re-mb-20">
+				<view class="re-mb-10"><van-button class="re-mb-20" @click="toPage(router.DemoLuckyMachine)">抽奖（老虎机）</van-button></view>
+			</van-col>
+			<van-col span="8" class="re-mb-20">
+				<view class="re-mb-10"><van-button class="re-mb-20" @click="toPage(router.DemoLanguage)">国际化</van-button></view>
+			</van-col>
 		</van-row>
 	</view>
 </template>
 
 <script setup>
-	import Constants from "@/plugins/utils/constants.js";
+	import router from "@/config/router.js";
 
-	const toPageI18n = () => {
+	const toPage = (url) => {
 		uni.navigateTo({
-			url: Constants.pages.language,
-		});
-	};
-
-	const toPageLottery = () => {
-		uni.navigateTo({
-			url: Constants.pages.lottery,
+			url: url,
 		});
 	};
 </script>

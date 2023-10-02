@@ -56,6 +56,9 @@ dependencies:
   '@vant/weapp':
     specifier: ^1.11.0
     version: registry.npmmirror.com/@vant/weapp@1.11.0
+  lucky-canvas:
+    specifier: ^1.7.27
+    version: registry.npmmirror.com/lucky-canvas@1.7.27
   pinia:
     specifier: 2.0.36
     version: registry.npmmirror.com/pinia@2.0.36(vue@3.3.4)
@@ -1345,7 +1348,7 @@ packages:
   /@lucky-canvas/uni@0.0.13:
     resolution: {integrity: sha512-rtudKkWgGY+Uj+1xvZJqbQ/NMGGvge/os0cypj12EO6RK8ZX0NKVR97SxEsFG7mn96cDn96tCg12MwmYQHkB9g==}
     dependencies:
-      lucky-canvas: 1.7.27
+      lucky-canvas: registry.npmmirror.com/lucky-canvas@1.7.27
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
@@ -2834,10 +2837,6 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
-
-  /lucky-canvas@1.7.27:
-    resolution: {integrity: sha512-Ftz6qD+863bI7xijBmZg3dw3cNEc7odPr70EZQcGA14y3TgTAzH65HPosOCd6kKUlMwhntBaHMx3onoj9MtJRQ==}
-    dev: false
 
   /magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
@@ -9780,6 +9779,12 @@ packages:
     dependencies:
       yallist: registry.npmmirror.com/yallist@4.0.0
     dev: true
+
+  registry.npmmirror.com/lucky-canvas@1.7.27:
+    resolution: {integrity: sha512-Ftz6qD+863bI7xijBmZg3dw3cNEc7odPr70EZQcGA14y3TgTAzH65HPosOCd6kKUlMwhntBaHMx3onoj9MtJRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lucky-canvas/-/lucky-canvas-1.7.27.tgz}
+    name: lucky-canvas
+    version: 1.7.27
+    dev: false
 
   registry.npmmirror.com/magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz}

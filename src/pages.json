@@ -42,6 +42,24 @@
 				"navigationBarTitleText": "抽奖",
 				"enablePullDownRefresh": true
 			}
+		}, {
+			"path": "lucky-wheel",
+			"style": {
+				"navigationBarTitleText": "抽奖（转盘）",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "lucky-grid",
+			"style": {
+				"navigationBarTitleText": "抽奖（九宫格）",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "lucky-machine",
+			"style": {
+				"navigationBarTitleText": "抽奖（老虎机）",
+				"enablePullDownRefresh": true
+			}
 		}]
 	}],
 	"preloadRule": {

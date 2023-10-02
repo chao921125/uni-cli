@@ -11,7 +11,7 @@
 	onLoad((option) => {
 		urlParams.value = option || "";
 		if (option.url) {
-			url.value = option.url;
+			url.value = decodeURIComponent(option.url);
 		}
 	});
 </script>
