@@ -2,14 +2,14 @@
 	<view class="container">
 		<van-row gutter="20">
 			<van-col span="24">
-				<van-notice-bar left-icon="volume-o" text="为了方便大家,特此做出一个小小工具.请大家关注支持!!!" />
+				<van-notice-bar left-icon="volume-o" text="文章持续更新中，内容最后更新时间：2023-10-02 13:19:00" />
 			</van-col>
 			<van-col span="24">
-				<view class="re-pb-20 re-mt-20">
-					<van-button @click="openDialog"><van-icon name="wap-nav" size="24" /></van-button>
+				<view class="re-pb-20 re-mt-20 re-flex-row-between">
 					<text class="re-ml-20">当前分类：{{ webSiteArray.websiteType[webSiteActive].label }}</text>
-					<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
+					<van-button @click="openDialog"><van-icon name="wap-nav" size="30" /></van-button>
 				</view>
+				<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 			</van-col>
 			<van-col span="24" v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
 				<view class="re-mt-20 re-flex">
@@ -21,13 +21,15 @@
 			</van-col>
 		</van-row>
 	</view>
-
 	<van-popup
 		:show="isShowDialog"
 		closeable
 		position="left"
+		safe-area-inset-top
+		safe-area-tab-bar
 		class="home-dialog"
-		custom-style="width: 50%; height: 100%; padding-top: 50;"
+		custom-class="home-dialog"
+		custom-style="width: 50%; height: 100%; padding-top: 50px;"
 		@close="closeDialog"
 		@click-overlay="closeDialog"
 	>
@@ -65,12 +67,15 @@
 		font-size: 20rpx;
 	}
 	.home-dialog {
+		height: 100%;
 		.home-sidebar {
 			width: 100%;
+			height: 100%;
 			> view {
 				width: 100%;
+				height: 100%;
 			}
-			::v-deep .van-sidebar {
+			:deep .van-sidebar {
 				width: 100%;
 			}
 		}

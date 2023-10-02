@@ -1,16 +1,15 @@
 <template>
 	<view>
 		<van-tabbar :active="active" @change="changePage" :placeholder="true" active-color="#1989fa">
-			<van-tabbar-item icon="home-o">首页</van-tabbar-item>
-			<van-tabbar-item icon="description">文章</van-tabbar-item>
-			<van-tabbar-item icon="coupon-o">API</van-tabbar-item>
-			<van-tabbar-item icon="cashier-o">示例</van-tabbar-item>
+			<van-tabbar-item v-for="item in constants.TabBar" :icon="item.icon">{{ item.name }}</van-tabbar-item>
 		</van-tabbar>
 	</view>
 </template>
 
 <script setup>
 	import { onMounted, ref } from "vue";
+	import constants from "@/plugins/utils/constants";
+
 	const props = defineProps({
 		index: {
 			required: false,
