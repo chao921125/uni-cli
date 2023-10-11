@@ -12,8 +12,13 @@
 	const listData = [
 		{
 			key: "Windows",
-			url: "https://mp.weixin.qq.com/s?__biz=MzU2MjY3MjQyMw==&mid=2247483684&idx=1&sn=3a4715ac1b673a1d2adb81a6bbd49988&chksm=fc64a76ccb132e7a1c02352852c622dedf818d9a34d6e973e7d1b7fad1f95adf586445a736b4#rd",
-			title: "Windows 数字激活 HWID2",
+			url: "https://mp.weixin.qq.com/s?__biz=MzU2MjY3MjQyMw==&mid=2247483776&idx=1&sn=192cb0b3f0d2d050b6aa1386edbb4ef5&chksm=fc64a7c8cb132ede8f33524319e2cd151cd41d72ceed1f7cb8e568a1c57b5c56d703e6c7d7b0#rd",
+			title: "Windows数字激活HWID2（HWID 已被微软封杀）",
+		},
+		{
+			key: "Windows",
+			url: "https://mp.weixin.qq.com/s?__biz=MzU2MjY3MjQyMw==&mid=2247483776&idx=1&sn=192cb0b3f0d2d050b6aa1386edbb4ef5&chksm=fc64a7c8cb132ede8f33524319e2cd151cd41d72ceed1f7cb8e568a1c57b5c56d703e6c7d7b0#rd",
+			title: "Office 免 KMS 激活",
 		},
 		{
 			key: "office",

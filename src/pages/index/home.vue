@@ -21,8 +21,8 @@
 						:text="item.name"
 						showUnderLine="false"
 						copyTips="已复制,请在浏览器打开"
-						@click="toWeb(item.url)"
-						@tap="toWeb(item.url)"
+						@click="copyData(item.url)"
+						@tap="copyData(item.url)"
 					>
 						{{ item.name }}
 					</uni-link>
@@ -66,8 +66,15 @@
 		closeDialog();
 	};
 
-	const toWeb = (url) => {
-		utils.gotoPage("/pages/common/web?url=" + encodeURIComponent(url), false);
+	const copyData = (url) => {
+		uni.setClipboardData({
+			data: url,
+			success: () => {
+				uni.showToast({
+					title: "已复制",
+				});
+			},
+		});
 	};
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
