@@ -12,7 +12,7 @@
 				<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 			</van-col>
 			<van-col span="24">
-				<van-skeleton row="3" loading="{{ isLoading }}">
+				<van-skeleton row="3" :border="false" clickable loading="{{ isLoading }}">
 					<van-grid column-num="2">
 						<van-grid-item use-slot v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
 							<view class="re-mt-10 re-mr-20 re-flex cc-card home-website">
