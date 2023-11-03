@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  pinia: 2.0.36
+
 dependencies:
   '@dcloudio/uni-app':
     specifier: 3.0.0-3081220230817001
@@ -57,8 +60,8 @@ dependencies:
     specifier: ^1.7.27
     version: registry.npmmirror.com/lucky-canvas@1.7.27
   pinia:
-    specifier: ^2.1.7
-    version: 2.1.7(vue@3.3.7)
+    specifier: 2.0.36
+    version: 2.0.36(vue@3.3.7)
   vue:
     specifier: ^3.3.7
     version: 3.3.7
@@ -5489,12 +5492,12 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
-  /pinia@2.1.7(vue@3.3.7):
-    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
+  /pinia@2.0.36(vue@3.3.7):
+    resolution: {integrity: sha512-4UKApwjlmJH+VuHKgA+zQMddcCb3ezYnyewQ9NVrsDqZ/j9dMv5+rh+1r48whKNdpFkZAWVxhBp5ewYaYX9JcQ==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
-      vue: ^2.6.14 || ^3.3.0
+      vue: ^2.6.14 || ^3.2.0
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
