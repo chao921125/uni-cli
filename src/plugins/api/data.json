@@ -40,19 +40,29 @@
 			"url": "https://www.forefront.ai/"
 		}]
 	}, {
-		"key": "ai",
+		"key": "ai-text",
 		"label": "AI 聊天",
 		"isRecommend": false,
 		"children": [{
 			"icon": "https://chat.openai.com/images/chatgpt-share-og.png",
 			"name": "ChatGPT",
-			"desc": "描述",
+			"desc": "魔法，好用",
 			"url": "https://chat.openai.com/auth/login"
 		}, {
-			"icon": "https://img.amz123.com/upload/diy_page/aibeiyong/202303/1679564754Google%20Bard.png",
+			"icon": "https://www.gstatic.com/lamda/images/favicon_v1_150160cddff7f294ce30.svg",
 			"name": "Bard",
-			"desc": "描述",
+			"desc": "魔法，Google出品",
 			"url": "https://bard.google.com/"
+		}, {
+			"icon": "https://nlp-eb.cdn.bcebos.com/logo/favicon.ico",
+			"name": "文心一言",
+			"desc": "百度的",
+			"url": "https://yiyan.baidu.com/welcome"
+		}, {
+			"icon": "https://www.bing.com/sa/simg/favicon-trans-bg-blue-mg-png.png",
+			"name": "必应",
+			"desc": "魔法，微软的，需要一定的操作",
+			"url": "https://www.bing.com/"
 		}, {
 			"icon": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
 			"name": "Anthropic",
@@ -63,9 +73,19 @@
 			"name": "Perplexity",
 			"desc": "描述",
 			"url": "https://www.perplexity.ai/"
+		}, {
+			"icon": "https://assets-global.website-files.com/60e5f2de011b86acebc30db7/60e5f2de011b86dd88c31078_Webclip.png",
+			"name": "jasper",
+			"desc": "描述",
+			"url": "https://www.jasper.ai/chat"
+		}, {
+			"icon": "https://psc2.cf2.poecdn.net/favicon.svg",
+			"name": "poe",
+			"desc": "描述",
+			"url": "https://poe.com/login"
 		}]
 	}, {
-		"key": "ai",
+		"key": "ai-draw",
 		"label": "AI 画图",
 		"isRecommend": false,
 		"children": [{
@@ -84,23 +104,33 @@
 			"desc": "描述",
 			"url": "https://stability.ai/"
 		}, {
+			"icon": "https://firefly.adobe.com/firefly_android_192.png",
+			"name": "adobe",
+			"desc": "描述",
+			"url": "https://firefly.adobe.com/"
+		}, {
 			"icon": "https://civitai.com/images/splash/apple-splash-2048-2732.jpg",
 			"name": "civitai",
 			"desc": "描述",
 			"url": "https://civitai.com/"
-		}, {
+		}]
+	}, {
+		"key": "ai-tips",
+		"label": "AI 提示词",
+		"isRecommend": false,
+		"children": [{
 			"icon": "https://promptbase.com/assets/img/logo/logo_50_webp.webp",
-			"name": "提示词 - promptbase",
+			"name": "promptbase",
 			"desc": "描述",
 			"url": "https://promptbase.com/"
 		}, {
 			"icon": "https://learningprompt.wiki/img/logo.svg",
-			"name": "提示词 - learningprompt",
+			"name": "learningprompt",
 			"desc": "描述",
 			"url": "https://learningprompt.wiki/"
 		}, {
 			"icon": "https://prompthero.com/og-image.jpg",
-			"name": "提示词 - prompthero",
+			"name": "prompthero",
 			"desc": "描述",
 			"url": "https://prompthero.com/"
 		}]
@@ -234,6 +264,11 @@
 		"label": "导航",
 		"isRecommend": false,
 		"children": [{
+			"icon": "https://img.amz123.com/domain/static/images/favicon.ico",
+			"name": "跨境导航 - AI",
+			"desc": "描述",
+			"url": "https://www.amz123.com/ai"
+		}, {
 			"icon": "https://lanrenao.com/favicon.ico",
 			"name": "综合性的导航网站 - 懒人",
 			"desc": "描述",
