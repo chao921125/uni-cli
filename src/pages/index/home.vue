@@ -2,31 +2,42 @@
 	<view class="container">
 		<van-row gutter="20">
 			<van-col span="24">
-				<van-notice-bar left-icon="volume-o" text="文章持续更新中，内容最后更新时间：2023-10-02 13:19:00" />
+				<van-notice-bar left-icon="volume-o" text="文章持续更新中，内容最后更新时间：2023-11-03 21:12:21" />
 			</van-col>
 			<van-col span="24">
 				<view class="re-pb-20 re-mt-20 re-flex-row-between">
-					<text class="re-ml-20">当前分类：{{ webSiteArray.websiteType[webSiteActive].label }}</text>
+					<text class="">当前分类：{{ webSiteArray.websiteType[webSiteActive].label }}</text>
 					<van-button @click="openDialog"><van-icon name="wap-nav" size="30" /></van-button>
 				</view>
 				<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 			</van-col>
-			<van-col span="24" v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
-				<view class="re-mt-20 re-flex">
-					<van-image width="15" height="15" :src="item.icon"></van-image>
-					<uni-link
-						class="re-ml-30"
-						color="#000000"
-						:href="item.url"
-						:text="item.name"
-						showUnderLine="false"
-						copyTips="已复制,请在浏览器打开"
-						@click="copyData(item.url)"
-						@tap="copyData(item.url)"
-					>
-						{{ item.name }}
-					</uni-link>
-				</view>
+			<van-col span="24">
+				<van-skeleton row="3" loading="{{ isLoading }}">
+					<van-grid column-num="2">
+						<van-grid-item use-slot v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
+							<view class="re-mt-10 re-mr-20 re-flex cc-card home-website">
+								<van-image class="card-icon" width="15" height="15" :src="item.icon"></van-image>
+								<view class="re-ml-30">
+									<view class="card-title">
+										<uni-link
+											#title
+											color="#000000"
+											:href="item.url"
+											:text="item.name"
+											showUnderLine="false"
+											copyTips="已复制,请在浏览器打开"
+											@click="copyData(item.url)"
+											@tap="copyData(item.url)"
+										>
+											{{ item.name }}
+										</uni-link>
+									</view>
+									<view class="card-desc">{{ item.desc }}</view>
+								</view>
+							</view>
+						</van-grid-item>
+					</van-grid>
+				</van-skeleton>
 			</van-col>
 		</van-row>
 	</view>
@@ -49,9 +60,10 @@
 </template>
 
 <script setup>
-	import { ref } from "vue";
+	import { onMounted, ref } from "vue";
 	import webSiteArray from "@/plugins/api/data.json";
-	import utils from "@/plugins/utils/index.js";
+
+	const isLoading = ref(true);
 
 	const isShowDialog = ref(false);
 	const openDialog = () => {
@@ -76,6 +88,12 @@
 			},
 		});
 	};
+
+	onMounted(() => {
+		setTimeout(() => {
+			isLoading.value = false;
+		}, 2000);
+	});
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
 </script>
@@ -99,5 +117,9 @@
 				width: 100%;
 			}
 		}
+	}
+	.home-website {
+		padding: 5rpx 10rpx;
+		border-radius: 5rpx;
 	}
 </style>

@@ -62,6 +62,10 @@
 	display: flex;
 	display: -webkit-flex;
 }
+.#{variable.$prefix}-flex-wrap {
+	@extend .#{variable.$prefix}-flex;
+	flex-wrap: wrap;
+}
 .#{variable.$prefix}-flex-row {
 	@extend .#{variable.$prefix}-flex;
 	flex-direction: row;
