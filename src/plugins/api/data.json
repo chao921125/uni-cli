@@ -113,6 +113,26 @@
 			"name": "civitai",
 			"desc": "描述",
 			"url": "https://civitai.com/"
+		}, {
+			"icon": "https://yige.baidu.com/favicon.png",
+			"name": "文心一格",
+			"desc": "百度",
+			"url": "https://yige.baidu.com/"
+		}, {
+			"icon": "https://civitai.com/images/splash/apple-splash-2048-2732.jpg",
+			"name": "civitai",
+			"desc": "描述",
+			"url": "https://civitai.com/"
+		}, {
+			"icon": "https://arc.tencent.com/logo.ico",
+			"name": "civitai",
+			"desc": "腾讯",
+			"url": "https://arc.tencent.com/zh/ai-demos/faceRestoration"
+		}, {
+			"icon": "https://ribbet.ai/apple-touch-icon.png",
+			"name": "civitai",
+			"desc": "描述",
+			"url": "https://ribbet.ai/"
 		}]
 	}, {
 		"key": "ai-tips",
@@ -140,12 +160,12 @@
 		"isRecommend": false,
 		"children": [{
 			"icon": "https://cn.office-converter.com/favicon.ico",
-			"name": "转换 - 很齐全的一个转换网站",
+			"name": "转换网站",
 			"desc": "描述",
 			"url": "https://cn.office-converter.com/"
 		}, {
 			"icon": "https://wormhole.app/favicon.ico",
-			"name": "分享 - 临时的一个分享工具",
+			"name": "分享工具",
 			"desc": "描述",
 			"url": "https://wormhole.app/"
 		}]
@@ -175,32 +195,32 @@
 			"url": "https://www.producthunt.com/"
 		}, {
 			"icon": "https://github.com/favicon.ico",
-			"name": "源码 - github",
+			"name": "github",
 			"desc": "描述",
 			"url": "https://github.com/"
 		}, {
 			"icon": "https://www.notion.so/zh-cnfavicon.ico",
-			"name": "源码 - notion",
+			"name": "notion",
 			"desc": "描述",
 			"url": "https://www.notion.so/zh-cn/"
 		}, {
 			"icon": "https://codepen.io/favicon.ico",
-			"name": "源码 - 托管及运行 codepen",
+			"name": "托管及运行 codepen",
 			"desc": "描述",
 			"url": "https://codepen.io/"
 		}, {
 			"icon": "https://coding.net/favicon.ico",
-			"name": "源码 - 托管及运行 coding",
+			"name": "托管及运行 coding",
 			"desc": "描述",
 			"url": "https://coding.net/"
 		}, {
 			"icon": "https://gitee.com/favicon.ico",
-			"name": "源码 - gitee",
+			"name": "gitee",
 			"desc": "描述",
 			"url": "https://gitee.com/"
 		}, {
 			"icon": "https://www.ipip.net/favicon.ico",
-			"name": "其他 - ipip",
+			"name": "ipip",
 			"desc": "描述",
 			"url": "https://www.ipip.net/"
 		}]
@@ -265,77 +285,77 @@
 		"isRecommend": false,
 		"children": [{
 			"icon": "https://img.amz123.com/domain/static/images/favicon.ico",
-			"name": "跨境导航 - AI",
+			"name": "AI跨境",
 			"desc": "描述",
 			"url": "https://www.amz123.com/ai"
 		}, {
 			"icon": "https://lanrenao.com/favicon.ico",
-			"name": "综合性的导航网站 - 懒人",
+			"name": "懒人",
 			"desc": "描述",
 			"url": "https://lanrenao.com/"
 		}, {
 			"icon": "https://www.shandiandh.com/favicon.ico",
-			"name": "综合性的导航网站 - 闪电",
+			"name": "闪电",
 			"desc": "描述",
 			"url": "https://www.shandiandh.com/"
 		}, {
 			"icon": "http://byr.wiki/favicon.ico",
-			"name": "综合性的导航网站 - 邮人",
+			"name": "邮人",
 			"desc": "描述",
 			"url": "http://byr.wiki/"
 		}, {
 			"icon": "http://123.meibp.com/favicon.ico",
-			"name": "综合性的导航网站 - 小站",
+			"name": "小站",
 			"desc": "描述",
 			"url": "http://123.meibp.com/"
 		}, {
 			"icon": "https://www.moulem.com/favicon.ico",
-			"name": "综合性的导航网站 - 柠檬",
+			"name": "柠檬",
 			"desc": "描述",
 			"url": "https://www.moulem.com/"
 		}, {
 			"icon": "https://www.sjsdh.cn/favicon.ico",
-			"name": "综合性的导航网站 - 搜奇",
+			"name": "搜奇",
 			"desc": "描述",
 			"url": "https://www.sjsdh.cn/"
 		}, {
 			"icon": "https://ailongmiao.com/favicon.ico",
-			"name": "综合性的导航网站 - 龙猫",
+			"name": "龙猫",
 			"desc": "描述",
 			"url": "https://ailongmiao.com/"
 		}, {
 			"icon": "http://ilxdh.com/favicon.ico",
-			"name": "综合性的导航网站 - 个人",
+			"name": "个人",
 			"desc": "描述",
 			"url": "http://ilxdh.com/"
 		}, {
 			"icon": "http://guozhivip.com/favicon.ico",
-			"name": "综合性的导航网站 - 果汁",
+			"name": "果汁",
 			"desc": "描述",
 			"url": "http://guozhivip.com/"
 		}, {
 			"icon": "https://www.bidianer.com/favicon.ico",
-			"name": "综合性的导航网站 - 啥啥",
+			"name": "啥啥",
 			"desc": "描述",
 			"url": "https://www.bidianer.com/"
 		}, {
 			"icon": "https://webjike.com/favicon.ico",
-			"name": "综合性的导航网站 - 呆呆",
+			"name": "呆呆",
 			"desc": "描述",
 			"url": "https://webjike.com/"
 		}, {
 			"icon": "https://paidaohang.org/favicon.ico",
-			"name": "综合性的导航网站 - 派导航",
+			"name": "派导航",
 			"desc": "描述",
 			"url": "https://paidaohang.org/"
 		}, {
 			"icon": "https://www.zhansousou.com/favicon.ico",
-			"name": "综合性的导航网站 - 站搜搜",
+			"name": "站搜搜",
 			"desc": "描述",
 			"url": "https://www.zhansousou.com/"
 		}, {
 			"icon": "https://0x3.com/favicon.ico",
-			"name": "综合性的导航网站 - 万花筒",
+			"name": "万花筒",
 			"desc": "描述",
 			"url": "https://0x3.com/"
 		}]
