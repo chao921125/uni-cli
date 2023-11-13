@@ -102,4 +102,5 @@
 	// #endif
 	/* 每个页面公共css */
 	@import "@/static/styles/index.scss";
+	@import "@/static/styles/pages.scss";
 </style>
