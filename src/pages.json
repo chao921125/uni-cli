@@ -108,5 +108,11 @@
 			"van-sidebar-item": "/wxcomponents/vant/sidebar-item/index",
 			"van-notice-bar": "/wxcomponents/vant/notice-bar/index"
 		}
-  }
+  },
+	"plugins": {
+		"chatbot": {
+			"version": "1.3.10",
+			"provider": "wx8c631f7e9f2465e1"
+		}
+	}
 }
