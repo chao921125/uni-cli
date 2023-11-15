@@ -1,5 +1,4 @@
 <template>
-	<re-van-nav-bar title="大转盘"></re-van-nav-bar>
 	<view class="re-flex-row-center re-mt-20">
 		<LuckyWheel
 			width="600rpx"
@@ -16,12 +15,11 @@
 
 <script setup name="">
 	import LuckyWheel from "@lucky-canvas/uni/lucky-wheel";
-	import { reactive, ref } from "vue";
-	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
+	import { reactive, ref, watch } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
 
 	const props = defineProps({
-		data: {
+		dataList: {
 			required: true,
 			type: Array,
 			default: () => {
@@ -29,10 +27,6 @@
 			},
 		},
 	});
-	const emits = defineEmits(["change"]);
-	const changeClick = () => {
-		emits("change", true);
-	};
 
 	const luckyRef = ref();
 	const luckyOptions = reactive({
@@ -67,6 +61,22 @@
 	const endLucky = (prize) => {
 		console.log("抽到奖品为：", prize);
 	};
+
+	const setData = () => {
+		const colors = ["#e9e8fe", "#b8c5f2"];
+		console.log(colors, props.dataList);
+		luckyOptions.prizes.push({ background: "#e9e8fe", fonts: [{ text: "1111" }] });
+	};
+
+	watch(
+		props,
+		() => {
+			setData();
+		},
+		{
+			deep: true,
+		},
+	);
 
 	onHide(() => {
 		luckyRef.value.stop(0);

@@ -1,5 +1,4 @@
 <template>
-	<re-van-nav-bar title="老虎机"></re-van-nav-bar>
 	<view class="re-flex-row-center re-mt-20">
 		<SlotMachine
 			width="600rpx"
@@ -20,9 +19,9 @@
 
 <script setup name="">
 	import SlotMachine from "@lucky-canvas/uni/slot-machine";
-	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 	import { reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
 	const luckyRef = ref();
 	const luckyOptions = reactive({
 		prizes: [

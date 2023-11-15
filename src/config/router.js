@@ -9,6 +9,7 @@ export default {
 	DemoDb: "/pages/demo/db",
 	DemoLanguage: "/pages/demo/language",
 	DemoLottery: "/pages/demo/lottery",
+	DemoLotteryBasic: "/pages/demo/lottery-basic",
 	DemoLuckyGrid: "/pages/demo/lucky-grid",
 	DemoLuckyMachine: "/pages/demo/lucky-machine",
 	DemoLuckyWheel: "/pages/demo/lucky-wheel",

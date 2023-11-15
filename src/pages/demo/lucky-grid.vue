@@ -20,6 +20,7 @@
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 	import { reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
 	const luckyRef = ref();
 	const luckyOptions = reactive({
 		prizes: [

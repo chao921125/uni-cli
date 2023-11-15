@@ -43,6 +43,12 @@
 				"enablePullDownRefresh": true
 			}
 		}, {
+			"path": "lottery-basic",
+			"style": {
+				"navigationBarTitleText": "抽奖（基础）",
+				"enablePullDownRefresh": true
+			}
+		}, {
 			"path": "lucky-wheel",
 			"style": {
 				"navigationBarTitleText": "抽奖（转盘）",
@@ -106,13 +112,10 @@
 			"van-field": "/wxcomponents/vant/field/index",
 			"van-sidebar": "/wxcomponents/vant/sidebar/index",
 			"van-sidebar-item": "/wxcomponents/vant/sidebar-item/index",
-			"van-notice-bar": "/wxcomponents/vant/notice-bar/index"
+			"van-notify": "/wxcomponents/vant/notify/index",
+			"van-notice-bar": "/wxcomponents/vant/notice-bar/index",
+			"van-radio": "/wxcomponents/vant/radio/index",
+			"van-radio-group": "/wxcomponents/vant/radio-group/index"
 		}
-  },
-	"plugins": {
-		"chatbot": {
-			"version": "1.3.10",
-			"provider": "wx8c631f7e9f2465e1"
-		}
-	}
+  }
 }

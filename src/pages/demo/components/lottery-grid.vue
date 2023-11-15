@@ -1,5 +1,4 @@
 <template>
-	<re-van-nav-bar title="九宫格"></re-van-nav-bar>
 	<view class="re-flex-row-center re-mt-20">
 		<LuckyGrid
 			width="600rpx"
@@ -17,9 +16,9 @@
 
 <script setup name="">
 	import LuckyGrid from "@lucky-canvas/uni/lucky-grid";
-	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 	import { reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
 	const luckyRef = ref();
 	const luckyOptions = reactive({
 		prizes: [

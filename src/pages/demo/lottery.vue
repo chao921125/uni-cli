@@ -1,41 +1,34 @@
 <template>
 	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
 	<view class="container">
-		<view v-show="!isLoading">
-			<text v-show="isInput" class="uni-title">请输入抽奖的内容（请用逗号或者空格分割）</text>
+		<view v-if="isInput">
+			<view class="uni-title">请选择抽奖的方式</view>
+			<view class="re-mt-10">
+				<van-radio-group :value="data.lottery.type" direction="horizontal" @change="changeType">
+					<van-radio name="1">大转盘</van-radio>
+					<van-radio name="2">九宫格</van-radio>
+					<van-radio name="3">老虎机</van-radio>
+				</van-radio-group>
+			</view>
+			<view class="uni-title re-mt-20">请输入抽奖的内容（请用逗号或者空格分割）</view>
 			<textarea
-				v-show="isInput"
 				class="lottery-text re-mt-10"
 				placeholder="请输入抽奖的内容"
 				auto-focus="true"
 				:maxlength="-1"
 				v-model="data.lottery.text"
+				@input="textToArray()"
+				@confirm="textToArray()"
 			></textarea>
-			<van-button
-				class="re-mt-20"
-				v-show="isInput"
-				@click="
-					isInput = false;
-					textToArray();
-				"
-			>
-				完成输入
-			</van-button>
 			<view class="uni-title re-mt-20">您输入的内容是</view>
 			<view>{{ data.lottery.array }}</view>
-			<view class="re-mt-20"><van-button v-show="!isInput" @click="isInput = true">重新输入</van-button></view>
+			<view class="re-mt-20"><van-button @click="startLottery" type="info" block>开始抽奖</van-button></view>
 		</view>
-		<view v-show="!isInput">
-			<view v-show="isLoading" class="uni-title">抽奖中......</view>
-			<view v-show="isLoading" class="uni-title re-mt-10">{{ data.result.progress }}</view>
-			<view v-show="isShowResult" class="uni-title lottery-result">抽奖结果 {{ data.result.startDateTime }}</view>
-			<view v-show="isShowResult" class="uni-title re-mt-10 lottery-result">{{ data.result.text }}</view>
-			<view class="re-mt-20">
-				<van-button v-show="!isLoading" @click="startDraw">手动抽奖</van-button>
-				<van-button v-show="isLoading && data.result.auto <= 0" @click="stopDraw">点击停止抽奖</van-button>
-				<van-button v-show="!isLoading" class="re-ml-20" @click="startDrawAuto">自动抽奖</van-button>
-				<van-button v-show="isLoading && data.result.auto > 0" disabled="disabled">{{ data.result.auto }}s</van-button>
-			</view>
+		<view v-if="!isInput">
+			<van-button @click="backLottery">返回</van-button>
+			<lottery-wheel v-if="data.lottery.type === '1'" :dataList="data.lottery.array"></lottery-wheel>
+			<lottery-machine v-if="data.lottery.type === '2'"></lottery-machine>
+			<lottery-grid v-if="data.lottery.type === '3'"></lottery-grid>
 		</view>
 	</view>
 </template>
@@ -43,30 +36,26 @@
 <script setup>
 	import { reactive, ref } from "vue";
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
+	import LotteryGrid from "./components/lottery-grid.vue";
+	import LotteryMachine from "./components/lottery-machine.vue";
+	import LotteryWheel from "./components/lottery-wheel.vue";
+
 	// 地球,火星,太阳,木星,金星,水星,火星,土星
 	const data = reactive({
 		lottery: {
+			type: "1",
 			text: "",
 			array: [],
 		},
-		result: {
-			startDateTime: "",
-			index: 0,
-			auto: 0,
-			progress: "",
-			text: "",
-		},
 	});
 
-	const isLoading = ref(false);
+	const changeType = (event) => {
+		data.lottery.type = event.detail;
+	};
+
 	const isInput = ref(true);
-	const isShowResult = ref(false);
-	// 定时器请勿使用，其他方式声明，直接在执行体外部即可，否则会失效
-	let intervalObj = null;
-	let intervalObjAuto = null;
 
 	const textToArray = () => {
-		isShowResult.value = false;
 		if (!data.lottery.text) data.lottery.array = [];
 		const text = data.lottery.text
 			.trim()
@@ -76,66 +65,26 @@
 		data.lottery.array = text.split(",");
 	};
 
-	const startDraw = () => {
-		data.result.startDateTime = new Date().toLocaleString();
-		isShowResult.value = false;
-		if (!data.lottery.array.length) {
-			isLoading.value = false;
+	const startLottery = () => {
+		if (!data.lottery.text.length) {
+			uni.showToast({
+				icon: "none",
+				title: "not null",
+			});
 			return false;
 		}
-		isLoading.value = true;
-		data.result.auto = 0;
-		drawLottery();
+		isInput.value = false;
 	};
-	// 自动停止
-	const startDrawAuto = () => {
-		data.result.startDateTime = new Date().toLocaleString();
-		isShowResult.value = false;
-		if (!data.lottery.array.length) {
-			isLoading.value = false;
-			return false;
-		}
-		isLoading.value = true;
-		if (data.lottery.array.length < 10) {
-			data.result.auto = 5;
-		} else {
-			data.result.auto = Matn.ceil(data.lottery.array.length / 2);
-		}
-
-		intervalObjAuto = setInterval(() => {
-			data.result.auto = --data.result.auto;
-			if (data.result.auto <= 0) {
-				stopDraw();
-				data.result.auto = 0;
-				clearInterval(intervalObjAuto);
-				intervalObjAuto = null;
-			}
-		}, 1000);
-		drawLottery();
-	};
-	const stopDraw = () => {
-		isLoading.value = false;
-		isShowResult.value = true;
-
-		data.result.index = Math.floor(Math.random() * data.lottery.array.length);
-		data.result.text = data.lottery.array[data.result.index];
-
-		data.result.auto = 0;
-		clearInterval(intervalObj);
-		intervalObj = null;
-	};
-
-	const drawLottery = () => {
-		intervalObj = setInterval(() => {
-			data.result.progress = data.lottery.array[Math.floor(Math.random() * data.lottery.array.length)];
-		}, 100);
+	const backLottery = () => {
+		isInput.value = true;
 	};
 </script>
 
 <style lang="scss">
-	.lottery-result {
-		color: #ff4040;
-		font-size: 30rpx;
-		font-weight: bold;
+	.lottery-text {
+		width: calc(100% - 20rpx);
+		border: 1rpx solid #999;
+		border-radius: 5rpx;
+		padding: 10rpx;
 	}
 </style>
