@@ -19,31 +19,30 @@
 
 <script setup name="">
 	import SlotMachine from "@lucky-canvas/uni/slot-machine";
-	import { reactive, ref } from "vue";
+	import { onMounted, reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
+	const props = defineProps({
+		dataList: {
+			required: true,
+			type: Array,
+			default: () => {
+				return [];
+			},
+		},
+	});
 
 	const luckyRef = ref();
 	const luckyOptions = reactive({
-		prizes: [
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "旅游" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游乐场" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "商场" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "吃吃吃" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "爬山" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游泳" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "玩玩玩" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "睡睡睡" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "宅宅宅" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "约约约" }] },
-		],
+		prizes: [],
 		blocks: [
 			{ padding: "10px", background: "#869cfa" },
 			{ padding: "10px", background: "#e9e8fe" },
 		],
 		slots: [
 			{ order: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], speed: 3, direction: 1 },
-			{ order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], speed: 3, direction: -1 },
-			{ order: [2, 3, 4, 5, 6, 7, 8, 9, 0, 1], speed: 3, direction: 1 },
+			{ order: [5, 6, 7, 8, 9, 0, 1, 2, 3, 4], speed: 3, direction: -1 },
+			{ order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0], speed: 3, direction: 1 },
 		],
 		defaultStyle: {
 			borderRadius: Infinity,
@@ -62,13 +61,11 @@
 		isLoading.value = true;
 		luckyRef.value.play();
 		setTimeout(() => {
-			const res = [
-				[9, 9, 6],
-				[0, 0, 7],
-				[6, 6, 6],
-				[8, 8, 8],
+			const index = [
+				Math.floor(Math.random() * props.dataList.length),
+				Math.floor(Math.random() * props.dataList.length),
+				Math.floor(Math.random() * props.dataList.length),
 			];
-			const index = res[(Math.random() * 4) >> 0];
 			luckyRef.value.stop(index);
 		}, 2500);
 	};
@@ -76,6 +73,18 @@
 		console.log("抽到奖品为：", prize);
 		isLoading.value = false;
 	};
+
+	const setData = () => {
+		luckyOptions.prizes = [];
+		const colors = ["#e9e8fe", "#b8c5f2"];
+		for (let i in props.dataList) {
+			luckyOptions.prizes.push({ background: colors[i % 2], borderRadius: "10px", fonts: [{ text: props.dataList[i] }] });
+		}
+	};
+
+	onMounted(() => {
+		setData();
+	});
 
 	onHide(() => {
 		luckyRef.value.stop([0, 0, 0]);

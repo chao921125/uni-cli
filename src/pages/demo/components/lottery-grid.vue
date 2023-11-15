@@ -16,8 +16,18 @@
 
 <script setup name="">
 	import LuckyGrid from "@lucky-canvas/uni/lucky-grid";
-	import { reactive, ref } from "vue";
+	import { onMounted, reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
+	const props = defineProps({
+		dataList: {
+			required: true,
+			type: Array,
+			default: () => {
+				return [];
+			},
+		},
+	});
 
 	const luckyRef = ref();
 	const luckyOptions = reactive({
@@ -58,6 +68,17 @@
 	const endLucky = (prize) => {
 		console.log("抽到奖品为：", prize);
 	};
+
+	const setData = () => {
+		luckyOptions.prizes = [];
+		for (let i in props.dataList) {
+			luckyOptions.prizes.push({ x: 0, y: 0, fonts: [{ text: props.dataList[i] }] });
+		}
+	};
+
+	onMounted(() => {
+		setData();
+	});
 
 	onHide(() => {
 		luckyRef.value.stop(0);

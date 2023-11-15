@@ -15,7 +15,7 @@
 
 <script setup name="">
 	import LuckyWheel from "@lucky-canvas/uni/lucky-wheel";
-	import { reactive, ref, watch } from "vue";
+	import { onMounted, reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
 
 	const props = defineProps({
@@ -30,14 +30,7 @@
 
 	const luckyRef = ref();
 	const luckyOptions = reactive({
-		prizes: [
-			{ background: "#e9e8fe", fonts: [{ text: "旅游" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "游乐场" }] },
-			{ background: "#e9e8fe", fonts: [{ text: "商场" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "吃吃吃" }] },
-			{ background: "#e9e8fe", fonts: [{ text: "爬山" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "游泳" }] },
-		],
+		prizes: [],
 		blocks: [{ padding: "10px", background: "#869cfa" }],
 		buttons: [
 			{ radius: "40%", background: "#617df2" },
@@ -63,20 +56,16 @@
 	};
 
 	const setData = () => {
+		luckyOptions.prizes = [];
 		const colors = ["#e9e8fe", "#b8c5f2"];
-		console.log(colors, props.dataList);
-		luckyOptions.prizes.push({ background: "#e9e8fe", fonts: [{ text: "1111" }] });
+		for (let i in props.dataList) {
+			luckyOptions.prizes.push({ background: colors[i % 2], fonts: [{ text: props.dataList[i] }] });
+		}
 	};
 
-	watch(
-		props,
-		() => {
-			setData();
-		},
-		{
-			deep: true,
-		},
-	);
+	onMounted(() => {
+		setData();
+	});
 
 	onHide(() => {
 		luckyRef.value.stop(0);

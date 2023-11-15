@@ -27,8 +27,8 @@
 		<view v-if="!isInput">
 			<van-button @click="backLottery">返回</van-button>
 			<lottery-wheel v-if="data.lottery.type === '1'" :dataList="data.lottery.array"></lottery-wheel>
-			<lottery-machine v-if="data.lottery.type === '2'"></lottery-machine>
-			<lottery-grid v-if="data.lottery.type === '3'"></lottery-grid>
+			<lottery-grid v-if="data.lottery.type === '2'" :dataList="data.lottery.array"></lottery-grid>
+			<lottery-machine v-if="data.lottery.type === '3'" :dataList="data.lottery.array"></lottery-machine>
 		</view>
 	</view>
 </template>
@@ -69,7 +69,28 @@
 		if (!data.lottery.text.length) {
 			uni.showToast({
 				icon: "none",
-				title: "not null",
+				title: "不能为空",
+			});
+			return false;
+		}
+		if (data.lottery.type === "1" && data.lottery.array.length < 4) {
+			uni.showToast({
+				icon: "none",
+				title: "最少为4个",
+			});
+			return false;
+		}
+		if (data.lottery.type === "2" && data.lottery.array.length !== 8) {
+			uni.showToast({
+				icon: "none",
+				title: "只能为8个",
+			});
+			return false;
+		}
+		if (data.lottery.type === "1" && data.lottery.array.length !== 9) {
+			uni.showToast({
+				icon: "none",
+				title: "只能为9个",
 			});
 			return false;
 		}
