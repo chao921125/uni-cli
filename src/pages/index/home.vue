@@ -51,7 +51,7 @@
 		custom-class="home-dialog"
 		custom-style="width: 50%; height: 100%; padding-top: 50px;"
 		@close="closeDialog"
-		@tap-overlay="closeDialog"
+		@click-overlay="closeDialog"
 	>
 		<van-sidebar :active-key="webSiteActive" class="home-sidebar" @change="changeWebSite">
 			<van-sidebar-item v-for="(item, index) in webSiteArray.websiteType" :key="index" :title="item.label" :dot="item.isRecommend" />

@@ -4,7 +4,7 @@
 		<view class="nav-status nav-status-fixed" :style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
 		<view v-if="isShowNav">
 			<!-- :statusBar="true" -->
-			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @tapLeft="onClickLeft" @tapRight="onClickRight">
+			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @click-left="onClickLeft" @tapRight="onClickRight">
 				<block v-slot:left>
 					<image
 						v-if="props.isShowLeft"

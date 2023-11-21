@@ -24,7 +24,7 @@
 						<text class="info-text">{{ options.comment_count }}条评论</text>
 						<text class="info-text">{{ options.datetime }}</text>
 					</view>
-					<view class="max-close-view view" @tap.stop="close">
+					<view class="max-close-view view" @click.stop="close">
 						<view class="close-view view"><text class="close">×</text></view>
 					</view>
 				</view>

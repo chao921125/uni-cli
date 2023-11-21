@@ -3,7 +3,7 @@
 		<view class="nav-status nav-bar-safe"></view>
 		<view class="nav-status nav-status-fixed" :style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
 		<view v-if="isShowNav">
-			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @tapLeft="onClickLeft" @tapRight="onClickRight" :statusBar="true">
+			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @tapLeft="onClickLeft" @click-right="onClickRight" :statusBar="true">
 				<block v-slot:left>
 					<view class="re-flex-row-center nav-text-left" v-if="props.leftText">{{ props.leftText }}</view>
 					<uni-data-checkbox
