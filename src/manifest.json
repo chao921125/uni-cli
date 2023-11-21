@@ -2,7 +2,7 @@
 	"name": "CC NET",
 	"appid": "__UNI__9950032",
 	"description": "CC APP仅限于学习功能测试，请勿做不良传播",
-  "versionName": "1.0.0",
+  "versionName": "1.5.0",
   "versionCode": "100",
   "transformPx": false,
 	"networkTimeout": {
