@@ -58,6 +58,7 @@
 		},
 	});
 
+	const emits = defineEmits(["getResult"]);
 	const startLucky = () => {
 		luckyRef.value.play();
 		setTimeout(() => {
@@ -66,13 +67,23 @@
 		}, 2500);
 	};
 	const endLucky = (prize) => {
-		console.log("抽到奖品为：", prize);
+		emits("getResult", prize.fonts[0].text);
 	};
 
 	const setData = () => {
 		luckyOptions.prizes = [];
+		let posi = [
+			[0, 0],
+			[1, 0],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[1, 2],
+			[0, 2],
+			[0, 1],
+		];
 		for (let i in props.dataList) {
-			luckyOptions.prizes.push({ x: 0, y: 0, fonts: [{ text: props.dataList[i] }] });
+			luckyOptions.prizes.push({ x: posi[i][0], y: posi[i][1], fonts: [{ text: props.dataList[i] }] });
 		}
 	};
 

@@ -7,7 +7,7 @@
 			v-for="(item, indexNav) in tabnav"
 			:key="item.name"
 			:class="type === item.type ? 'tabss' : ''"
-			@click="typefun(indexNav, item.type)"
+			@tap="typefun(indexNav, item.type)"
 		>
 			<text class="text">{{ item.name }}</text>
 		</view>

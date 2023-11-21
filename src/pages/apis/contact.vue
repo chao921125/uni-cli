@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<button @click="getContact">获取联系人</button>
+		<button @tap="getContact">获取联系人</button>
 	</view>
 </template>
 

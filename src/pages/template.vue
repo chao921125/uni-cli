@@ -1,5 +1,5 @@
 <template>
-	<view @click="changeClick">template {{ props.name }}</view>
+	<view @tap="changeClick">template {{ props.name }}</view>
 </template>
 
 <script setup name="">

@@ -14,7 +14,7 @@
 			<van-button
 				class="re-mt-20"
 				v-show="isInput"
-				@click="
+				@tap="
 					isInput = false;
 					textToArray();
 				"
@@ -23,7 +23,7 @@
 			</van-button>
 			<view class="uni-title re-mt-20">您输入的内容是</view>
 			<view>{{ data.lottery.array }}</view>
-			<view class="re-mt-20"><van-button v-show="!isInput" @click="isInput = true">重新输入</van-button></view>
+			<view class="re-mt-20"><van-button v-show="!isInput" @tap="isInput = true">重新输入</van-button></view>
 		</view>
 		<view v-show="!isInput">
 			<view v-show="isLoading" class="uni-title">抽奖中......</view>
@@ -31,9 +31,9 @@
 			<view v-show="isShowResult" class="uni-title lottery-result">抽奖结果 {{ data.result.startDateTime }}</view>
 			<view v-show="isShowResult" class="uni-title re-mt-10 lottery-result">{{ data.result.text }}</view>
 			<view class="re-mt-20">
-				<van-button v-show="!isLoading" @click="startDraw">手动抽奖</van-button>
-				<van-button v-show="isLoading && data.result.auto <= 0" @click="stopDraw">点击停止抽奖</van-button>
-				<van-button v-show="!isLoading" class="re-ml-20" @click="startDrawAuto">自动抽奖</van-button>
+				<van-button v-show="!isLoading" @tap="startDraw">手动抽奖</van-button>
+				<van-button v-show="isLoading && data.result.auto <= 0" @tap="stopDraw">点击停止抽奖</van-button>
+				<van-button v-show="!isLoading" class="re-ml-20" @tap="startDrawAuto">自动抽奖</van-button>
 				<van-button v-show="isLoading && data.result.auto > 0" disabled="disabled">{{ data.result.auto }}s</van-button>
 			</view>
 		</view>

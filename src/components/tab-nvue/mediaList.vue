@@ -1,6 +1,6 @@
 <template>
 	<view class="view">
-		<view class="list-cell view" hover-class="uni-list-cell-hover" @click="bindClick">
+		<view class="list-cell view" hover-class="uni-list-cell-hover" @tap="bindClick">
 			<view class="media-list view" v-if="options.title">
 				<view class="view" :class="{ 'media-image-right': options.article_type === 2, 'media-image-left': options.article_type === 1 }">
 					<text class="media-title" :class="{ 'media-title2': options.article_type === 1 || options.article_type === 2 }">{{ options.title }}</text>
@@ -24,7 +24,7 @@
 						<text class="info-text">{{ options.comment_count }}条评论</text>
 						<text class="info-text">{{ options.datetime }}</text>
 					</view>
-					<view class="max-close-view view" @click.stop="close">
+					<view class="max-close-view view" @tap.stop="close">
 						<view class="close-view view"><text class="close">×</text></view>
 					</view>
 				</view>

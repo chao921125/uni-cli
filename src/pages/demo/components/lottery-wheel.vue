@@ -44,6 +44,7 @@
 		],
 	});
 
+	const emits = defineEmits(["getResult"]);
 	const startLucky = () => {
 		luckyRef.value.play();
 		setTimeout(() => {
@@ -52,7 +53,7 @@
 		}, 2500);
 	};
 	const endLucky = (prize) => {
-		console.log("抽到奖品为：", prize);
+		emits("getResult", prize.fonts[0].text);
 	};
 
 	const setData = () => {

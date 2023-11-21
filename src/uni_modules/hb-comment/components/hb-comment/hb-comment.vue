@@ -22,7 +22,7 @@
 			<view class="comment-num">
 				<view>共 {{ commentData.commentSize }} 条评论</view>
 				<view class="add-btn">
-					<button type="primary" size="mini" @click="commentInput">发表评论</button>
+					<button type="primary" size="mini" @tap="commentInput">发表评论</button>
 				</view>
 			</view>
 			<!-- 评论主体-顶部数量及发表评论按钮-end -->
@@ -42,7 +42,7 @@
 								<view class="comLogo com4" v-if="index > 2">{{ index + 1 }}楼</view>
 								<view class="nick-name">{{ item.nickName }}</view>
 							</view>
-							<view class="zan-box" @click="like(item.id)">
+							<view class="zan-box" @tap="like(item.id)">
 								<span :class="item.hasLike ? 'isLike' : 'notLike'">{{ item.likeNum == 0 ? "抢首赞" : item.likeNum }}</span>
 								<img
 									style="width: 14px; height: 14px"
@@ -60,15 +60,15 @@
 							{{ item.content.length > 60 ? item.content.slice(0, 59) : item.content }}
 							<span v-if="item.content.length > 60">
 								{{ item.hasShowMore ? item.content.slice(59) : "..." }}
-								<span class="foot-btn" @click="showMore(item.id)">
+								<span class="foot-btn" @tap="showMore(item.id)">
 									{{ item.hasShowMore ? "收起" : "展开" }}
 								</span>
 							</span>
 						</view>
 						<view class="comment-main-foot">
 							<view class="foot-time">{{ item.createTime }}</view>
-							<view class="foot-btn" @click="reply(item.nickName, item.nickName, item.id)">回复</view>
-							<view class="foot-btn" v-if="item.owner" @click="confirmDelete(item.id)">删除</view>
+							<view class="foot-btn" @tap="reply(item.nickName, item.nickName, item.id)">回复</view>
+							<view class="foot-btn" v-if="item.owner" @tap="confirmDelete(item.id)">删除</view>
 						</view>
 						<!-- 父评论体-end -->
 						<!-- 子评论列表-start -->
@@ -80,7 +80,7 @@
 								<view class="comment-main">
 									<view class="sub-comment-main-top">
 										<view class="nick-name">{{ each.nickName }}</view>
-										<view class="zan-box" @click="like(each.id)">
+										<view class="zan-box" @tap="like(each.id)">
 											<span :class="each.hasLike ? 'isLike' : 'notLike'">{{ each.likeNum == 0 ? "抢首赞" : each.likeNum }}</span>
 											<img
 												style="width: 14px; height: 14px"
@@ -98,15 +98,15 @@
 										{{ each.content.length > 60 ? each.content.slice(0, 59) : each.content }}
 										<span v-if="each.content.length > 60">
 											{{ each.hasShowMore ? each.content.slice(59) : "..." }}
-											<span class="foot-btn" @click="showMore(each.id)">
+											<span class="foot-btn" @tap="showMore(each.id)">
 												{{ each.hasShowMore ? "收起" : "展开" }}
 											</span>
 										</span>
 									</view>
 									<view class="comment-main-foot">
 										<view class="foot-time">{{ each.createTime }}</view>
-										<view class="foot-btn" @click="reply(item.nickName, each.nickName, item.id)"> 回复</view>
-										<view class="foot-btn" v-if="each.owner" @click="confirmDelete(each.id)">删除 </view>
+										<view class="foot-btn" @tap="reply(item.nickName, each.nickName, item.id)"> 回复</view>
+										<view class="foot-btn" v-if="each.owner" @tap="confirmDelete(each.id)">删除 </view>
 									</view>
 								</view>
 							</view>
@@ -119,22 +119,22 @@
 		</view>
 		<!-- 评论主体-end -->
 		<!-- 无评论-start -->
-		<view class="comment-none" v-else> 暂无评论，<span @click="commentInput" style="color: #007aff">抢沙发</span> </view>
+		<view class="comment-none" v-else> 暂无评论，<span @tap="commentInput" style="color: #007aff">抢沙发</span> </view>
 		<!-- 无评论-end -->
 		<!-- 新增评论-start -->
-		<view class="comment-submit-box" v-if="submit" @click="closeInput">
+		<view class="comment-submit-box" v-if="submit" @tap="closeInput">
 			<!-- 下边的click.stop.prevent用于让上边的click不传下去，以防点到下边的空白处触发closeInput方法 -->
-			<view class="comment-add" @click.stop.prevent="stopPrevent" :style="'bottom:' + KeyboardHeight + 'px'">
+			<view class="comment-add" @tap.stop.prevent="stopPrevent" :style="'bottom:' + KeyboardHeight + 'px'">
 				<view class="comment-submit">
-					<view class="btn-click cancel" @click="closeInput">取消</view>
+					<view class="btn-click cancel" @tap="closeInput">取消</view>
 					<view>
 						<view class="replayTag" v-show="showTag">
 							<view>回复在 {{ pUser }} 的评论下</view>
-							<view @click="tagClose" class="replyTagClose">×</view>
+							<view @tap="tagClose" class="replyTagClose">×</view>
 						</view>
 					</view>
 					<view>
-						<view class="btn-click" @click="add">发布</view>
+						<view class="btn-click" @tap="add">发布</view>
 					</view>
 				</view>
 				<textarea

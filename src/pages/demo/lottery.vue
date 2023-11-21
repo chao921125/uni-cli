@@ -7,7 +7,7 @@
 				<van-radio-group :value="data.lottery.type" direction="horizontal" @change="changeType">
 					<van-radio name="1">大转盘</van-radio>
 					<van-radio name="2">九宫格</van-radio>
-					<van-radio name="3">老虎机</van-radio>
+					<van-radio name="3">老虎机(不建议使用)</van-radio>
 				</van-radio-group>
 			</view>
 			<view class="uni-title re-mt-20">请输入抽奖的内容（请用逗号或者空格分割）</view>
@@ -20,15 +20,18 @@
 				@input="textToArray()"
 				@confirm="textToArray()"
 			></textarea>
-			<view class="uni-title re-mt-20">您输入的内容是</view>
+			<view class="uni-title re-mt-20">您输入的内容是 {{ data.lottery.array.length }}</view>
 			<view>{{ data.lottery.array }}</view>
-			<view class="re-mt-20"><van-button @click="startLottery" type="info" block>开始抽奖</van-button></view>
+			<view class="re-mt-20"><van-button @tap="startLottery" type="info" block>开始抽奖</van-button></view>
 		</view>
 		<view v-if="!isInput">
-			<van-button @click="backLottery">返回</van-button>
-			<lottery-wheel v-if="data.lottery.type === '1'" :dataList="data.lottery.array"></lottery-wheel>
-			<lottery-grid v-if="data.lottery.type === '2'" :dataList="data.lottery.array"></lottery-grid>
-			<lottery-machine v-if="data.lottery.type === '3'" :dataList="data.lottery.array"></lottery-machine>
+			<van-button @tap="backLottery">返回</van-button>
+			<view v-show="data.lottery.result" class="lottery-result">
+				抽奖结果[{{ data.lottery.resultTime }}]：{{ data.lottery.result === "null" ? "未中奖" : data.lottery.result }}
+			</view>
+			<lottery-wheel v-if="data.lottery.type === '1'" :dataList="data.lottery.array" @get-result="getResult"></lottery-wheel>
+			<lottery-grid v-if="data.lottery.type === '2'" :dataList="data.lottery.array" @get-result="getResult"></lottery-grid>
+			<lottery-machine v-if="data.lottery.type === '3'" :dataList="data.lottery.array" @get-result="getResult"></lottery-machine>
 		</view>
 	</view>
 </template>
@@ -46,6 +49,8 @@
 			type: "1",
 			text: "",
 			array: [],
+			result: "",
+			resultTime: "",
 		},
 	});
 
@@ -87,7 +92,7 @@
 			});
 			return false;
 		}
-		if (data.lottery.type === "1" && data.lottery.array.length !== 9) {
+		if (data.lottery.type === "3" && data.lottery.array.length !== 9) {
 			uni.showToast({
 				icon: "none",
 				title: "只能为9个",
@@ -98,6 +103,13 @@
 	};
 	const backLottery = () => {
 		isInput.value = true;
+		data.lottery.resultTime = "";
+		data.lottery.result = "";
+	};
+
+	const getResult = (rel) => {
+		data.lottery.resultTime = new Date().toLocaleString();
+		data.lottery.result = rel;
 	};
 </script>
 
@@ -107,5 +119,10 @@
 		border: 1rpx solid #999;
 		border-radius: 5rpx;
 		padding: 10rpx;
+	}
+	.lottery-result {
+		color: #ff4040;
+		font-size: 30rpx;
+		font-weight: bold;
 	}
 </style>

@@ -3,26 +3,26 @@
 		<!-- 日期选择器 -->
 		<view class="content">
 			<!-- 默认标题 -->
-			<!-- 	<view class="content_box" v-if="!showTitle" @click="getPopup()">
+			<!-- 	<view class="content_box" v-if="!showTitle" @tap="getPopup()">
 				<view>{{y + "年" + m + "月" + d +"日"}}</view>
 			</view> -->
 			<!-- 自定义标题 -->
-			<!-- <view class="title" v-if="showTitle" @click="getPopup()">
+			<!-- <view class="title" v-if="showTitle" @tap="getPopup()">
 				{{title}}
 			</view> -->
 			<!-- <uni-popup ref="popup" type="bottom"> -->
 			<!-- <view class="popup_body"> -->
 			<!-- 关闭弹框 -->
 			<!-- <view class="close_popup">
-						<text class="iconfont iconerror" @click="close()"></text>
+						<text class="iconfont iconerror" @tap="close()"></text>
 					</view> -->
 			<!-- 关闭弹框end -->
 			<view class="calendar-wrapper">
 				<!-- 选择月份 -->
 				<view class="header" v-if="headerBar">
-					<view class="iconfont iconarrow-left-bold pre" @click="changeMonth('pre')"></view>
+					<view class="iconfont iconarrow-left-bold pre" @tap="changeMonth('pre')"></view>
 					<view>{{ y + "-" + formatNum(m) + "" }}</view>
-					<view class="iconfont iconarrow-left-bold-copy next" @click="changeMonth('next')"></view>
+					<view class="iconfont iconarrow-left-bold-copy next" @tap="changeMonth('next')"></view>
 				</view>
 				<!-- 星期栏 -->
 				<view class="week">
@@ -35,7 +35,7 @@
 						<view class="item" v-for="(item, index) in dates" :key="index">
 							<view
 								class="day"
-								@click="selectOne(item, $event)"
+								@tap="selectOne(item, $event)"
 								:class="{
 									choose: getActday(`${item.year}-${item.month}-${item.date}`) && item.isCurM, //选中的日期
 									chooseMarkDay: getChoose(`${item.year}-${item.month}-${item.date}`),

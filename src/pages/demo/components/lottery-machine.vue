@@ -13,7 +13,7 @@
 		></SlotMachine>
 	</view>
 	<view class="re-mt-20 re-flex-row-center">
-		<van-button @click="startLucky" @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
+		<van-button @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
 	</view>
 </template>
 
@@ -57,28 +57,30 @@
 	});
 
 	const isLoading = ref(false);
+	const emits = defineEmits(["getResult"]);
+	const prizeRel = ref([]);
 	const startLucky = () => {
 		isLoading.value = true;
 		luckyRef.value.play();
 		setTimeout(() => {
-			const index = [
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-			];
-			luckyRef.value.stop(index);
+			luckyRef.value.stop(prizeRel.value[(Math.random() * props.dataList.length) >> 0]);
 		}, 2500);
 	};
 	const endLucky = (prize) => {
-		console.log("抽到奖品为：", prize);
 		isLoading.value = false;
+		emits("getResult", prize || "null");
 	};
 
 	const setData = () => {
 		luckyOptions.prizes = [];
-		const colors = ["#e9e8fe", "#b8c5f2"];
 		for (let i in props.dataList) {
-			luckyOptions.prizes.push({ background: colors[i % 2], borderRadius: "10px", fonts: [{ text: props.dataList[i] }] });
+			prizeRel.value.push([
+				Math.floor(Math.random() * props.dataList.length),
+				Math.floor(Math.random() * props.dataList.length),
+				Math.floor(Math.random() * props.dataList.length),
+			]);
+			prizeRel.value.push([i, i, i]);
+			luckyOptions.prizes.push({ fonts: [{ text: props.dataList[i], top: "15%" }] });
 		}
 	};
 
