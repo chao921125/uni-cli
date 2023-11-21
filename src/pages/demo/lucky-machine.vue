@@ -14,7 +14,7 @@
 		></SlotMachine>
 	</view>
 	<view class="re-mt-20 re-flex-row-center">
-		<van-button @click="startLucky" @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
+		<van-button @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
 	</view>
 </template>
 
@@ -23,19 +23,20 @@
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
 	import { reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
 	const luckyRef = ref();
 	const luckyOptions = reactive({
 		prizes: [
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "旅游" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游乐场" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "商场" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "吃吃吃" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "爬山" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游泳" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "玩玩玩" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "睡睡睡" }] },
-			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "宅宅宅" }] },
-			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "约约约" }] },
+			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "旅游", top: "15%" }] },
+			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游乐场", top: "15%" }] },
+			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "商场", top: "15%" }] },
+			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "吃吃吃", top: "15%" }] },
+			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "爬山", top: "15%" }] },
+			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "游泳", top: "15%" }] },
+			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "玩玩玩", top: "15%" }] },
+			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "睡睡睡", top: "15%" }] },
+			{ background: "#e9e8fe", borderRadius: "10px", fonts: [{ text: "宅宅宅", top: "15%" }] },
+			{ background: "#b8c5f2", borderRadius: "10px", fonts: [{ text: "约约约", top: "15%" }] },
 		],
 		blocks: [
 			{ padding: "10px", background: "#869cfa" },
@@ -64,8 +65,8 @@
 		luckyRef.value.play();
 		setTimeout(() => {
 			const res = [
-				[9, 9, 6],
-				[0, 0, 7],
+				[9, 9, 9],
+				[0, 0, 0],
 				[6, 6, 6],
 				[8, 8, 8],
 			];

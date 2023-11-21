@@ -1,6 +1,6 @@
 <template>
 	<view class="view">
-		<view class="list-cell view" hover-class="uni-list-cell-hover" @click="bindClick">
+		<view class="list-cell view" hover-class="uni-list-cell-hover" @tap="bindClick">
 			<view class="media-list view" v-if="options.title">
 				<view class="view" :class="{ 'media-image-right': options.article_type === 2, 'media-image-left': options.article_type === 1 }">
 					<text class="media-title" :class="{ 'media-title2': options.article_type === 1 || options.article_type === 2 }">{{ options.title }}</text>

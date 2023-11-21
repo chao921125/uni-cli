@@ -2,7 +2,7 @@
 	<view class="container">
 		<view>{{ $t("schema.name") }}</view>
 		<input v-model="name" class="input" />
-		<button type="primary" @click="add">{{ $t("schema.add") }}</button>
+		<button type="primary" @tap="add">{{ $t("schema.add") }}</button>
 	</view>
 </template>
 

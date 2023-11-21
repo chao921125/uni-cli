@@ -1,5 +1,5 @@
 <template>
-	<view class="countdown text-success" :class="{ 'is-disabled': isClick }" @click="getCode">{{ codeText }}</view>
+	<view class="countdown text-success" :class="{ 'is-disabled': isClick }" @tap="getCode">{{ codeText }}</view>
 </template>
 
 <script>

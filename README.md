@@ -30,5 +30,12 @@ https://developers.weixin.qq.com/miniprogram/dev/framework/ability/darkmode.html
 ###### [APK](https://nativesupport.dcloud.net.cn/AppDocs/download/android.html)
 
 ###### [IOS](https://nativesupport.dcloud.net.cn/AppDocs/download/ios.html)
-
+```json5
+	"plugins": {
+		"chatbot": {
+			"version": "1.3.10",
+			"provider": "wx8c631f7e9f2465e1"
+		}
+	}
+```
 [//]: # (__UNI__C9F9D0B)

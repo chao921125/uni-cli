@@ -2,7 +2,7 @@
 	<view>
 		<re-van-nav-bar title="详情"></re-van-nav-bar>
 		<text>https://www.baidu.com</text>
-		<van-button @click="changeClick">detail</van-button>
+		<van-button @tap="changeClick">detail</van-button>
 		<van-toast id="van-toast" />
 	</view>
 </template>

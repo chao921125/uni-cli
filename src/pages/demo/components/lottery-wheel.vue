@@ -1,5 +1,4 @@
 <template>
-	<re-van-nav-bar title="大转盘"></re-van-nav-bar>
 	<view class="re-flex-row-center re-mt-20">
 		<LuckyWheel
 			width="600rpx"
@@ -16,12 +15,11 @@
 
 <script setup name="">
 	import LuckyWheel from "@lucky-canvas/uni/lucky-wheel";
-	import { reactive, ref } from "vue";
-	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
+	import { onMounted, reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
 
 	const props = defineProps({
-		data: {
+		dataList: {
 			required: true,
 			type: Array,
 			default: () => {
@@ -29,21 +27,10 @@
 			},
 		},
 	});
-	const emits = defineEmits(["change"]);
-	const changeClick = () => {
-		emits("change", true);
-	};
 
 	const luckyRef = ref();
 	const luckyOptions = reactive({
-		prizes: [
-			{ background: "#e9e8fe", fonts: [{ text: "旅游" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "游乐场" }] },
-			{ background: "#e9e8fe", fonts: [{ text: "商场" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "吃吃吃" }] },
-			{ background: "#e9e8fe", fonts: [{ text: "爬山" }] },
-			{ background: "#b8c5f2", fonts: [{ text: "游泳" }] },
-		],
+		prizes: [],
 		blocks: [{ padding: "10px", background: "#869cfa" }],
 		buttons: [
 			{ radius: "40%", background: "#617df2" },
@@ -57,6 +44,7 @@
 		],
 	});
 
+	const emits = defineEmits(["getResult"]);
 	const startLucky = () => {
 		luckyRef.value.play();
 		setTimeout(() => {
@@ -65,8 +53,20 @@
 		}, 2500);
 	};
 	const endLucky = (prize) => {
-		console.log("抽到奖品为：", prize);
+		emits("getResult", prize.fonts[0].text);
 	};
+
+	const setData = () => {
+		luckyOptions.prizes = [];
+		const colors = ["#e9e8fe", "#b8c5f2"];
+		for (let i in props.dataList) {
+			luckyOptions.prizes.push({ background: colors[i % 2], fonts: [{ text: props.dataList[i] }] });
+		}
+	};
+
+	onMounted(() => {
+		setData();
+	});
 
 	onHide(() => {
 		luckyRef.value.stop(0);

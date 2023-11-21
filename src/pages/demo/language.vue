@@ -18,7 +18,7 @@
 		</view>
 		<view class="locale-setting">{{ $t("index.language") }}</view>
 		<view class="locale-list">
-			<view class="locale-item" v-for="(item, index) in locales" :key="index" @click="onLocaleChange(item)">
+			<view class="locale-item" v-for="(item, index) in locales" :key="index" @tap="onLocaleChange(item)">
 				<text class="text">{{ item.text }}</text>
 				<text class="icon-check" v-if="item.code == applicationLocale"></text>
 			</view>

@@ -7,7 +7,7 @@
 			<van-col span="24">
 				<view class="re-pb-20 re-mt-20 re-flex-row-between">
 					<text class="">当前分类：{{ webSiteArray.websiteType[webSiteActive].label }}</text>
-					<van-button @click="openDialog"><van-icon name="wap-nav" size="30" /></van-button>
+					<van-button @tap="openDialog"><van-icon name="wap-nav" size="30" /></van-button>
 				</view>
 				<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 			</van-col>

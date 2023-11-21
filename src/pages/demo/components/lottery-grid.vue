@@ -1,5 +1,4 @@
 <template>
-	<re-van-nav-bar title="九宫格"></re-van-nav-bar>
 	<view class="re-flex-row-center re-mt-20">
 		<LuckyGrid
 			width="600rpx"
@@ -17,9 +16,19 @@
 
 <script setup name="">
 	import LuckyGrid from "@lucky-canvas/uni/lucky-grid";
-	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
-	import { reactive, ref } from "vue";
+	import { onMounted, reactive, ref } from "vue";
 	import { onHide } from "@dcloudio/uni-app";
+
+	const props = defineProps({
+		dataList: {
+			required: true,
+			type: Array,
+			default: () => {
+				return [];
+			},
+		},
+	});
+
 	const luckyRef = ref();
 	const luckyOptions = reactive({
 		prizes: [
@@ -49,6 +58,7 @@
 		},
 	});
 
+	const emits = defineEmits(["getResult"]);
 	const startLucky = () => {
 		luckyRef.value.play();
 		setTimeout(() => {
@@ -57,8 +67,29 @@
 		}, 2500);
 	};
 	const endLucky = (prize) => {
-		console.log("抽到奖品为：", prize);
+		emits("getResult", prize.fonts[0].text);
 	};
+
+	const setData = () => {
+		luckyOptions.prizes = [];
+		let posi = [
+			[0, 0],
+			[1, 0],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[1, 2],
+			[0, 2],
+			[0, 1],
+		];
+		for (let i in props.dataList) {
+			luckyOptions.prizes.push({ x: posi[i][0], y: posi[i][1], fonts: [{ text: props.dataList[i] }] });
+		}
+	};
+
+	onMounted(() => {
+		setData();
+	});
 
 	onHide(() => {
 		luckyRef.value.stop(0);
