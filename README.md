@@ -16,7 +16,7 @@
 5. components 根目录下这个目录存放的是公共的组件，和uni-modules类似，但是需要自行引用
 6. cover-image 不再使用，使用image替换
 7. 静态图片直接使用绝对路径即可，请勿再import
-
+8. 如果无法正常打开开发者工具，请将/src/manifest.json中的微信ID删除掉即可
 ```
 
 # 适配暗黑模式，还未测试
