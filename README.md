@@ -3,9 +3,13 @@
 
 1. 微信内置UI
 2. [vant weapp v1.10.23](https://github.com/youzan/vant-weapp)
-3. [uni-ui v1.4.27](https://github.com/dcloudio/uni-ui)
-4. [uviewui 未用](https://uviewui.com/)
-5. [ucharts 图表 收费 未用](https://www.ucharts.cn/v2/#/)
+3. [ucharts 图表 收费 未用](https://www.ucharts.cn/v2/#/)
+# 三方UI
+0. [uni-ui v1.4.27](https://github.com/dcloudio/uni-ui)
+1. [uviewui](https://www.uviewui.com/)
+2. [thorui](https://thorui.cn/doc/)
+3. [firstui](https://www.firstui.cn/)
+4. [uvui](https://www.uvui.cn/)
 
 # 注意事项
 ```text
