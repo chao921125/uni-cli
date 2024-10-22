@@ -52,13 +52,7 @@
 		.replace("def", "\\n+(?=" + block.def.source + ")")
 		.getRegex();
 
-	block._tag =
-		"address|article|aside|base|basefont|blockquote|body|caption" +
-		"|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption" +
-		"|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe" +
-		"|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option" +
-		"|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr" +
-		"|track|ul";
+	block._tag = "address|article|aside|base|basefont|blockquote|body|caption" + "|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption" + "|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe" + "|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option" + "|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr" + "|track|ul";
 	block._comment = /<!--(?!-?>)[\s\S]*?-->/;
 	block.html = edit(block.html, "i")
 		.replace("comment", block._comment)
@@ -115,13 +109,7 @@
 				"|<tag(?:\"[^\"]*\"|'[^']*'|\\s[^'\"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))",
 		)
 			.replace("comment", block._comment)
-			.replace(
-				/tag/g,
-				"(?!(?:" +
-					"a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub" +
-					"|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)" +
-					"\\b)\\w+(?!:|[^\\w\\s@]*@)\\b",
-			)
+			.replace(/tag/g, "(?!(?:" + "a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub" + "|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)" + "\\b)\\w+(?!:|[^\\w\\s@]*@)\\b")
 			.getRegex(),
 		def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
 	});
@@ -523,8 +511,7 @@
 	inline._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;
 
 	inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
-	inline._email =
-		/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
+	inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
 	inline.autolink = edit(inline.autolink).replace("scheme", inline._scheme).replace("email", inline._email).getRegex();
 
 	inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;

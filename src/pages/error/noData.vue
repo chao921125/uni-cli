@@ -1,9 +1,3 @@
-<template>
-	<view class="container">
-		<no-data></no-data>
-	</view>
-</template>
-
 <script>
 	export default {
 		data() {
@@ -15,5 +9,11 @@
 		methods: {},
 	};
 </script>
+
+<template>
+	<view class="container">
+		<no-data></no-data>
+	</view>
+</template>
 
 <style lang="scss"></style>

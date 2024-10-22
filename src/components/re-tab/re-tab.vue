@@ -1,5 +1,7 @@
 <template>
-	<view class="re-tab" :style="fixed == true ? 'position: fixed;' : ''">
+	<view
+		class="re-tab"
+		:style="fixed == true ? 'position: fixed;' : ''">
 		<!-- 导航 -->
 		<view
 			class="tabs"
@@ -7,14 +9,17 @@
 			v-for="(item, indexNav) in tabnav"
 			:key="item.name"
 			:class="type === item.type ? 'tabss' : ''"
-			@tap="typefun(indexNav, item.type)"
-		>
+			@tap="typefun(indexNav, item.type)">
 			<text class="text">{{ item.name }}</text>
 		</view>
 
 		<!-- 进度 -->
-		<view class="speed" :style="'left:' + dataInd * (750 / tabnav.length) + 'rpx;width:' + 720 / tabnav.length + 'rpx'">
-			<view class="speed-box" :style="'width:' + (lineW || (720 / tabnav.length) * 0.5) + 'rpx;' + lineStyle"></view>
+		<view
+			class="speed"
+			:style="'left:' + dataInd * (750 / tabnav.length) + 'rpx;width:' + 720 / tabnav.length + 'rpx'">
+			<view
+				class="speed-box"
+				:style="'width:' + (lineW || (720 / tabnav.length) * 0.5) + 'rpx;' + lineStyle"></view>
 		</view>
 	</view>
 </template>

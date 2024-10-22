@@ -1,9 +1,3 @@
-<template>
-	<view>
-		<button @tap="getContact">获取联系人</button>
-	</view>
-</template>
-
 <script>
 	export default {
 		methods: {
@@ -25,5 +19,11 @@
 		},
 	};
 </script>
+
+<template>
+	<view>
+		<button @tap="getContact">获取联系人</button>
+	</view>
+</template>
 
 <style lang="scss"></style>

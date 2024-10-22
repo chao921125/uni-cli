@@ -1,7 +1,18 @@
 <template>
-	<picker mode="date" :value="dateObj.date" :start="startDate" :end="endDate" @change="changeClick">
+	<picker
+		mode="date"
+		:value="dateObj.date"
+		:start="startDate"
+		:end="endDate"
+		@change="changeClick">
 		<slot>
-			<uni-easyinput v-model="dateObj.date" class="re-w-fill input" placeholder="" :trim="true" :inputBorder="false" type="text" />
+			<uni-easyinput
+				v-model="dateObj.date"
+				class="re-w-fill input"
+				placeholder=""
+				:trim="true"
+				:inputBorder="false"
+				type="text" />
 		</slot>
 	</picker>
 </template>

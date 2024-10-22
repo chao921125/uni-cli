@@ -1,7 +1,3 @@
-<template>
-	<view @tap="changeClick">template {{ props.name }}</view>
-</template>
-
 <script setup name="">
 	const props = defineProps({
 		name: {
@@ -18,5 +14,9 @@
 		changeClick,
 	});
 </script>
+
+<template>
+	<view @tap="changeClick">template {{ props.name }}</view>
+</template>
 
 <style scoped lang="scss"></style>

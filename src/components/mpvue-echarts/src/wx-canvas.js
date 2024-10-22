@@ -25,20 +25,7 @@ export default class WxCanvas {
 	}
 
 	static initStyle(ctx) {
-		const styles = [
-			"fillStyle",
-			"strokeStyle",
-			"globalAlpha",
-			"textAlign",
-			"textBaseAlign",
-			"shadow",
-			"lineWidth",
-			"lineCap",
-			"lineJoin",
-			"lineDash",
-			"miterLimit",
-			"fontSize",
-		];
+		const styles = ["fillStyle", "strokeStyle", "globalAlpha", "textAlign", "textBaseAlign", "shadow", "lineWidth", "lineCap", "lineJoin", "lineDash", "miterLimit", "fontSize"];
 
 		styles.forEach((style) => {
 			Object.defineProperty(ctx, style, {

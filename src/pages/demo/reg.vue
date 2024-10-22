@@ -1,11 +1,3 @@
-<template>
-	<view>
-		<view>匹配正则</view>
-		<view>匹配数字+大小写字母组合：/^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)[0-9a-zA-Z]+$/</view>
-		<view>匹配数字+大小写字母组合：!/^([0-9]*|[a-z]*|[A-Z]*)$/</view>
-	</view>
-</template>
-
 <script setup name="">
 	const props = defineProps({
 		name: {
@@ -22,5 +14,13 @@
 		changeClick,
 	});
 </script>
+
+<template>
+	<view>
+		<view>匹配正则</view>
+		<view>匹配数字+大小写字母组合：/^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)[0-9a-zA-Z]+$/</view>
+		<view>匹配数字+大小写字母组合：!/^([0-9]*|[a-z]*|[A-Z]*)$/</view>
+	</view>
+</template>
 
 <style scoped lang="scss"></style>

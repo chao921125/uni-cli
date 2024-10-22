@@ -1,7 +1,3 @@
-<template>
-	<web-view :src="url"></web-view>
-</template>
-
 <script setup name="">
 	import { onLoad } from "@dcloudio/uni-app";
 	import { ref } from "vue";
@@ -15,5 +11,9 @@
 		}
 	});
 </script>
+
+<template>
+	<web-view :src="url"></web-view>
+</template>
 
 <style scoped lang="scss"></style>

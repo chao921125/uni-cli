@@ -1,15 +1,21 @@
 # 注意：此项目仅支持微信小程序，其他端一概没有做适配，请勿运行。
-# 该项目使用的UI
 
-1. 微信内置UI
-2. [vant weapp v1.10.23](https://github.com/youzan/vant-weapp)
-3. [ucharts 图表 收费 未用](https://www.ucharts.cn/v2/#/)
-# 三方UI
-0. [uni-ui v1.4.27](https://github.com/dcloudio/uni-ui)
-1. [uviewui](https://www.uviewui.com/)
-2. [thorui](https://thorui.cn/doc/)
-3. [firstui](https://www.firstui.cn/)
-4. [uvui](https://www.uvui.cn/)
+| 框架                                                              |
+|-----------------------------------------------------------------|
+| [uniapp](https://uniapp.dcloud.net.cn/)                         |
+| [taro](https://taro.zone/)                                      |
+| [donut 小程序 跨端APP框架](https://dev.weixin.qq.com/products/miniapp) |
+
+| UI                                                 |
+|----------------------------------------------------|
+| [vant weapp](https://github.com/youzan/vant-weapp) |
+| [uni-ui](https://github.com/dcloudio/uni-ui)       |
+| [uviewui](https://www.uviewui.com/)                |
+| [uvui](https://www.uvui.cn/)                       |
+
+| 图表                                               |
+|--------------------------------------------------|
+| [ucharts 图表 收费 未用](https://www.ucharts.cn/v2/#/) |
 
 # 注意事项
 ```text

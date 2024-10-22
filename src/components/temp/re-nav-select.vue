@@ -1,25 +1,41 @@
 <template>
 	<view>
 		<view class="nav-status nav-bar-safe"></view>
-		<view class="nav-status nav-status-fixed" :style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
+		<view
+			class="nav-status nav-status-fixed"
+			:style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
 		<view v-if="isShowNav">
-			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @tapLeft="onClickLeft" @click-right="onClickRight" :statusBar="true">
+			<uni-nav-bar
+				class="nav-bar"
+				:fixed="true"
+				:border="false"
+				@tapLeft="onClickLeft"
+				@click-right="onClickRight"
+				:statusBar="true">
 				<block v-slot:left>
-					<view class="re-flex-row-center nav-text-left" v-if="props.leftText">{{ props.leftText }}</view>
+					<view
+						class="re-flex-row-center nav-text-left"
+						v-if="props.leftText"
+						>{{ props.leftText }}</view
+					>
 					<uni-data-checkbox
 						v-else
 						class="checkbox-select"
 						v-model="isCheckAll"
 						multiple
 						:localdata="[{ text: 'All', value: true }]"
-						@change="onClickLeft"
-					></uni-data-checkbox>
+						@change="onClickLeft"></uni-data-checkbox>
 				</block>
 				<view class="re-flex-row-center nav-title">{{ props.title }}</view>
 				<block v-slot:right>
-					<view v-if="props.isShowRight" class="re-flex-row-center nav-text-right">
+					<view
+						v-if="props.isShowRight"
+						class="re-flex-row-center nav-text-right">
 						<text v-if="props.rightText">{{ props.rightText }}</text>
-						<uni-icons v-else type="more-filled" size="20"></uni-icons>
+						<uni-icons
+							v-else
+							type="more-filled"
+							size="20"></uni-icons>
 					</view>
 				</block>
 			</uni-nav-bar>

@@ -1,5 +1,10 @@
 <template>
-	<uni-data-picker :localdata="dataArray" v-model="areaSelect" popup-title="请选择地域" @change="onchange" @nodeclick="onnodeclick"></uni-data-picker>
+	<uni-data-picker
+		:localdata="dataArray"
+		v-model="areaSelect"
+		popup-title="请选择地域"
+		@change="onchange"
+		@nodeclick="onnodeclick"></uni-data-picker>
 </template>
 
 <script>

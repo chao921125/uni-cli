@@ -1,21 +1,29 @@
 <template>
 	<view>
 		<view class="nav-status nav-bar-safe"></view>
-		<view class="nav-status nav-status-fixed" :style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
+		<view
+			class="nav-status nav-status-fixed"
+			:style="{ 'background-color': props.statusBackground, color: props.statusColor }"></view>
 		<view v-if="isShowNav">
 			<!-- :statusBar="true" -->
-			<uni-nav-bar class="nav-bar" :fixed="true" :border="false" @click-left="onClickLeft" @tapRight="onClickRight">
+			<uni-nav-bar
+				class="nav-bar"
+				:fixed="true"
+				:border="false"
+				@click-left="onClickLeft"
+				@tapRight="onClickRight">
 				<block v-slot:left>
 					<image
 						v-if="props.isShowLeft"
 						:src="isDefault ? props.leftIcon : '/static/images/icons/back-round.png'"
 						mode="aspectFit"
-						:class="isDefault ? 'back-img' : 'back-img-ot'"
-					></image>
+						:class="isDefault ? 'back-img' : 'back-img-ot'"></image>
 				</block>
 				<view class="re-flex-row-center nav-title">{{ props.title }}</view>
 				<block v-slot:right>
-					<view v-if="props.isShowRight" class="re-flex-row-center nav-text-right">
+					<view
+						v-if="props.isShowRight"
+						class="re-flex-row-center nav-text-right">
 						{{ props.rightText }}
 					</view>
 				</block>

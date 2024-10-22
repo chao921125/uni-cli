@@ -1,6 +1,6 @@
 <script>
 	import config from "@/config/index";
-
+	
 	export default {
 		globalData: {
 			title: "CC NET",
@@ -93,14 +93,14 @@
 
 <style lang="scss">
 	/* 组件 */
-	@import "@/wxcomponents/vant/common/index.wxss";
+	// @use "@/wxcomponents/vant/common/index.wxss";
 	// #ifdef H5
 	/* 字体 */
-	@import "@/static/fonts/index.css";
+	@use "@/static/fonts/index.css";
 	/* 图标 */
-	@import "@/static/iconfonts/iconfont/iconfont.css";
+	@use "@/static/iconfonts/iconfont/iconfont.css";
 	// #endif
 	/* 每个页面公共css */
-	@import "@/static/styles/index.scss";
-	@import "@/static/styles/pages.scss";
+	@use "@/static/styles/index.scss";
+	@use "@/static/styles/pages.scss";
 </style>

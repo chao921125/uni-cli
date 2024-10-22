@@ -1,22 +1,3 @@
-<template>
-	<view class="re-flex-row-center re-mt-20">
-		<SlotMachine
-			width="600rpx"
-			height="600rpx"
-			ref="luckyRef"
-			:prizes="luckyOptions.prizes"
-			:blocks="luckyOptions.blocks"
-			:slots="luckyOptions.slots"
-			:default-config="luckyOptions.defaultConfig"
-			:default-style="luckyOptions.defaultStyle"
-			@end="endLucky"
-		></SlotMachine>
-	</view>
-	<view class="re-mt-20 re-flex-row-center">
-		<van-button @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
-	</view>
-</template>
-
 <script setup name="">
 	import SlotMachine from "@lucky-canvas/uni/slot-machine";
 	import { onMounted, reactive, ref } from "vue";
@@ -74,11 +55,7 @@
 	const setData = () => {
 		luckyOptions.prizes = [];
 		for (let i in props.dataList) {
-			prizeRel.value.push([
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-			]);
+			prizeRel.value.push([Math.floor(Math.random() * props.dataList.length), Math.floor(Math.random() * props.dataList.length), Math.floor(Math.random() * props.dataList.length)]);
 			prizeRel.value.push([i, i, i]);
 			luckyOptions.prizes.push({ fonts: [{ text: props.dataList[i], top: "15%" }] });
 		}
@@ -92,5 +69,29 @@
 		luckyRef.value.stop([0, 0, 0]);
 	});
 </script>
+
+<template>
+	<view class="re-flex-row-center re-mt-20">
+		<SlotMachine
+			width="600rpx"
+			height="600rpx"
+			ref="luckyRef"
+			:prizes="luckyOptions.prizes"
+			:blocks="luckyOptions.blocks"
+			:slots="luckyOptions.slots"
+			:default-config="luckyOptions.defaultConfig"
+			:default-style="luckyOptions.defaultStyle"
+			@end="endLucky"></SlotMachine>
+	</view>
+	<view class="re-mt-20 re-flex-row-center">
+		<van-button
+			@tap="startLucky"
+			:disabled="isLoading"
+			:loading="isLoading"
+			loading-type="spinner"
+			>开始</van-button
+		>
+	</view>
+</template>
 
 <style scoped lang="scss"></style>

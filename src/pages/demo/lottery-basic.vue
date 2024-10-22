@@ -1,45 +1,3 @@
-<template>
-	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
-	<view class="container">
-		<view v-show="!isLoading">
-			<text v-show="isInput" class="uni-title">请输入抽奖的内容（请用逗号或者空格分割）</text>
-			<textarea
-				v-show="isInput"
-				class="lottery-text re-mt-10"
-				placeholder="请输入抽奖的内容"
-				auto-focus="true"
-				:maxlength="-1"
-				v-model="data.lottery.text"
-			></textarea>
-			<van-button
-				class="re-mt-20"
-				v-show="isInput"
-				@tap="
-					isInput = false;
-					textToArray();
-				"
-			>
-				完成输入
-			</van-button>
-			<view class="uni-title re-mt-20">您输入的内容是</view>
-			<view>{{ data.lottery.array }}</view>
-			<view class="re-mt-20"><van-button v-show="!isInput" @tap="isInput = true">重新输入</van-button></view>
-		</view>
-		<view v-show="!isInput">
-			<view v-show="isLoading" class="uni-title">抽奖中......</view>
-			<view v-show="isLoading" class="uni-title re-mt-10">{{ data.result.progress }}</view>
-			<view v-show="isShowResult" class="uni-title lottery-result">抽奖结果 {{ data.result.startDateTime }}</view>
-			<view v-show="isShowResult" class="uni-title re-mt-10 lottery-result">{{ data.result.text }}</view>
-			<view class="re-mt-20">
-				<van-button v-show="!isLoading" @tap="startDraw">手动抽奖</van-button>
-				<van-button v-show="isLoading && data.result.auto <= 0" @tap="stopDraw">点击停止抽奖</van-button>
-				<van-button v-show="!isLoading" class="re-ml-20" @tap="startDrawAuto">自动抽奖</van-button>
-				<van-button v-show="isLoading && data.result.auto > 0" disabled="disabled">{{ data.result.auto }}s</van-button>
-			</view>
-		</view>
-	</view>
-</template>
-
 <script setup>
 	import { reactive, ref } from "vue";
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
@@ -131,6 +89,89 @@
 		}, 100);
 	};
 </script>
+
+<template>
+	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
+	<view class="container">
+		<view v-show="!isLoading">
+			<text
+				v-show="isInput"
+				class="uni-title"
+				>请输入抽奖的内容（请用逗号或者空格分割）</text
+			>
+			<textarea
+				v-show="isInput"
+				class="lottery-text re-mt-10"
+				placeholder="请输入抽奖的内容"
+				auto-focus="true"
+				:maxlength="-1"
+				v-model="data.lottery.text"></textarea>
+			<van-button
+				class="re-mt-20"
+				v-show="isInput"
+				@tap="
+					isInput = false;
+					textToArray();
+				">
+				完成输入
+			</van-button>
+			<view class="uni-title re-mt-20">您输入的内容是</view>
+			<view>{{ data.lottery.array }}</view>
+			<view class="re-mt-20"
+				><van-button
+					v-show="!isInput"
+					@tap="isInput = true"
+					>重新输入</van-button
+				></view
+			>
+		</view>
+		<view v-show="!isInput">
+			<view
+				v-show="isLoading"
+				class="uni-title"
+				>抽奖中......</view
+			>
+			<view
+				v-show="isLoading"
+				class="uni-title re-mt-10"
+				>{{ data.result.progress }}</view
+			>
+			<view
+				v-show="isShowResult"
+				class="uni-title lottery-result"
+				>抽奖结果 {{ data.result.startDateTime }}</view
+			>
+			<view
+				v-show="isShowResult"
+				class="uni-title re-mt-10 lottery-result"
+				>{{ data.result.text }}</view
+			>
+			<view class="re-mt-20">
+				<van-button
+					v-show="!isLoading"
+					@tap="startDraw"
+					>手动抽奖</van-button
+				>
+				<van-button
+					v-show="isLoading && data.result.auto <= 0"
+					@tap="stopDraw"
+					>点击停止抽奖</van-button
+				>
+				<van-button
+					v-show="!isLoading"
+					class="re-ml-20"
+					@tap="startDrawAuto"
+					>自动抽奖</van-button
+				>
+				<van-button
+					v-show="isLoading && data.result.auto > 0"
+					disabled="disabled"
+					>{{ data.result.auto }}s</van-button
+				>
+			</view>
+		</view>
+	</view>
+</template>
 
 <style lang="scss">
 	.lottery-result {

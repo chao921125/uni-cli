@@ -672,12 +672,7 @@ function isInExactLegendArea(currentPoints, area) {
 }
 
 function isInExactChartArea(currentPoints, opts, config) {
-	return (
-		currentPoints.x < opts.width - opts.area[1] + 10 &&
-		currentPoints.x > opts.area[3] - 10 &&
-		currentPoints.y > opts.area[0] &&
-		currentPoints.y < opts.height - opts.area[2]
-	);
+	return currentPoints.x < opts.width - opts.area[1] + 10 && currentPoints.x > opts.area[3] - 10 && currentPoints.y > opts.area[0] && currentPoints.y < opts.height - opts.area[2];
 }
 
 function findRadarChartCurrentIndex(currentPoints, radarData, count) {
@@ -725,12 +720,7 @@ function findFunnelChartCurrentIndex(currentPoints, funnelData) {
 	var currentIndex = -1;
 	for (var i = 0, len = funnelData.series.length; i < len; i++) {
 		var item = funnelData.series[i];
-		if (
-			currentPoints.x > item.funnelArea[0] &&
-			currentPoints.x < item.funnelArea[2] &&
-			currentPoints.y > item.funnelArea[1] &&
-			currentPoints.y < item.funnelArea[3]
-		) {
+		if (currentPoints.x > item.funnelArea[0] && currentPoints.x < item.funnelArea[2] && currentPoints.y > item.funnelArea[1] && currentPoints.y < item.funnelArea[3]) {
 			currentIndex = i;
 			break;
 		}
@@ -987,11 +977,7 @@ function getRadarDataPoints(angleList, center, radius, series, opts) {
 			tmp.angle = angleList[index];
 
 			tmp.proportion = item / maxData;
-			tmp.position = convertCoordinateOrigin(
-				radius * tmp.proportion * process * Math.cos(tmp.angle),
-				radius * tmp.proportion * process * Math.sin(tmp.angle),
-				center,
-			);
+			tmp.position = convertCoordinateOrigin(radius * tmp.proportion * process * Math.cos(tmp.angle), radius * tmp.proportion * process * Math.sin(tmp.angle), center);
 			listItem.data.push(tmp);
 		});
 
@@ -2734,12 +2720,7 @@ function drawMixDataPoints(series, opts, config, context) {
 
 function drawToolTipBridge(opts, config, context, process, eachSpacing, xAxisPoints) {
 	var toolTipOption = opts.extra.tooltip || {};
-	if (
-		toolTipOption.horizentalLine &&
-		opts.tooltip &&
-		process === 1 &&
-		(opts.type == "line" || opts.type == "area" || opts.type == "column" || opts.type == "candle" || opts.type == "mix")
-	) {
+	if (toolTipOption.horizentalLine && opts.tooltip && process === 1 && (opts.type == "line" || opts.type == "area" || opts.type == "column" || opts.type == "candle" || opts.type == "mix")) {
 		drawToolTipHorizentalLine(opts, config, context, eachSpacing, xAxisPoints);
 	}
 	context.save();
@@ -3121,10 +3102,7 @@ function drawPieDataPoints(series, opts, config, context) {
 		config.pieChartLinePadding = pieOption.activeRadius;
 	}
 
-	var radius = Math.min(
-		(opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_,
-		(opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding,
-	);
+	var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
 
 	series = getPieDataPoints(series, radius, process);
 
@@ -3140,13 +3118,7 @@ function drawPieDataPoints(series, opts, config, context) {
 				context.beginPath();
 				context.setFillStyle(hexToRgb(eachSeries.color, opts.extra.pie.activeOpacity || 0.5));
 				context.moveTo(centerPosition.x, centerPosition.y);
-				context.arc(
-					centerPosition.x,
-					centerPosition.y,
-					eachSeries._radius_ + activeRadius,
-					eachSeries._start_,
-					eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI,
-				);
+				context.arc(centerPosition.x, centerPosition.y, eachSeries._radius_ + activeRadius, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._proportion_ * Math.PI);
 				context.closePath();
 				context.fill();
 			}
@@ -3226,10 +3198,7 @@ function drawRoseDataPoints(series, opts, config, context) {
 		x: opts.area[3] + (opts.width - opts.area[1] - opts.area[3]) / 2,
 		y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2,
 	};
-	var radius = Math.min(
-		(opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_,
-		(opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding,
-	);
+	var radius = Math.min((opts.width - opts.area[1] - opts.area[3]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding - config._pieTextMaxLength_, (opts.height - opts.area[0] - opts.area[2]) / 2 - config.pieChartLinePadding - config.pieChartTextPadding);
 	var minRadius = roseOption.minRadius || radius * 0.5;
 
 	series = getRoseDataPoints(series, roseOption.type, minRadius, radius, process);
@@ -3247,13 +3216,7 @@ function drawRoseDataPoints(series, opts, config, context) {
 				context.beginPath();
 				context.setFillStyle(hexToRgb(eachSeries.color, roseOption.activeOpacity || 0.5));
 				context.moveTo(centerPosition.x, centerPosition.y);
-				context.arc(
-					centerPosition.x,
-					centerPosition.y,
-					activeRadius + eachSeries._radius_,
-					eachSeries._start_,
-					eachSeries._start_ + 2 * eachSeries._rose_proportion_ * Math.PI,
-				);
+				context.arc(centerPosition.x, centerPosition.y, activeRadius + eachSeries._radius_, eachSeries._start_, eachSeries._start_ + 2 * eachSeries._rose_proportion_ * Math.PI);
 				context.closePath();
 				context.fill();
 			}
@@ -3498,10 +3461,7 @@ function drawRadarDataPoints(series, opts, config, context) {
 		y: opts.area[0] + (opts.height - opts.area[0] - opts.area[2]) / 2,
 	};
 
-	var radius = Math.min(
-		centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin),
-		centerPosition.y - config.radarLabelTextMargin,
-	);
+	var radius = Math.min(centerPosition.x - (getMaxTextListLength(opts.categories) + config.radarLabelTextMargin), centerPosition.y - config.radarLabelTextMargin);
 	//TODO逻辑不对
 	radius -= opts.padding[1];
 
@@ -3524,11 +3484,7 @@ function drawRadarDataPoints(series, opts, config, context) {
 		context.setLineWidth(1 * opts.pixelRatio);
 		context.setStrokeStyle(radarOption.gridColor);
 		coordinateAngle.forEach(function (angle, index) {
-			var pos = convertCoordinateOrigin(
-				(radius / config.radarGridCount) * i * Math.cos(angle),
-				(radius / config.radarGridCount) * i * Math.sin(angle),
-				centerPosition,
-			);
+			var pos = convertCoordinateOrigin((radius / config.radarGridCount) * i * Math.cos(angle), (radius / config.radarGridCount) * i * Math.sin(angle), centerPosition);
 			if (index === 0) {
 				startPos = pos;
 				context.moveTo(pos.x, pos.y);
@@ -3845,12 +3801,7 @@ function getWordCloudPoint(opts, type) {
 						x = normalInt(-opts.width / 2, opts.width / 2, 5) - tWidth / 2;
 						y = normalInt(-opts.height / 2, opts.height / 2, 5) + tHeight / 2;
 						area = [y - 5 - tWidth + opts.width / 2, -x - 5 + opts.height / 2, y + 5 + opts.width / 2, -x + tHeight + 5 + opts.height / 2];
-						areav = [
-							opts.width - (opts.width / 2 - opts.height / 2) - (-x + tHeight + 5 + opts.height / 2) - 5,
-							opts.height / 2 - opts.width / 2 + (y - 5 - tWidth + opts.width / 2) - 5,
-							opts.width - (opts.width / 2 - opts.height / 2) - (-x + tHeight + 5 + opts.height / 2) + tHeight,
-							opts.height / 2 - opts.width / 2 + (y - 5 - tWidth + opts.width / 2) + tWidth + 5,
-						];
+						areav = [opts.width - (opts.width / 2 - opts.height / 2) - (-x + tHeight + 5 + opts.height / 2) - 5, opts.height / 2 - opts.width / 2 + (y - 5 - tWidth + opts.width / 2) - 5, opts.width - (opts.width / 2 - opts.height / 2) - (-x + tHeight + 5 + opts.height / 2) + tHeight, opts.height / 2 - opts.width / 2 + (y - 5 - tWidth + opts.width / 2) + tWidth + 5];
 						isCollision = collisionNew(areav, points, opts.height, opts.width);
 					} else {
 						x = normalInt(-opts.width / 2, opts.width / 2, 5) - tWidth / 2;
@@ -3912,48 +3863,24 @@ function drawWordCloudDataPoints(series, opts, config, context) {
 			if (points[i].areav[0] > 0) {
 				if (opts.tooltip) {
 					if (opts.tooltip.index == i) {
-						context.strokeText(
-							text,
-							(points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-							(points[i].areav[1] + 5 + tHeight - opts.height / 2) * process,
-						);
+						context.strokeText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
 					} else {
-						context.fillText(
-							text,
-							(points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-							(points[i].areav[1] + 5 + tHeight - opts.height / 2) * process,
-						);
+						context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
 					}
 				} else {
-					context.fillText(
-						text,
-						(points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-						(points[i].areav[1] + 5 + tHeight - opts.height / 2) * process,
-					);
+					context.fillText(text, (points[i].areav[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].areav[1] + 5 + tHeight - opts.height / 2) * process);
 				}
 			}
 		} else {
 			if (points[i].area[0] > 0) {
 				if (opts.tooltip) {
 					if (opts.tooltip.index == i) {
-						context.strokeText(
-							text,
-							(points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-							(points[i].area[1] + 5 + tHeight - opts.height / 2) * process,
-						);
+						context.strokeText(text, (points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
 					} else {
-						context.fillText(
-							text,
-							(points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-							(points[i].area[1] + 5 + tHeight - opts.height / 2) * process,
-						);
+						context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
 					}
 				} else {
-					context.fillText(
-						text,
-						(points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2,
-						(points[i].area[1] + 5 + tHeight - opts.height / 2) * process,
-					);
+					context.fillText(text, (points[i].area[0] + 5 - opts.width / 2) * process - (tWidth * (1 - process)) / 2, (points[i].area[1] + 5 + tHeight - opts.height / 2) * process);
 				}
 			}
 		}
@@ -4035,12 +3962,7 @@ function drawFunnelDataPoints(series, opts, config, context) {
 					context.fill();
 				}
 			}
-			series[i].funnelArea = [
-				centerPosition.x - series[i].radius,
-				centerPosition.y - eachSpacing * (i + 1),
-				centerPosition.x + series[i].radius,
-				centerPosition.y - eachSpacing * i,
-			];
+			series[i].funnelArea = [centerPosition.x - series[i].radius, centerPosition.y - eachSpacing * (i + 1), centerPosition.x + series[i].radius, centerPosition.y - eachSpacing * i];
 			context.beginPath();
 			context.setLineWidth(funnelOption.borderWidth * opts.pixelRatio);
 			context.setStrokeStyle(funnelOption.borderColor);
@@ -4721,12 +4643,10 @@ var Charts = function Charts(opts) {
 	config$$1.colors = opts.colors ? opts.colors : config$$1.colors;
 	config$$1.yAxisTitleWidth = opts.yAxis.disabled !== true && opts.yAxis.title ? config$$1.yAxisTitleWidth : 0;
 	if (opts.type == "pie" || opts.type == "ring") {
-		config$$1.pieChartLinePadding =
-			opts.dataLabel === false ? 0 : opts.extra.pie.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+		config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.pie.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
 	}
 	if (opts.type == "rose") {
-		config$$1.pieChartLinePadding =
-			opts.dataLabel === false ? 0 : opts.extra.rose.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
+		config$$1.pieChartLinePadding = opts.dataLabel === false ? 0 : opts.extra.rose.labelWidth * opts.pixelRatio || config$$1.pieChartLinePadding * opts.pixelRatio;
 	}
 	config$$1.pieChartTextPadding = opts.dataLabel === false ? 0 : config$$1.pieChartTextPadding * opts.pixelRatio;
 	config$$1.yAxisSplit = opts.yAxis.splitNumber ? opts.yAxis.splitNumber : config.yAxisSplit;
@@ -5052,15 +4972,7 @@ Charts.prototype.showToolTip = function (e) {
 			});
 			var seriesData = getSeriesDataItem(this.opts.series, index);
 			if (seriesData.length !== 0) {
-				var _getToolTipData = getCandleToolTipData(
-						this.opts.series[0].data,
-						seriesData,
-						this.opts.chartData.calPoints,
-						index,
-						this.opts.categories,
-						this.opts.extra.candle,
-						option,
-					),
+				var _getToolTipData = getCandleToolTipData(this.opts.series[0].data, seriesData, this.opts.chartData.calPoints, index, this.opts.categories, this.opts.extra.candle, option),
 					textList = _getToolTipData.textList,
 					offset = _getToolTipData.offset;
 				offset.y = _touches$.y;

@@ -1,41 +1,3 @@
-<template>
-	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
-	<view class="container">
-		<view v-if="isInput">
-			<view class="uni-title">请选择抽奖的方式</view>
-			<view class="re-mt-10">
-				<van-radio-group :value="data.lottery.type" direction="horizontal" @change="changeType">
-					<van-radio name="1">大转盘</van-radio>
-					<van-radio name="2">九宫格</van-radio>
-					<van-radio name="3">老虎机(不建议使用)</van-radio>
-				</van-radio-group>
-			</view>
-			<view class="uni-title re-mt-20">请输入抽奖的内容（请用逗号或者空格分割）</view>
-			<textarea
-				class="lottery-text re-mt-10"
-				placeholder="请输入抽奖的内容"
-				auto-focus="true"
-				:maxlength="-1"
-				v-model="data.lottery.text"
-				@input="textToArray()"
-				@confirm="textToArray()"
-			></textarea>
-			<view class="uni-title re-mt-20">您输入的内容是 {{ data.lottery.array.length }}</view>
-			<view>{{ data.lottery.array }}</view>
-			<view class="re-mt-20"><van-button @tap="startLottery" type="info" block>开始抽奖</van-button></view>
-		</view>
-		<view v-if="!isInput">
-			<van-button @tap="backLottery">返回</van-button>
-			<view v-show="data.lottery.result" class="lottery-result">
-				抽奖结果[{{ data.lottery.resultTime }}]：{{ data.lottery.result === "null" ? "未中奖" : data.lottery.result }}
-			</view>
-			<lottery-wheel v-if="data.lottery.type === '1'" :dataList="data.lottery.array" @get-result="getResult"></lottery-wheel>
-			<lottery-grid v-if="data.lottery.type === '2'" :dataList="data.lottery.array" @get-result="getResult"></lottery-grid>
-			<lottery-machine v-if="data.lottery.type === '3'" :dataList="data.lottery.array" @get-result="getResult"></lottery-machine>
-		</view>
-	</view>
-</template>
-
 <script setup>
 	import { reactive, ref } from "vue";
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
@@ -112,6 +74,64 @@
 		data.lottery.result = rel;
 	};
 </script>
+
+<template>
+	<re-van-nav-bar title="抽奖"></re-van-nav-bar>
+	<view class="container">
+		<view v-if="isInput">
+			<view class="uni-title">请选择抽奖的方式</view>
+			<view class="re-mt-10">
+				<van-radio-group
+					:value="data.lottery.type"
+					direction="horizontal"
+					@change="changeType">
+					<van-radio name="1">大转盘</van-radio>
+					<van-radio name="2">九宫格</van-radio>
+					<van-radio name="3">老虎机(不建议使用)</van-radio>
+				</van-radio-group>
+			</view>
+			<view class="uni-title re-mt-20">请输入抽奖的内容（请用逗号或者空格分割）</view>
+			<textarea
+				class="lottery-text re-mt-10"
+				placeholder="请输入抽奖的内容"
+				auto-focus="true"
+				:maxlength="-1"
+				v-model="data.lottery.text"
+				@input="textToArray()"
+				@confirm="textToArray()"></textarea>
+			<view class="uni-title re-mt-20">您输入的内容是 {{ data.lottery.array.length }}</view>
+			<view>{{ data.lottery.array }}</view>
+			<view class="re-mt-20"
+				><van-button
+					@tap="startLottery"
+					type="info"
+					block
+					>开始抽奖</van-button
+				></view
+			>
+		</view>
+		<view v-if="!isInput">
+			<van-button @tap="backLottery">返回</van-button>
+			<view
+				v-show="data.lottery.result"
+				class="lottery-result">
+				抽奖结果[{{ data.lottery.resultTime }}]：{{ data.lottery.result === "null" ? "未中奖" : data.lottery.result }}
+			</view>
+			<lottery-wheel
+				v-if="data.lottery.type === '1'"
+				:dataList="data.lottery.array"
+				@get-result="getResult"></lottery-wheel>
+			<lottery-grid
+				v-if="data.lottery.type === '2'"
+				:dataList="data.lottery.array"
+				@get-result="getResult"></lottery-grid>
+			<lottery-machine
+				v-if="data.lottery.type === '3'"
+				:dataList="data.lottery.array"
+				@get-result="getResult"></lottery-machine>
+		</view>
+	</view>
+</template>
 
 <style lang="scss">
 	.lottery-text {
