@@ -1,3 +1,42 @@
+<script setup>
+	import { onMounted, ref } from "vue";
+	import webSiteArray from "@/plugins/api/data.json";
+
+	const isLoading = ref(true);
+
+	const isShowDialog = ref(false);
+	const openDialog = () => {
+		isShowDialog.value = true;
+	};
+	const closeDialog = () => {
+		isShowDialog.value = false;
+	};
+	const webSiteActive = ref(0);
+	const changeWebSite = (e) => {
+		webSiteActive.value = e.detail;
+		closeDialog();
+	};
+
+	const copyData = (url) => {
+		uni.setClipboardData({
+			data: url,
+			success: () => {
+				uni.showToast({
+					title: "已复制",
+				});
+			},
+		});
+	};
+
+	onMounted(() => {
+		setTimeout(() => {
+			isLoading.value = false;
+		}, 2000);
+	});
+	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
+	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
+</script>
+
 <template>
 	<view class="container">
 		<van-row gutter="20">
@@ -58,45 +97,6 @@
 		</van-sidebar>
 	</van-popup>
 </template>
-
-<script setup>
-	import { onMounted, ref } from "vue";
-	import webSiteArray from "@/plugins/api/data.json";
-
-	const isLoading = ref(true);
-
-	const isShowDialog = ref(false);
-	const openDialog = () => {
-		isShowDialog.value = true;
-	};
-	const closeDialog = () => {
-		isShowDialog.value = false;
-	};
-	const webSiteActive = ref(0);
-	const changeWebSite = (e) => {
-		webSiteActive.value = e.detail;
-		closeDialog();
-	};
-
-	const copyData = (url) => {
-		uni.setClipboardData({
-			data: url,
-			success: () => {
-				uni.showToast({
-					title: "已复制",
-				});
-			},
-		});
-	};
-
-	onMounted(() => {
-		setTimeout(() => {
-			isLoading.value = false;
-		}, 2000);
-	});
-	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
-	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
-</script>
 
 <style lang="scss">
 	.website-tips {

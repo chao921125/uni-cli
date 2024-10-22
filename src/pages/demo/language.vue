@@ -1,31 +1,3 @@
-<template>
-	<re-van-nav-bar title="国际化"></re-van-nav-bar>
-	<view class="container">
-		<view class="title">{{ $t("index.demo") }}</view>
-		<view class="description">{{ $t("index.demo-description") }}</view>
-		<view class="detail-link">
-			{{ $t("index.detail") }}:
-			<text class="link">https://uniapp.dcloud.net.cn/collocation/i18n</text>
-		</view>
-		<view class="locale-setting">{{ $t("index.language-info") }}</view>
-		<view class="list-item">
-			<text class="k">{{ $t("index.system-language") }}:</text>
-			<text class="v">{{ systemLocale }}</text>
-		</view>
-		<view class="list-item">
-			<text class="k">{{ $t("index.application-language") }}:</text>
-			<text class="v">{{ applicationLocale }}</text>
-		</view>
-		<view class="locale-setting">{{ $t("index.language") }}</view>
-		<view class="locale-list">
-			<view class="locale-item" v-for="(item, index) in locales" :key="index" @tap="onLocaleChange(item)">
-				<text class="text">{{ item.text }}</text>
-				<text class="icon-check" v-if="item.code == applicationLocale"></text>
-			</view>
-		</view>
-	</view>
-</template>
-
 <script setup>
 	import { getCurrentInstance, computed } from "vue";
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
@@ -80,6 +52,34 @@
 		];
 	});
 </script>
+
+<template>
+	<re-van-nav-bar title="国际化"></re-van-nav-bar>
+	<view class="container">
+		<view class="title">{{ $t("index.demo") }}</view>
+		<view class="description">{{ $t("index.demo-description") }}</view>
+		<view class="detail-link">
+			{{ $t("index.detail") }}:
+			<text class="link">https://uniapp.dcloud.net.cn/collocation/i18n</text>
+		</view>
+		<view class="locale-setting">{{ $t("index.language-info") }}</view>
+		<view class="list-item">
+			<text class="k">{{ $t("index.system-language") }}:</text>
+			<text class="v">{{ systemLocale }}</text>
+		</view>
+		<view class="list-item">
+			<text class="k">{{ $t("index.application-language") }}:</text>
+			<text class="v">{{ applicationLocale }}</text>
+		</view>
+		<view class="locale-setting">{{ $t("index.language") }}</view>
+		<view class="locale-list">
+			<view class="locale-item" v-for="(item, index) in locales" :key="index" @tap="onLocaleChange(item)">
+				<text class="text">{{ item.text }}</text>
+				<text class="icon-check" v-if="item.code == applicationLocale"></text>
+			</view>
+		</view>
+	</view>
+</template>
 
 <style lang="scss">
 	.title {

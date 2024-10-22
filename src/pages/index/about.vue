@@ -1,3 +1,11 @@
+<script setup>
+	import Icon from "@/static/logo.png";
+	import Gzh from "@/static/images/about/gzh.png";
+	import PayWx from "@/static/images/about/pay-wx.png";
+	import PayZfb from "@/static/images/about/pay-zfb.png";
+	import HbZfb from "@/static/images/about/hb-zfb.png";
+</script>
+
 <template>
 	<view class="container">
 		<view class="re-flex-row-center">
@@ -14,13 +22,5 @@
 		</view>
 	</view>
 </template>
-
-<script setup>
-	import Icon from "@/static/logo.png";
-	import Gzh from "@/static/images/about/gzh.png";
-	import PayWx from "@/static/images/about/pay-wx.png";
-	import PayZfb from "@/static/images/about/pay-zfb.png";
-	import HbZfb from "@/static/images/about/hb-zfb.png";
-</script>
 
 <style lang="scss"></style>

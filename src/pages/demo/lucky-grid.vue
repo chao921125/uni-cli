@@ -1,20 +1,3 @@
-<template>
-	<re-van-nav-bar title="九宫格"></re-van-nav-bar>
-	<view class="re-flex-row-center re-mt-20">
-		<LuckyGrid
-			width="600rpx"
-			height="600rpx"
-			ref="luckyRef"
-			:prizes="luckyOptions.prizes"
-			:blocks="luckyOptions.blocks"
-			:buttons="luckyOptions.buttons"
-			:default-style="luckyOptions.defaultStyle"
-			@start="startLucky"
-			@end="endLucky"
-		></LuckyGrid>
-	</view>
-</template>
-
 <script setup name="">
 	import LuckyGrid from "@lucky-canvas/uni/lucky-grid";
 	import ReVanNavBar from "@/pages/comonents/re-van-nav-bar.vue";
@@ -65,5 +48,22 @@
 		luckyRef.value.stop(0);
 	});
 </script>
+
+<template>
+	<re-van-nav-bar title="九宫格"></re-van-nav-bar>
+	<view class="re-flex-row-center re-mt-20">
+		<LuckyGrid
+			width="600rpx"
+			height="600rpx"
+			ref="luckyRef"
+			:prizes="luckyOptions.prizes"
+			:blocks="luckyOptions.blocks"
+			:buttons="luckyOptions.buttons"
+			:default-style="luckyOptions.defaultStyle"
+			@start="startLucky"
+			@end="endLucky"
+		></LuckyGrid>
+	</view>
+</template>
 
 <style scoped lang="scss"></style>

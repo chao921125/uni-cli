@@ -1,18 +1,3 @@
-<template>
-	<view class="re-flex-row-center re-mt-20">
-		<LuckyWheel
-			width="600rpx"
-			height="600rpx"
-			ref="luckyRef"
-			:prizes="luckyOptions.prizes"
-			:blocks="luckyOptions.blocks"
-			:buttons="luckyOptions.buttons"
-			@start="startLucky"
-			@end="endLucky"
-		></LuckyWheel>
-	</view>
-</template>
-
 <script setup name="">
 	import LuckyWheel from "@lucky-canvas/uni/lucky-wheel";
 	import { onMounted, reactive, ref } from "vue";
@@ -72,5 +57,20 @@
 		luckyRef.value.stop(0);
 	});
 </script>
+
+<template>
+	<view class="re-flex-row-center re-mt-20">
+		<LuckyWheel
+			width="600rpx"
+			height="600rpx"
+			ref="luckyRef"
+			:prizes="luckyOptions.prizes"
+			:blocks="luckyOptions.blocks"
+			:buttons="luckyOptions.buttons"
+			@start="startLucky"
+			@end="endLucky"
+		></LuckyWheel>
+	</view>
+</template>
 
 <style scoped lang="scss"></style>

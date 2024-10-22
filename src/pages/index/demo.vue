@@ -1,3 +1,13 @@
+<script setup>
+	import router from "@/config/router.js";
+
+	const toPage = (url) => {
+		uni.navigateTo({
+			url: url,
+		});
+	};
+</script>
+
 <template>
 	<view class="container">
 		<view class="re-flex-wrap">
@@ -17,15 +27,5 @@
 		</van-row>
 	</view>
 </template>
-
-<script setup>
-	import router from "@/config/router.js";
-
-	const toPage = (url) => {
-		uni.navigateTo({
-			url: url,
-		});
-	};
-</script>
 
 <style lang="scss"></style>
