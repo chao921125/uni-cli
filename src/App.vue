@@ -91,9 +91,9 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	/* 组件 */
-	/* @use "@/wxcomponents/vant/common/index.wxss"; */
+	// @use "@/wxcomponents/vant/common/index.wxss";
 	// #ifdef H5
 	/* 字体 */
 	@use "@/static/fonts/index.css";
