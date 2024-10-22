@@ -91,8 +91,7 @@
 			:buttons="luckyOptions.buttons"
 			:default-style="luckyOptions.defaultStyle"
 			@start="startLucky"
-			@end="endLucky"
-		></LuckyGrid>
+			@end="endLucky"></LuckyGrid>
 	</view>
 </template>
 

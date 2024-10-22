@@ -76,11 +76,16 @@
 			:slots="luckyOptions.slots"
 			:default-config="luckyOptions.defaultConfig"
 			:default-style="luckyOptions.defaultStyle"
-			@end="endLucky"
-		></SlotMachine>
+			@end="endLucky"></SlotMachine>
 	</view>
 	<view class="re-mt-20 re-flex-row-center">
-		<van-button @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
+		<van-button
+			@tap="startLucky"
+			:disabled="isLoading"
+			:loading="isLoading"
+			loading-type="spinner"
+			>开始</van-button
+		>
 	</view>
 </template>
 

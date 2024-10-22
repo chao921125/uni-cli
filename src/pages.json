@@ -88,34 +88,6 @@
     "backgroundColor": "#F8F8F8",
     "backgroundTextStyle": "dark",
     "onReachBottomDistance": 50,
-    "usingComponents": {
-			"van-config-provider": "/wxcomponents/vant/config-provider/index",
-			"van-transition": "/wxcomponents/vant/transition/index",
-			"van-loading": "/wxcomponents/vant/loading/index",
-			"van-icon": "/wxcomponents/vant/icon/index",
-			"van-row": "/wxcomponents/vant/row/index",
-			"van-col": "/wxcomponents/vant/col/index",
-			"van-cell": "/wxcomponents/vant/cell/index",
-			"van-cell-group": "/wxcomponents/vant/cell-group/index",
-			"van-grid": "/wxcomponents/vant/grid/index",
-			"van-grid-item": "/wxcomponents/vant/grid-item/index",
-			"van-toast": "/wxcomponents/vant/toast/index",
-			"van-popup": "/wxcomponents/vant/popup/index",
-			"van-dialog": "/wxcomponents/vant/dialog/index",
-			"van-calendar": "/wxcomponents/vant/calendar/index",
-			"van-cascader": "/wxcomponents/vant/cascader/index",
-			"van-nav-bar": "/wxcomponents/vant/nav-bar/index",
-			"van-tabbar": "/wxcomponents/vant/tabbar/index",
-			"van-tabbar-item": "/wxcomponents/vant/tabbar-item/index",
-			"van-button": "/wxcomponents/vant/button/index",
-			"van-image": "/wxcomponents/vant/image/index",
-			"van-field": "/wxcomponents/vant/field/index",
-			"van-sidebar": "/wxcomponents/vant/sidebar/index",
-			"van-sidebar-item": "/wxcomponents/vant/sidebar-item/index",
-			"van-notify": "/wxcomponents/vant/notify/index",
-			"van-notice-bar": "/wxcomponents/vant/notice-bar/index",
-			"van-radio": "/wxcomponents/vant/radio/index",
-			"van-radio-group": "/wxcomponents/vant/radio-group/index"
-		}
+    "usingComponents": {}
   }
 }

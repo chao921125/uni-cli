@@ -36,17 +36,25 @@
 <template>
 	<template v-if="!isLoading">
 		<view class="re-wh-full re-wh-fill re-text-center welcome-box">
-			<van-loading type="spinner" color="#1989fa">加载中...</van-loading>
+			<van-loading
+				type="spinner"
+				color="#1989fa"
+				>加载中...</van-loading
+			>
 		</view>
 	</template>
 	<template v-else>
 		<view class="re-w-full">
-			<re-van-nav-bar :title="tabBarTitle" :isShowLeft="false"></re-van-nav-bar>
+			<re-van-nav-bar
+				:title="tabBarTitle"
+				:isShowLeft="false"></re-van-nav-bar>
 			<about v-if="tabBarIndex === 3"></about>
 			<demo v-else-if="tabBarIndex === 1"></demo>
 			<tutorial v-else-if="tabBarIndex === 2"></tutorial>
 			<home v-else></home>
-			<re-van-tab-bar :index="tabBarIndex" @change="changeIndex"></re-van-tab-bar>
+			<re-van-tab-bar
+				:index="tabBarIndex"
+				@change="changeIndex"></re-van-tab-bar>
 		</view>
 	</template>
 </template>

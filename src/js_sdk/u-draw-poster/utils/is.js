@@ -1,15 +1,11 @@
 import "../chunk-GSFXI7XO.js";
 function isFunction(value) {
-  return typeof value === "function";
+	return typeof value === "function";
 }
 function isObject(value) {
-  return typeof value === "object";
+	return typeof value === "object";
 }
 function isString(value) {
-  return typeof value === "string";
+	return typeof value === "string";
 }
-export {
-  isFunction,
-  isObject,
-  isString
-};
+export { isFunction, isObject, isString };

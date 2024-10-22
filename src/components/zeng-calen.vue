@@ -19,20 +19,38 @@
 			<!-- 关闭弹框end -->
 			<view class="calendar-wrapper">
 				<!-- 选择月份 -->
-				<view class="header" v-if="headerBar">
-					<view class="iconfont iconarrow-left-bold pre" @tap="changeMonth('pre')"></view>
+				<view
+					class="header"
+					v-if="headerBar">
+					<view
+						class="iconfont iconarrow-left-bold pre"
+						@tap="changeMonth('pre')"></view>
 					<view>{{ y + "-" + formatNum(m) + "" }}</view>
-					<view class="iconfont iconarrow-left-bold-copy next" @tap="changeMonth('next')"></view>
+					<view
+						class="iconfont iconarrow-left-bold-copy next"
+						@tap="changeMonth('next')"></view>
 				</view>
 				<!-- 星期栏 -->
 				<view class="week">
-					<view class="week-day" v-for="(item, index) in weekDay" :key="index">{{ item }}</view>
+					<view
+						class="week-day"
+						v-for="(item, index) in weekDay"
+						:key="index"
+						>{{ item }}</view
+					>
 				</view>
 				<!-- {{choose}} -->
 				<!-- 日历数字 -->
-				<view class="content" :style="{ height: height }">
-					<view :style="{ top: positionTop + 'rpx' }" class="days">
-						<view class="item" v-for="(item, index) in dates" :key="index">
+				<view
+					class="content"
+					:style="{ height: height }">
+					<view
+						:style="{ top: positionTop + 'rpx' }"
+						class="days">
+						<view
+							class="item"
+							v-for="(item, index) in dates"
+							:key="index">
 							<view
 								class="day"
 								@tap="selectOne(item, $event)"
@@ -42,15 +60,13 @@
 									nolm: !item.isCurM, //不在本月的日
 									today: isToday(item.year, item.month, item.date), //当日日期
 									isWorkDay: isWorkDay(item.year, item.month, item.date), //周一至周五
-								}"
-							>
+								}">
 								{{ Number(item.date) }}
 							</view>
 							<view
 								class="iconfont iconyixuanzhong"
 								:class="{ markDays: getChoose(`${item.year}-${item.month}-${item.date}`) }"
-								v-if="getChoose(`${item.year}-${item.month}-${item.date}`) && !isMarkDay(item.year, item.month, item.date) && item.isCurM"
-							></view>
+								v-if="getChoose(`${item.year}-${item.month}-${item.date}`) && !isMarkDay(item.year, item.month, item.date) && item.isCurM"></view>
 							<!-- <view :class="{markDay:getChoose(`${item.year}-${item.month}-${item.date}`)}"
 										v-if="getChoose(`${item.year}-${item.month}-${item.date}`) && !isMarkDay(item.year, item.month, item.date)&&item.isCurM">
 										已投标</view> -->

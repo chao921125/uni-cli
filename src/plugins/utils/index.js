@@ -31,17 +31,7 @@ export default {
 		let _format = function (number) {
 			return number < 10 ? "0" + number : number;
 		};
-		return (
-			date.getFullYear() +
-			"/" +
-			_format(date.getMonth() + 1) +
-			"/" +
-			_format(date.getDate()) +
-			"-" +
-			_format(date.getHours()) +
-			":" +
-			_format(date.getMinutes())
-		);
+		return date.getFullYear() + "/" + _format(date.getMonth() + 1) + "/" + _format(date.getDate()) + "-" + _format(date.getHours()) + ":" + _format(date.getMinutes());
 	},
 
 	parse: (str) => {
@@ -165,7 +155,7 @@ export default {
 					r: parseInt(result[1], 16),
 					g: parseInt(result[2], 16),
 					b: parseInt(result[3], 16),
-			  }
+				}
 			: null;
 	},
 	toast: function (text, duration, success) {

@@ -1,6 +1,6 @@
 <script>
 	import config from "@/config/index";
-
+	
 	export default {
 		globalData: {
 			title: "CC NET",
@@ -91,9 +91,9 @@
 	};
 </script>
 
-<style lang="scss">
+<style>
 	/* 组件 */
-	@use "@/wxcomponents/vant/common/index.wxss";
+	/* @use "@/wxcomponents/vant/common/index.wxss"; */
 	// #ifdef H5
 	/* 字体 */
 	@use "@/static/fonts/index.css";

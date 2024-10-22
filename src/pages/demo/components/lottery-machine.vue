@@ -55,11 +55,7 @@
 	const setData = () => {
 		luckyOptions.prizes = [];
 		for (let i in props.dataList) {
-			prizeRel.value.push([
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-				Math.floor(Math.random() * props.dataList.length),
-			]);
+			prizeRel.value.push([Math.floor(Math.random() * props.dataList.length), Math.floor(Math.random() * props.dataList.length), Math.floor(Math.random() * props.dataList.length)]);
 			prizeRel.value.push([i, i, i]);
 			luckyOptions.prizes.push({ fonts: [{ text: props.dataList[i], top: "15%" }] });
 		}
@@ -85,11 +81,16 @@
 			:slots="luckyOptions.slots"
 			:default-config="luckyOptions.defaultConfig"
 			:default-style="luckyOptions.defaultStyle"
-			@end="endLucky"
-		></SlotMachine>
+			@end="endLucky"></SlotMachine>
 	</view>
 	<view class="re-mt-20 re-flex-row-center">
-		<van-button @tap="startLucky" :disabled="isLoading" :loading="isLoading" loading-type="spinner">开始</van-button>
+		<van-button
+			@tap="startLucky"
+			:disabled="isLoading"
+			:loading="isLoading"
+			loading-type="spinner"
+			>开始</van-button
+		>
 	</view>
 </template>
 

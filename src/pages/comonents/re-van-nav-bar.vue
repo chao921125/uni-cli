@@ -45,7 +45,9 @@
 		<!-- #ifdef APP-PLUS -->
 		<view class="nav-status"></view>
 		<!-- #endif -->
-		<van-nav-bar :left-arrow="props.isShowLeft" @click-left="clickLeft">
+		<van-nav-bar
+			:left-arrow="props.isShowLeft"
+			@click-left="clickLeft">
 			<template v-slot:title>{{ props.title }}</template>
 		</van-nav-bar>
 	</view>

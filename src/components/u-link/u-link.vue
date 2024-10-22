@@ -1,5 +1,11 @@
 <template>
-	<text style="text-decoration: underline" :href="href" @tap="openURL" :inWhiteList="inWhiteList">{{ text }}</text>
+	<text
+		style="text-decoration: underline"
+		:href="href"
+		@tap="openURL"
+		:inWhiteList="inWhiteList"
+		>{{ text }}</text
+	>
 </template>
 
 <script>

@@ -50,8 +50,17 @@
 
 <template>
 	<view class="container">
-		<view v-for="(item, index) in listData" :key="item.key + index" class="re-mb-20">
-			<uni-link color="#00ffff" :href="item.url" copyTips="" @tap="toWeb(item.url)">{{ index + 1 }}、 {{ item.title }}</uni-link>
+		<view
+			v-for="(item, index) in listData"
+			:key="item.key + index"
+			class="re-mb-20">
+			<uni-link
+				color="#00ffff"
+				:href="item.url"
+				copyTips=""
+				@tap="toWeb(item.url)"
+				>{{ index + 1 }}、 {{ item.title }}</uni-link
+			>
 		</view>
 	</view>
 </template>

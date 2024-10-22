@@ -5,8 +5,7 @@
 		:style="{ width: containerWidth + 'rpx', height: containerWidth + 'rpx' }"
 		@touchstart.stop="onTouchStart"
 		@touchmove.stop="onTouchMove"
-		@touchend.stop="onTouchEnd"
-	>
+		@touchend.stop="onTouchEnd">
 		<!-- 同级 v-for 的 key 重复会有问题，需要套一层。 -->
 		<!-- 9 个圆 -->
 		<view>
@@ -15,8 +14,7 @@
 				:key="i"
 				class="cycle"
 				:class="{ check: item.check }"
-				:style="{ left: item.style.left, top: item.style.top, width: item.style.width, height: item.style.width }"
-			>
+				:style="{ left: item.style.left, top: item.style.top, width: item.style.width, height: item.style.width }">
 			</view>
 		</view>
 		<view>
@@ -31,8 +29,7 @@
 					width: item.activeWidth,
 					'-webkit-transform': 'rotate(' + item.activeRotate + ')',
 					transform: 'rotate(' + item.activeRotate + ')',
-				}"
-			>
+				}">
 			</view>
 		</view>
 		<!-- 最后一个激活的锁与当前位置之间的线段 -->
@@ -44,8 +41,7 @@
 				width: activeLine.activeWidth,
 				'-webkit-transform': 'rotate(' + activeLine.activeRotate + ')',
 				transform: 'rotate(' + activeLine.activeRotate + ')',
-			}"
-		>
+			}">
 		</view>
 	</view>
 </template>

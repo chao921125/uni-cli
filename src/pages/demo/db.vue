@@ -37,8 +37,14 @@
 <template>
 	<view class="container">
 		<view>{{ $t("schema.name") }}</view>
-		<input v-model="name" class="input" />
-		<button type="primary" @tap="add">{{ $t("schema.add") }}</button>
+		<input
+			v-model="name"
+			class="input" />
+		<button
+			type="primary"
+			@tap="add"
+			>{{ $t("schema.add") }}</button
+		>
 	</view>
 </template>
 

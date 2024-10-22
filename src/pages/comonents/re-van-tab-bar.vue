@@ -24,8 +24,17 @@
 
 <template>
 	<view>
-		<van-tabbar :active="active" @change="changePage" :placeholder="true" active-color="#1989fa">
-			<van-tabbar-item v-for="item in constants.TabBar" :icon="item.icon" :key="item.path">{{ item.name }}</van-tabbar-item>
+		<van-tabbar
+			:active="active"
+			@change="changePage"
+			:placeholder="true"
+			active-color="#1989fa">
+			<van-tabbar-item
+				v-for="item in constants.TabBar"
+				:icon="item.icon"
+				:key="item.path"
+				>{{ item.name }}</van-tabbar-item
+			>
 		</van-tabbar>
 	</view>
 </template>

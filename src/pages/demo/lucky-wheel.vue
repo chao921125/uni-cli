@@ -54,8 +54,7 @@
 			:blocks="luckyOptions.blocks"
 			:buttons="luckyOptions.buttons"
 			@start="startLucky"
-			@end="endLucky"
-		></LuckyWheel>
+			@end="endLucky"></LuckyWheel>
 	</view>
 </template>
 

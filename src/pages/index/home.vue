@@ -41,21 +41,38 @@
 	<view class="container">
 		<van-row gutter="20">
 			<van-col span="24">
-				<van-notice-bar left-icon="volume-o" text="文章持续更新中，内容最后更新时间：2023-11-03 21:12:21" />
+				<van-notice-bar
+					left-icon="volume-o"
+					text="文章持续更新中，内容最后更新时间：2023-11-03 21:12:21" />
 			</van-col>
 			<van-col span="24">
 				<view class="re-pb-20 re-mt-20 re-flex-row-between">
 					<text class="">当前分类：{{ webSiteArray.websiteType[webSiteActive].label }}</text>
-					<van-button @tap="openDialog"><van-icon name="wap-nav" size="30" /></van-button>
+					<van-button @tap="openDialog"
+						><van-icon
+							name="wap-nav"
+							size="30"
+					/></van-button>
 				</view>
 				<view class="re-mt-20 website-tips">点击名称即可完成复制,在手机浏览器打开即可</view>
 			</van-col>
 			<van-col span="24">
-				<van-skeleton row="3" :border="false" clickable loading="{{ isLoading }}">
+				<van-skeleton
+					row="3"
+					:border="false"
+					clickable
+					loading="{{ isLoading }}">
 					<van-grid column-num="2">
-						<van-grid-item use-slot v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children" :key="index">
+						<van-grid-item
+							use-slot
+							v-for="(item, index) in webSiteArray.websiteType[webSiteActive].children"
+							:key="index">
 							<view class="re-mt-10 re-mr-20 re-flex cc-card home-website">
-								<van-image class="card-icon" width="15" height="15" :src="item.icon"></van-image>
+								<van-image
+									class="card-icon"
+									width="15"
+									height="15"
+									:src="item.icon"></van-image>
 								<view class="re-ml-30">
 									<view class="card-title">
 										<uni-link
@@ -66,8 +83,7 @@
 											showUnderLine="false"
 											copyTips="已复制,请在浏览器打开"
 											@click="copyData(item.url)"
-											@tap="copyData(item.url)"
-										>
+											@tap="copyData(item.url)">
 											{{ item.name }}
 										</uni-link>
 									</view>
@@ -90,10 +106,16 @@
 		custom-class="home-dialog"
 		custom-style="width: 50%; height: 100%; padding-top: 50px;"
 		@close="closeDialog"
-		@click-overlay="closeDialog"
-	>
-		<van-sidebar :active-key="webSiteActive" class="home-sidebar" @change="changeWebSite">
-			<van-sidebar-item v-for="(item, index) in webSiteArray.websiteType" :key="index" :title="item.label" :dot="item.isRecommend" />
+		@click-overlay="closeDialog">
+		<van-sidebar
+			:active-key="webSiteActive"
+			class="home-sidebar"
+			@change="changeWebSite">
+			<van-sidebar-item
+				v-for="(item, index) in webSiteArray.websiteType"
+				:key="index"
+				:title="item.label"
+				:dot="item.isRecommend" />
 		</van-sidebar>
 	</van-popup>
 </template>

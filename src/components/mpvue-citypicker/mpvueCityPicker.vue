@@ -1,21 +1,56 @@
 <template>
 	<div class="mpvue-picker">
-		<div :class="{ pickerMask: showPicker }" @tap="maskClick" catchtouchmove="true"></div>
-		<div class="mpvue-picker-content" :class="{ 'mpvue-picker-view-show': showPicker }">
-			<div class="mpvue-picker__hd" catchtouchmove="true">
-				<div class="mpvue-picker__action" @tap="pickerCancel">取消</div>
-				<div class="mpvue-picker__action" :style="{ color: themeColor }" @tap="pickerConfirm">确定</div>
+		<div
+			:class="{ pickerMask: showPicker }"
+			@tap="maskClick"
+			catchtouchmove="true"></div>
+		<div
+			class="mpvue-picker-content"
+			:class="{ 'mpvue-picker-view-show': showPicker }">
+			<div
+				class="mpvue-picker__hd"
+				catchtouchmove="true">
+				<div
+					class="mpvue-picker__action"
+					@tap="pickerCancel"
+					>取消</div
+				>
+				<div
+					class="mpvue-picker__action"
+					:style="{ color: themeColor }"
+					@tap="pickerConfirm"
+					>确定</div
+				>
 			</div>
-			<picker-view indicator-style="height: 40px;" class="mpvue-picker-view" :value="pickerValue" @change="pickerChange">
+			<picker-view
+				indicator-style="height: 40px;"
+				class="mpvue-picker-view"
+				:value="pickerValue"
+				@change="pickerChange">
 				<block>
 					<picker-view-column>
-						<div class="picker-item" v-for="(item, index) in provinceDataList" :key="index">{{ item.label }}</div>
+						<div
+							class="picker-item"
+							v-for="(item, index) in provinceDataList"
+							:key="index"
+							>{{ item.label }}</div
+						>
 					</picker-view-column>
 					<picker-view-column>
-						<div class="picker-item" v-for="(item, index) in cityDataList" :key="index">{{ item.label }}</div>
+						<div
+							class="picker-item"
+							v-for="(item, index) in cityDataList"
+							:key="index"
+							>{{ item.label }}</div
+						>
 					</picker-view-column>
 					<picker-view-column>
-						<div class="picker-item" v-for="(item, index) in areaDataList" :key="index">{{ item.label }}</div>
+						<div
+							class="picker-item"
+							v-for="(item, index) in areaDataList"
+							:key="index"
+							>{{ item.label }}</div
+						>
 					</picker-view-column>
 				</block>
 			</picker-view>
@@ -129,12 +164,7 @@
 				this.$emit(emitName, pickObj);
 			},
 			_getLabel() {
-				let pcikerLabel =
-					this.provinceDataList[this.pickerValue[0]].label +
-					"-" +
-					this.cityDataList[this.pickerValue[1]].label +
-					"-" +
-					this.areaDataList[this.pickerValue[2]].label;
+				let pcikerLabel = this.provinceDataList[this.pickerValue[0]].label + "-" + this.cityDataList[this.pickerValue[1]].label + "-" + this.areaDataList[this.pickerValue[2]].label;
 				return pcikerLabel;
 			},
 			_getCityCode() {

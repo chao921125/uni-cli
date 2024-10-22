@@ -1,8 +1,8 @@
-export type ObjectFit = 'contain' | 'cover';
-export type ObjectPosition = ['left' | 'center' | 'right', 'top' | 'center' | 'bottom'];
+export type ObjectFit = "contain" | "cover";
+export type ObjectPosition = ["left" | "center" | "right", "top" | "center" | "bottom"];
 export interface Size {
-    width: number;
-    height: number;
+	width: number;
+	height: number;
 }
 /**
  * 用于计算图片的宽高比例
@@ -20,19 +20,23 @@ export interface Size {
  *
  * ### default object size
  */
-export declare function concreteRect(style: {
-    /** @see https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit */
-    objectFit?: ObjectFit;
-    /** @see https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position */
-    intrinsicPosition?: ObjectPosition;
-    specifiedPosition?: [number, number];
-}, intrinsicSize: Size, specifiedSize: Size): {
-    sx: number;
-    sy: number;
-    sw: number;
-    sh: number;
-    dx: number;
-    dy: number;
-    dw: number;
-    dh: number;
+export declare function concreteRect(
+	style: {
+		/** @see https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit */
+		objectFit?: ObjectFit;
+		/** @see https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position */
+		intrinsicPosition?: ObjectPosition;
+		specifiedPosition?: [number, number];
+	},
+	intrinsicSize: Size,
+	specifiedSize: Size,
+): {
+	sx: number;
+	sy: number;
+	sw: number;
+	sh: number;
+	dx: number;
+	dy: number;
+	dw: number;
+	dh: number;
 };

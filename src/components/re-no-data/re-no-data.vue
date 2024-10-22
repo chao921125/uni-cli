@@ -1,8 +1,13 @@
 <template>
 	<view class="re-flex-row-center">
-		<image class="img-no-data" v-if="imgPath" :src="imgPath.NoData"></image>
+		<image
+			class="img-no-data"
+			v-if="imgPath"
+			:src="imgPath.NoData"></image>
 	</view>
-	<view v-if="text" class="re-flex-row-center text-msg re-margin-top-30">
+	<view
+		v-if="text"
+		class="re-flex-row-center text-msg re-margin-top-30">
 		<text>{{ text }}</text>
 	</view>
 </template>

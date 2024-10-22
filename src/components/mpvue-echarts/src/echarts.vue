@@ -7,8 +7,7 @@
 		@touchstart="touchStart"
 		@touchmove="touchMove"
 		@touchend="touchEnd"
-		@error="error"
-	></canvas>
+		@error="error"></canvas>
 </template>
 
 <script>
