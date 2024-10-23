@@ -76,7 +76,6 @@
 								<view class="re-ml-30">
 									<view class="card-title">
 										<uni-link
-											#title
 											color="#000000"
 											:href="item.url"
 											:text="item.name"
@@ -84,7 +83,6 @@
 											copyTips="已复制,请在浏览器打开"
 											@click="copyData(item.url)"
 											@tap="copyData(item.url)">
-											{{ item.name }}
 										</uni-link>
 									</view>
 									<view class="card-desc">{{ item.desc }}</view>
