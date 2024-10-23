@@ -31,7 +31,7 @@
 	onMounted(() => {
 		setTimeout(() => {
 			isLoading.value = false;
-		}, 2000);
+		}, 1500);
 	});
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=rxLVW1QZMc15xc1anR6VQ6RpwTP57ez7JsVdXFe4QErIgJT4deCP4p/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBJv/Z/lfIkZJ
 	// https://wenshu.court.gov.cn/website/wenshu/181107ANFZ0BXSK4/index.html?docId=HSIbTIHYRKI5LHHYsLc85Z2AC+jPMl0IiQDcJnRMWWdvjtuLyU1gfZ/dgBYosE2gXlwaJez63rKkpQ0i3SSnRtavYjmV3fpKzjgAYaM/n+FQHg8NDVboBBLmnDWLKvik
@@ -61,7 +61,7 @@
 					row="3"
 					:border="false"
 					clickable
-					loading="{{ isLoading }}">
+					:loading="isLoading">
 					<van-grid column-num="2">
 						<van-grid-item
 							use-slot
@@ -76,7 +76,6 @@
 								<view class="re-ml-30">
 									<view class="card-title">
 										<uni-link
-											#title
 											color="#000000"
 											:href="item.url"
 											:text="item.name"
@@ -84,7 +83,6 @@
 											copyTips="已复制,请在浏览器打开"
 											@click="copyData(item.url)"
 											@tap="copyData(item.url)">
-											{{ item.name }}
 										</uni-link>
 									</view>
 									<view class="card-desc">{{ item.desc }}</view>
