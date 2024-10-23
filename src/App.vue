@@ -94,12 +94,6 @@
 <style lang="scss">
 	/* 组件 */
 	// @use "@/wxcomponents/vant/common/index.wxss";
-	// #ifdef H5
-	/* 字体 */
-	@use "@/static/fonts/index.css";
-	/* 图标 */
-	@use "@/static/iconfonts/iconfont/iconfont.css";
-	// #endif
 	/* 每个页面公共css */
 	@use "@/static/styles/index.scss";
 	@use "@/static/styles/pages.scss";

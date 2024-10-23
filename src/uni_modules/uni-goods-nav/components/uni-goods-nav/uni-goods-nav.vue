@@ -129,8 +129,6 @@
 
 	.uni-tab__cart-sub-left {
 		padding: 0 5px;
-		display: flex;
-		flex-direction: row;
 	}
 
 	.uni-tab__cart-sub-right {

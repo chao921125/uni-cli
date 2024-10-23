@@ -16,7 +16,7 @@
 				width="100"
 				height="100"></van-image>
 		</view>
-		<view>十五年开发团队（前后端/设计/UI）经验，多端（web/小程序/APP）开发经验，欢迎咨询：19920008007（VX 同步）/ 19231288007</view>
+		<view>十五年开发团队（前后端/设计/UI）经验，多端（web/小程序/APP）开发经验，欢迎咨询：19920008007（VX 同步</view>
 		<view class="re-flex-row-center">
 			<van-image
 				:src="Gzh"
